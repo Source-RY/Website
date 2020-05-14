@@ -16,4 +16,39 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+
+  const result = await graphql(`
+    query {
+      allStrapiEvent {
+        edges {
+          node {
+            id
+            end
+            content
+            start
+            name
+          }
+        }
+      }
+    }
+  `);
+
+  for (const { node } of result.data.allStrapiEvent.edges) {
+
+    // Don't create a page for an event that doesn't have a name.
+    if (!node.name)
+      continue;
+
+    const pageOptions = {
+      path: `/event/${node.name.toLowerCase()}`,
+      component: path.resolve('./src/templates/event.tsx'),
+      context: {
+        id: node.id
+      }
+    };
+
+    console.log(pageOptions);
+
+    createPage(pageOptions);
+  }
 };

@@ -12,6 +12,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: 'https://strapi.vanhanen.dev',
+        queryLimit: 1000, // Default to 100
+        contentTypes: ['event']
+      }
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
