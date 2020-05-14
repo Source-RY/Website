@@ -1,0 +1,38 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "plugins": ["eslint-plugin-import"],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": [ 2, "single", "avoid-escape"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": [ "error", "last"],
+    "eol-last": ["error", "always"],
+    "func-call-spacing": ["error", "never"],
+    "indent": ["error", 2],
+    "max-len": ["error", { "code": 100, "ignoreComments": true }],
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "never"],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "no-var": "error",
+    "prefer-const": "error",
+    "lines-between-class-members": ["error", "always"],
+    "keyword-spacing": "error",
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "dot-location": ["error", "property"],
+    "brace-style": ["error", "1tbs"],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "no-trailing-spaces": "error",
+    "newline-before-return": "error",
+    "space-infix-ops": "error",
+    "import/newline-after-import": ["error", { "count": 2 }]
+  }
+}
