@@ -33,9 +33,19 @@ exports.createPages = async ({ graphql, actions }) => {
       allStrapiPage {
         edges {
           node {
+            page {
+              title
+            }
             id
+            primary
             title
             textContent
+            events {
+              content
+              end
+              name
+              start
+            }
           }
         }
       }
@@ -53,8 +63,10 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   for (const { node } of result.data.allStrapiPage.edges) {
+    //if primary -> find parent
     createPage({
-      path: `/${node.title.toLowerCase()}`,
+      path: node.primary ? `/${_.kebabCase(node.title)}` :
+        `/${_.kebabCase(node.page.title)}/${_.kebabCase(node.title)}`,
       component: path.resolve('./src/templates/page.tsx'),
       context: {
         id: node.id
