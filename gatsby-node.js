@@ -39,16 +39,12 @@ exports.createPages = async ({ graphql, actions }) => {
     if (!node.name)
       continue;
 
-    const pageOptions = {
+    createPage({
       path: `/event/${node.name.toLowerCase()}`,
       component: path.resolve('./src/templates/event.tsx'),
       context: {
         id: node.id
       }
-    };
-
-    console.log(pageOptions);
-
-    createPage(pageOptions);
+    });
   }
 };

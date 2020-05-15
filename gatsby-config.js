@@ -1,6 +1,7 @@
 module.exports = {
+  // pathPrefix: '',
   siteMetadata: {
-    title: '',
+    title: 'Source ry',
     description: '',
     keywords: '',
     siteUrl: 'http://localhost:8000',
@@ -46,6 +47,7 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-remove-trailing-slashes'
   ]
 };
