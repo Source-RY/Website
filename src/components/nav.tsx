@@ -2,16 +2,16 @@ import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 
-interface navPage {
-  title: String,
-  id: String
+interface NavPage {
+  title: string,
+  id: string
 };
 
 const Nav: React.FC = () => (
   <StaticQuery
     query={graphql`
       query availablePages {
-        allStrapiPage {
+        allStrapiPage(filter: {primary: {eq: true}}) {
           nodes {
             title
             id
@@ -22,8 +22,8 @@ const Nav: React.FC = () => (
     render={data => (
       <>
         <div className="nav-bar">
-          {data.allStrapiPage.nodes.map((node: navPage) => {
-            return (<Link to={`/${node.title}`} className="nav-link">{node.title}</Link>);
+          {data.allStrapiPage.nodes.map((node: NavPage) => {
+            return <Link to={`/${node.title}`} className="nav-link">{node.title}</Link>;
           })}
         </div>
       </>

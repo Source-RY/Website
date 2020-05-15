@@ -53,9 +53,6 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   for (const { node } of result.data.allStrapiPage.edges) {
-    if (!node.title)
-      continue;
-
     createPage({
       path: `/${node.title.toLowerCase()}`,
       component: path.resolve('./src/templates/page.tsx'),
