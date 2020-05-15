@@ -30,6 +30,15 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allStrapiPage {
+        edges {
+          node {
+            id
+            title
+            textContent
+          }
+        }
+      }
     }
   `);
 
@@ -37,6 +46,19 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/events/${_.kebabCase(node.name)}`,
       component: path.resolve('./src/templates/event.tsx'),
+      context: {
+        id: node.id
+      }
+    });
+  }
+
+  for (const { node } of result.data.allStrapiPage.edges) {
+    if (!node.title)
+      continue;
+
+    createPage({
+      path: `/${node.title.toLowerCase()}`,
+      component: path.resolve('./src/templates/page.tsx'),
       context: {
         id: node.id
       }
