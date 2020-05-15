@@ -30,7 +30,7 @@ const PageTemplate: React.FC<PageTemplateProps> =
       <div className="page-text" dangerouslySetInnerHTML={{ __html: textContent }} />
       <div className="page-events">
         {events.map((evt: Event) => {
-          return <h1>{evt.name}</h1>;
+          return <h1 key={evt.id}>{evt.name}</h1>;
         })}
       </div>
     </IndexLayout>

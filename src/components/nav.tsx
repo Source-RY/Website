@@ -23,7 +23,8 @@ const Nav: React.FC = () => (
       <>
         <div className="nav-bar">
           {data.allStrapiPage.nodes.map((node: NavPage) => {
-            return <Link to={`/${node.title}`} className="nav-link">{node.title}</Link>;
+            return <Link key={node.id} to={`/${node.title}`} className="nav-link">{node.title}
+            </Link>;
           })}
         </div>
       </>
