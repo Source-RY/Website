@@ -21,6 +21,9 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-less'
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
