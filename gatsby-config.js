@@ -1,14 +1,14 @@
 module.exports = {
   // pathPrefix: '',
   siteMetadata: {
-    title: 'Source ry',
-    description: '',
+    title: 'SOURCE ry',
+    description: 'Homepage of SOURCE ry',
     keywords: '',
     siteUrl: 'http://localhost:8000',
     author: {
-      name: '',
+      name: 'SOURCE ry',
       url: '',
-      email: ''
+      email: 'source.tite@gmail.com'
     }
   },
   plugins: [

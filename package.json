@@ -1,9 +1,9 @@
 {
   "name": "source-website",
-  "description": "",
-  "version": "",
+  "description": "Homepage of SOURCE ry",
+  "version": "0.0.1",
   "private": true,
-  "author": "",
+  "author": "SOURCE ry <source.tite@gmail.com>",
   "keywords": [
     "gatsby"
   ],
