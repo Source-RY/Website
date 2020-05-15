@@ -17,7 +17,7 @@ module.exports = {
       options: {
         apiURL: 'https://strapi.vanhanen.dev',
         queryLimit: 1000, // Default to 100
-        contentTypes: ['event']
+        contentTypes: ['event', 'page']
       }
     },
     {
