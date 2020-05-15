@@ -35,10 +35,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   for (const { node } of result.data.allStrapiEvent.edges) {
 
-    // Don't create a page for an event that doesn't have a name.
-    if (!node.name)
-      continue;
-
     createPage({
       path: `/event/${node.name.toLowerCase()}`,
       component: path.resolve('./src/templates/event.tsx'),
