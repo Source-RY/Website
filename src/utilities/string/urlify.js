@@ -2,6 +2,8 @@ const _ = require('lodash');
 const replaceAccentedCharacters = require('./replaceAccentedCharacters');
 
 
-module.exports = str => {
-  return _.kebabCase(replaceAccentedCharacters(str));
+module.exports = (prefixOrPath, path) => {
+  return path ?
+    prefixOrPath + _.kebabCase(replaceAccentedCharacters(path)) :
+    '/' + _.kebabCase(replaceAccentedCharacters(prefixOrPath));
 };
