@@ -1,34 +1,24 @@
 import React from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 
-interface navPage {
-  title: String,
-  id: String
+interface NavProps {
+  items: {
+    title: string,
+    fields: {
+      url: string;
+    }
+  }[];
 };
 
-const Nav: React.FC = () => (
-  <StaticQuery
-    query={graphql`
-      query availablePages {
-        allStrapiPage {
-          nodes {
-            title
-            id
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <div className="nav-bar">
-          {data.allStrapiPage.nodes.map((node: navPage) => {
-            return (<Link to={`/${node.title}`} className="nav-link">{node.title}</Link>);
-          })}
-        </div>
-      </>
-    )}
-  />
+const Nav: React.FC<NavProps> = ({ items }) => (
+  <>
+    <div className="nav-bar">
+      {items.map(item => (
+        <Link to={item.fields.url} className="nav-link">{item.title}</Link>
+      ))}
+    </div>
+  </>
 );
 
 export default Nav;

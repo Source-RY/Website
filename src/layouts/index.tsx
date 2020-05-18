@@ -7,11 +7,20 @@ import Nav from '../components/nav';
 interface StaticQueryProps {
   site: {
     siteMetadata: {
-      title: string
-      description: string
-      keywords: string
-    }
+      title: string;
+      description: string;
+      keywords: string;
+    };
   }
+  allStrapiPage: {
+    nodes: {
+      id: string;
+      title: string;
+      fields: {
+        url: string;
+      }
+    }[];
+  };
 }
 
 const IndexLayout: React.FC = ({ children }) => (
@@ -24,22 +33,30 @@ const IndexLayout: React.FC = ({ children }) => (
             description
           }
         }
+        allStrapiPage {
+          nodes {
+            id
+            title
+            fields {
+              url
+            }
+          }
+        }
       }
     `}
-    render={(data: StaticQueryProps) => (
+    render={({ site: { siteMetadata }, allStrapiPage }: StaticQueryProps) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={siteMetadata.title}
           meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: data.site.siteMetadata.keywords }
+            { name: 'description', content: siteMetadata.description },
+            { name: 'keywords', content: siteMetadata.keywords }
           ]}
         />
-        <Nav />
+        <Nav items={allStrapiPage.nodes} />
         <main className="content-wrapper">{children}</main>
       </>
-    )}
-  />
+    )} />
 );
 
 export default IndexLayout;
