@@ -1,5 +1,6 @@
 const path = require('path');
 const _ = require('lodash');
+const { urlify } = require('./src/utilities/string');
 
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -10,6 +11,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // through `createNodeField` so that the fields still exist and GraphQL won't
   // trip up. An empty string is still required in replacement to `null`.
   switch (node.internal.type) {
+  case 'StrapiPage': {
+    createNodeField({
+      node,
+      name: 'url',
+      value: urlify(node.title)
+    });
+    break;
+  }
   default: break;
   }
 };
@@ -40,11 +49,8 @@ exports.createPages = async ({ graphql, actions }) => {
             primary
             title
             textContent
-            events {
-              content
-              end
-              name
-              start
+            fields {
+              url
             }
           }
         }
@@ -65,8 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
   for (const { node } of result.data.allStrapiPage.edges) {
     //if primary -> find parent
     createPage({
-      path: node.primary ? `/${_.kebabCase(node.title)}` :
-        `/${_.kebabCase(node.page.title)}/${_.kebabCase(node.title)}`,
+      path: node.fields.url,
       component: path.resolve('./src/templates/page.tsx'),
       context: {
         id: node.id
