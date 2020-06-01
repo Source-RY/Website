@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
+import ReactMarkdown from 'react-markdown';
 
 import IndexLayout from '../layouts';
 
@@ -23,7 +24,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data: { strapiPage: { trans
   return (
     <IndexLayout>
       <h1 className="page-title">{finskTranslation.title}</h1>
-      <div className="page-text" dangerouslySetInnerHTML={{ __html: finskTranslation.body }} />
+      <ReactMarkdown className="page-text">{finskTranslation.body}</ReactMarkdown>
     </IndexLayout>
   );
 };
