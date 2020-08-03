@@ -1,5 +1,4 @@
 const path = require('path');
-const _ = require('lodash');
 
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -19,48 +18,29 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     query {
-      allStrapiEvent {
-        edges {
-          node {
-            id
-            end
-            content
-            start
-            name
-          }
-        }
-      }
       allStrapiPage {
         edges {
           node {
-            id
-            title
-            textContent
+            name
+            url
+            enabled
+            translations {
+              title
+              body
+              language
+            }
           }
         }
       }
     }
   `);
 
-  for (const { node } of result.data.allStrapiEvent.edges) {
+  for (const { url } of result.data.allStrapiPage.edges.map(edge => edge.node)) {
     createPage({
-      path: `/events/${_.kebabCase(node.name)}`,
-      component: path.resolve('./src/templates/event.tsx'),
-      context: {
-        id: node.id
-      }
-    });
-  }
-
-  for (const { node } of result.data.allStrapiPage.edges) {
-    if (!node.title)
-      continue;
-
-    createPage({
-      path: `/${node.title.toLowerCase()}`,
+      path: url,
       component: path.resolve('./src/templates/page.tsx'),
       context: {
-        id: node.id
+        url: url
       }
     });
   }

@@ -8,38 +8,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.nav-bar {
-  width: 90%;
-  height: 75px;
-  background: @nav-primary;
-  position: fixed;
-  top: 50px;
-  border-radius: 10px;
-  left: 5%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.nav-link {
-  display: block;
-  color: @nav-textcolor;
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 75px;
-}
-
-.nav-link:active {
-  text-decoration: none;
-  outline: none;
-  border: none;
-}
-
 .content-wrapper {
   width: 90%;
   height: 100%;
@@ -47,14 +15,5 @@ body {
   margin: 0 auto;
 }
 
-.page-title {
-  font-size: 40px;
-  margin: 0;
-  padding: 0 0 20px 0;
-  text-transform: capitalize;
-}
-
-.page-text {
-  font-size: 20px;
-  line-height: 30px;
-}
+@import 'components/nav/all';
+@import 'components/page/all';

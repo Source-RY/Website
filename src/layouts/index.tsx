@@ -1,17 +1,20 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Nav from '../components/nav';
+import Nav, { NavItemOrNavMenu } from '../components/nav';
 
 
 interface StaticQueryProps {
   site: {
     siteMetadata: {
-      title: string
-      description: string
-      keywords: string
-    }
+      title: string;
+      description: string;
+      keywords: string;
+    };
   }
+  strapiNavigationBar: {
+    items: NavItemOrNavMenu[]
+  };
 }
 
 const IndexLayout: React.FC = ({ children }) => (
@@ -24,22 +27,43 @@ const IndexLayout: React.FC = ({ children }) => (
             description
           }
         }
+        strapiNavigationBar {
+          items {
+            id
+            label
+            index
+            visible
+            page {
+              url
+              enabled
+            }
+            items {
+              id
+              label
+              index
+              visible
+              page {
+                url
+                enabled
+              }
+            }
+          }
+        }
       }
     `}
-    render={(data: StaticQueryProps) => (
+    render={({ site: { siteMetadata }, strapiNavigationBar }: StaticQueryProps) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={siteMetadata.title}
           meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: data.site.siteMetadata.keywords }
+            { name: 'description', content: siteMetadata.description },
+            { name: 'keywords', content: siteMetadata.keywords }
           ]}
         />
-        <Nav />
+        <Nav items={strapiNavigationBar.items} />
         <main className="content-wrapper">{children}</main>
       </>
-    )}
-  />
+    )} />
 );
 
 export default IndexLayout;

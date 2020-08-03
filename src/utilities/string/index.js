@@ -1,3 +1,4 @@
 module.exports = {
-  replaceAccentedCharacters: require('./replaceAccentedCharacters')
+  replaceAccentedCharacters: require('./replaceAccentedCharacters'),
+  urlify: require('./urlify')
 };
