@@ -2,5 +2,17 @@
   font-size: 40px;
   margin: 0;
   padding: 0 0 20px 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  animation: title-entry 0.2s ease-in-out forwards;
+}
+
+@keyframes title-entry {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0px); }
 }

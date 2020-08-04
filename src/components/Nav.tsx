@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { ChevronDown } from 'react-feather';
 
 
 interface NavItem {
@@ -23,8 +24,8 @@ interface NavProps {
   items: NavItemOrNavMenu[];
 };
 
+// Taking items from NavProps.items
 const Nav: React.FC<NavProps> = ({ items }) => {
-  console.log(items);
 
   return (
   /* TODO: implement nav menus */
@@ -34,16 +35,49 @@ const Nav: React.FC<NavProps> = ({ items }) => {
           .filter(item => item.visible)
           .sort((a, b) => a.index - b.index)
           .map(item => (
-            <React.Fragment key={item.id}>
-              {/* Don't create link if the page doesn't exist */}
-              {item.page.enabled ?
-                <Link className="nav-link" to={item.page.url}>{item.label}</Link> :
-                <p className="nav-link">{item.label}</p>}
-            </React.Fragment>
+            <NavPart key={item.id} {...item} />
           ))}
       </div>
     </>
   );
 };
+
+const NavPart: React.FC<NavItemOrNavMenu> = ( item ) => {
+
+  let subContent: NavItemOrNavMenu[] = [];
+
+  if ('items' in item) {
+    subContent = item.items;
+  }
+
+  return (
+    <>
+      <div className="nav-link-container" key={`part-${item.id}`}>
+        {
+          item.page.enabled ?
+            <Link className="nav-link" to={item.page.url}>{item.label}</Link>
+            : <p className="nav-link">{item.label}</p>
+        }
+        {
+          subContent != null && subContent.length > 0 ? (
+            <>
+              <ChevronDown className="nav-chevron" color="#fff" />
+              <div className="nav-sub-container">
+                {
+                  subContent.map(subItem => {
+                    return <NavPart key={subItem.id} {...subItem} />;
+                  })
+                }
+              </div></>
+          )
+            :
+            <></>
+
+        }
+      </div>
+    </>
+  );
+};
+
 
 export default Nav;
