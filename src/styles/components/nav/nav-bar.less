@@ -97,9 +97,9 @@
 
 @media only screen and (max-width: 1024px) {
   .nav-bar {
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    display: block;
     visibility:hidden;
     background: var(--nav-primary);
     overflow-y: auto;
@@ -114,7 +114,7 @@
   }
   .nav-inner {
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     flex-direction: column;
   }
   .nav-items {
@@ -174,7 +174,7 @@
   }
   .activate-nav-button {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     z-index: 50;

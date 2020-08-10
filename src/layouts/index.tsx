@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Nav, { NavItemOrNavMenu } from '../components/Nav';
@@ -25,6 +25,13 @@ interface NavProps {
 const NavAndButton: React.FC<NavProps> = ({ items }) => {
 
   const [navActive, setNavActive] = useState(false);
+
+  useEffect(() => {
+    if (navActive && !document.body.classList.contains('noscroll'))
+      document.body.classList.add('noscroll');
+    else
+      document.body.classList.remove('noscroll');
+  }, [navActive]);
 
   return (
     <>
