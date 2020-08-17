@@ -4,7 +4,7 @@ module.exports = {
     title: 'SOURCE ry',
     description: 'Homepage of SOURCE ry',
     keywords: '',
-    siteUrl: 'http://localhost:8000',
+    siteUrl: 'https://sourcery.rocks',
     author: {
       name: 'SOURCE ry',
       url: '',
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: '<url-goes-here>'
+        siteUrl: 'https://sourcery.rocks'
       }
     },
     'gatsby-plugin-typescript',
