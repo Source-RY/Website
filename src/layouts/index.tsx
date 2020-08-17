@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Nav, { NavItemOrNavMenu } from '../components/nav';
+import Nav, { NavItemOrNavMenu } from '../components/Nav';
+import { AlignJustify } from 'react-feather';
 
 
 interface StaticQueryProps {
@@ -16,6 +17,31 @@ interface StaticQueryProps {
     items: NavItemOrNavMenu[]
   };
 }
+
+interface NavProps {
+  items: NavItemOrNavMenu[]
+}
+
+const NavAndButton: React.FC<NavProps> = ({ items }) => {
+
+  const [navActive, setNavActive] = useState(false);
+
+  useEffect(() => {
+    if (navActive && !document.body.classList.contains('noscroll'))
+      document.body.classList.add('noscroll');
+    else
+      document.body.classList.remove('noscroll');
+  }, [navActive]);
+
+  return (
+    <>
+      <Nav items={items} navActive={navActive} setNavInactive={() => setNavActive(false)} />
+      <button onClick={() => setNavActive(true)} type="button" className="activate-nav-button">
+        <AlignJustify className="activate-nav-button-icon" />
+      </button>
+    </>
+  );
+};
 
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery
@@ -59,8 +85,11 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'description', content: siteMetadata.description },
             { name: 'keywords', content: siteMetadata.keywords }
           ]}
+          link={[
+            { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+          ]}
         />
-        <Nav items={strapiNavigationBar.items} />
+        <NavAndButton items={strapiNavigationBar.items} />
         <main className="content-wrapper">{children}</main>
       </>
     )} />

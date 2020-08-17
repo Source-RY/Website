@@ -22,6 +22,14 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             name
+            hasWidgets
+            banner {
+              childImageSharp {
+                original {
+                  src
+                }
+              }
+            }
             url
             enabled
             translations {

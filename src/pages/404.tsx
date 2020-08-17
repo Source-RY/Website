@@ -6,9 +6,11 @@ import IndexLayout from '../layouts';
 
 const NotFoundPage = () => (
   <IndexLayout>
-    <h1>404: Page not found.</h1>
-    <p>
-      You've hit the void. <Link to="/">Go back.</Link>
+    <h1 className="not-found">Tais mennä väärin</h1>
+    <p className="not-found">
+      Typoista päätellen olet jo valmistunut insinööri!
+      <br /><br />
+      <Link to="/">Haluun pois</Link>
     </p>
   </IndexLayout>
 );

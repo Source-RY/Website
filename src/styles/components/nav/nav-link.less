@@ -1,4 +1,9 @@
+.nav-link-container {
+  position:relative;
+}
+
 .nav-link {
+  position:relative;
   display: block;
   color: var(--nav-textcolor);
   padding: 0;
@@ -6,8 +11,16 @@
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 75px;
+}
+
+.nav-chevron {
+  position:absolute;
+  top: 65%;
+  left: calc(50% - 12px);
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .nav-link:active {
@@ -15,3 +28,23 @@
   outline: none;
   border: none;
 }
+
+.nav-sub-container .nav-link-container {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.nav-sub-container .nav-link-container .nav-link {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  color: #fff;
+  line-height: 30px;
+}
+
+
