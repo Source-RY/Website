@@ -1,6 +1,6 @@
 .page-banner-container {
   width: 100%;
-  height: 700px;
+  height: 500px;
   background:#212121;
   position:relative;
   overflow:hidden;
@@ -15,4 +15,20 @@
   filter: brightness(0.5);
   left: 0;
   top: 0;
+}
+.widgets-container {
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1024px) {
+  .page-banner-container {
+    max-height: 100vh;
+  }
+  .widgets-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }

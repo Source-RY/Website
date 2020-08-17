@@ -22,6 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             name
+            hasWidgets
             banner {
               childImageSharp {
                 original {
@@ -41,8 +42,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
-  console.log(result);
 
   for (const { url } of result.data.allStrapiPage.edges.map(edge => edge.node)) {
     createPage({
