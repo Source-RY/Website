@@ -57,7 +57,9 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data: { strapiPage } }) => 
         </div>
         <h1 className="page-title">{finskTranslation.title}</h1>
       </div>
-      <ReactMarkdown className={'page-text ' + (strapiPage.hasWidgets ? 'has-widgets' : '')}>{finskTranslation.body}</ReactMarkdown>
+      <ReactMarkdown className={'page-text ' + (strapiPage.hasWidgets ? 'has-widgets' : '')}>
+        {finskTranslation.body}
+      </ReactMarkdown>
       <Widgets hasWidgets={strapiPage.hasWidgets} />
     </IndexLayout>
   );
