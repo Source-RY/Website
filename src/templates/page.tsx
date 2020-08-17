@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
-
 import IndexLayout from '../layouts';
 
 
