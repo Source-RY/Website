@@ -85,6 +85,9 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'description', content: siteMetadata.description },
             { name: 'keywords', content: siteMetadata.keywords }
           ]}
+          link={[
+            { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+          ]}
         />
         <NavAndButton items={strapiNavigationBar.items} />
         <main className="content-wrapper">{children}</main>
