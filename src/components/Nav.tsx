@@ -35,7 +35,9 @@ const Nav: React.FC<NavProps> = ({ items, navActive, setNavInactive }) => {
       <div className={'nav-bar ' + (navActive ? 'active' : '')}>
         <div className="nav-inner">
           <div className="nav-logo-container">
-            <img src="/logo.png" />
+            <a href="https://cdn.discordapp.com/attachments/745750496333267034/745751354818953308/4cdb98bb1295cee1e2175eb83ef99284.jpg">
+              <img src="/logo.png" />
+            </a>
           </div>
           <div className="nav-items">
             {items
