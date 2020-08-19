@@ -16,7 +16,7 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics-gdpr',
       options: {
         // The property ID; the tracking code won't be generated without it.
-        trackingId: '${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}',
+        trackingId: 'UA-175588917-1',
         // Optional parameter (default false) - Enable analytics in development mode.
         enableDevelopment: false, // default false
         // Optional parameter (default true) - Some countries (such as Germany) require you to use the _anonymizeIP function for Google Analytics. Otherwise you are not allowed to use it.
