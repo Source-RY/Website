@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Nav, { NavItemOrNavMenu } from '../components/Nav';
+import NavigationBar, { NavigationBarItemOrNavigationBarMenu } from '../components/NavigationBar';
 import { AlignJustify } from 'react-feather';
 
 
@@ -14,15 +14,15 @@ interface StaticQueryProps {
     };
   }
   strapiNavigationBar: {
-    items: NavItemOrNavMenu[]
+    items: NavigationBarItemOrNavigationBarMenu[]
   };
 }
 
-interface NavProps {
-  items: NavItemOrNavMenu[]
+interface NavigationBarProps {
+  items: NavigationBarItemOrNavigationBarMenu[]
 }
 
-const NavAndButton: React.FC<NavProps> = ({ items }) => {
+const NavigationBarAndButton: React.FC<NavigationBarProps> = ({ items }) => {
 
   const [navActive, setNavActive] = useState(false);
 
@@ -35,8 +35,14 @@ const NavAndButton: React.FC<NavProps> = ({ items }) => {
 
   return (
     <>
-      <Nav items={items} navActive={navActive} setNavInactive={() => setNavActive(false)} />
-      <button onClick={() => setNavActive(true)} type="button" className="activate-nav-button">
+      <NavigationBar
+        items={items}
+        navActive={navActive}
+        setNavInactive={() => setNavActive(false)} />
+      <button
+        onClick={() => setNavActive(true)}
+        type="button"
+        className="activate-nav-button">
         <AlignJustify className="activate-nav-button-icon" />
       </button>
     </>
@@ -89,7 +95,7 @@ const IndexLayout: React.FC = ({ children }) => (
             { rel: 'icon', type: 'image/png', href: '/favicon.png' }
           ]}
         />
-        <NavAndButton items={strapiNavigationBar.items} />
+        <NavigationBarAndButton items={strapiNavigationBar.items} />
         <main className="content-wrapper">{children}</main>
       </>
     )} />
