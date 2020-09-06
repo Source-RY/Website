@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Nav, { NavItemOrNavMenu } from '../components/Nav';
-import { AlignJustify } from 'react-feather';
+import { Menu } from 'react-feather';
 
 
 interface StaticQueryProps {
@@ -37,7 +37,7 @@ const NavAndButton: React.FC<NavProps> = ({ items }) => {
     <>
       <Nav items={items} navActive={navActive} setNavInactive={() => setNavActive(false)} />
       <button onClick={() => setNavActive(true)} type="button" className="activate-nav-button">
-        <AlignJustify className="activate-nav-button-icon" />
+        <Menu className="activate-nav-button-icon" />
       </button>
     </>
   );
