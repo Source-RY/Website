@@ -43,7 +43,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  for (const { url } of result.data.allStrapiPage.edges.map(edge => edge.node)) {
+  for (const { enabled, url } of result.data.allStrapiPage.edges.map(edge => edge.node)) {
+    if (!enabled)
+      continue;
+
     createPage({
       path: url,
       component: path.resolve('./src/templates/page.tsx'),
