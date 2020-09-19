@@ -4,7 +4,7 @@ module.exports = {
     title: 'SOURCE ry',
     description: 'Homepage of SOURCE ry',
     keywords: '',
-    siteUrl: 'https://sourcery.rocks',
+    siteUrl: 'https://www.sourcery.rocks',
     author: {
       name: 'SOURCE ry',
       url: '',
@@ -12,6 +12,7 @@ module.exports = {
     }
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-strapi',
       options: {
@@ -45,7 +46,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://sourcery.rocks'
+        siteUrl: 'https://www.sourcery.rocks'
       }
     },
     'gatsby-plugin-typescript',
