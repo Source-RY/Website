@@ -37,19 +37,20 @@ exports.createPages = async ({ graphql, actions }) => {
               body
               language
             }
+            template
           }
         }
       }
     }
   `);
 
-  for (const { enabled, url } of result.data.allStrapiPage.edges.map(edge => edge.node)) {
+  for (const { template, enabled, url } of result.data.allStrapiPage.edges.map(edge => edge.node)) {
     if (!enabled)
       continue;
 
     createPage({
       path: url,
-      component: path.resolve('./src/templates/page.tsx'),
+      component: path.resolve(`./src/templates/${template ?? 'page'}.tsx`),
       context: {
         url: url
       }
