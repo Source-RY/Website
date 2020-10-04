@@ -13,7 +13,12 @@ interface PageTemplateProps {
           original: {
             src: string;
           }
-        }
+        };
+        childVideoFfmpeg: {
+          transcode: {
+            src: string;
+          }
+        };
       };
       translations: {
         title: string;
@@ -48,12 +53,17 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data: { strapiPage } }) => 
   /* TODO: implement localization */
   const finskTranslation = strapiPage.translations.filter(t => t.language === 'FI')[0];
 
-  const bannerURL = strapiPage.banner ? strapiPage.banner.childImageSharp.original.src : '';
+  const isImage = !!strapiPage.banner.childImageSharp;
+  const bannerURL = strapiPage.banner.childImageSharp ?
+    strapiPage.banner.childImageSharp.original.src
+    : strapiPage.banner.childVideoFfmpeg.transcode.src;
 
   return (
     <IndexLayout>
       <div className="page-banner-container">
-        <div className="page-banner" style={{ backgroundImage: `url(${bannerURL})` }}>
+        <div className={isImage ? "page-banner filter" : "page-banner"} 
+          style={{ backgroundImage: `url(${isImage ? bannerURL : ''})` }}>
+          { !isImage ? <video src={bannerURL} /> : <></> }
         </div>
         <h1 className="page-title">{finskTranslation.title}</h1>
       </div>
@@ -74,6 +84,11 @@ export const query = graphql`
       banner {
         childImageSharp {
           original {
+            src
+          }
+        }
+        childVideoFfmpeg {
+          transcode {
             src
           }
         }
