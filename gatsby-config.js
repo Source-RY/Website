@@ -4,11 +4,11 @@ module.exports = {
     title: 'SOURCE ry',
     description: 'Homepage of SOURCE ry',
     keywords: '',
-    siteUrl: 'https://www.sourcery.rocks',
+    siteUrl: 'https://www.source.club',
     author: {
       name: 'SOURCE ry',
       url: '',
-      email: 'source.tite@gmail.com'
+      email: 'hallitus@source.club'
     }
   },
   plugins: [
@@ -59,13 +59,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://www.sourcery.rocks'
+        siteUrl: 'https://www.source.club'
       }
     },
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-remove-trailing-slashes'
+    'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-transformer-ffmpeg'
   ]
 };

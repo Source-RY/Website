@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
 import IndexLayout from '../layouts';
@@ -13,55 +13,86 @@ interface PartnerTemplateProps {
           original: {
             src: string;
           }
-        }
+        };
+        childVideoFfmpeg: {
+          transcode: {
+            src: string;
+          }
+        };
       };
       translations: {
         title: string;
         body: string;
         language: 'FI' | 'EN';
       }[];
+      partner: {
+        basicInfo: string;
+        name: string;
+        url: string;
+      };
     }
   }
 }
 
-interface WidgetProps {
-  hasWidgets: boolean;
+interface PartnerViewProps {
+  partner: {
+    basicInfo: string;
+    name: string;
+    url: string;
+  }
 }
-
-const Widgets: React.FC<WidgetProps> = ({ hasWidgets }) => {
-  if (hasWidgets) {
-    return (
-      <div className="widgets-container">
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftamko.source&amp;tabs=timeline&amp;width=360&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=true&amp;appId"
-          className="fb-widget"
-          width="360" height="500"
-          scrolling="no"
-          allow="encrypted-media">
-        </iframe>
-      </div>
-    );
-  } else
-    return <></>;
-};
 
 const PartnerTemplate: React.FC<PartnerTemplateProps> = ({ data: { strapiPage } }) => {
   /* TODO: implement localization */
   const finskTranslation = strapiPage.translations.filter(t => t.language === 'FI')[0];
 
-  const bannerURL = strapiPage.banner ? strapiPage.banner.childImageSharp.original.src : '';
+  const isImage = !!strapiPage.banner.childImageSharp;
+  const bannerURL = strapiPage.banner.childImageSharp ?
+    strapiPage.banner.childImageSharp.original.src
+    : strapiPage.banner.childVideoFfmpeg.transcode.src
+
+  const partner = strapiPage.partner;
+  console.log(partner);
+
+  const videoContainer = useRef<any>(null); 
+  const video = useRef<any>(null);
+
+  // Todo add dynamic video scaling
+  useEffect(() => {
+    if (!isImage && videoContainer && video) {
+      const containerWidth = videoContainer.current.offsetWidth;
+      const containerHeight = videoContainer.current.offsetHeight;
+      if (containerWidth > containerHeight)
+        video.current.width = containerWidth;
+      else
+        video.current.height = containerHeight;
+    }
+  }, [videoContainer, video]);
 
   return (
     <IndexLayout>
       <div className="page-banner-container">
-        <div className="page-banner" style={{ backgroundImage: `url(${bannerURL})` }}>
+        <div className={isImage ? "page-banner filter" : "page-banner"} 
+          style={{ backgroundImage: `url(${isImage ? bannerURL : ''})` }} ref={videoContainer} >
+          { !isImage ? <video src={bannerURL} autoPlay loop ref={video} /> : <></> }
         </div>
-        <h1 className="page-title">{finskTranslation.title}</h1>
       </div>
-      <ReactMarkdown className={'page-text ' + (strapiPage.hasWidgets ? 'has-widgets' : '')}>
+      <h1 className="page-title-rel">{finskTranslation.title}</h1>
+      <ReactMarkdown className="partner-page-text">
         {finskTranslation.body}
       </ReactMarkdown>
-      <Widgets hasWidgets={strapiPage.hasWidgets} />
+      <PartnerView partner={partner} />
     </IndexLayout>
+  );
+};
+
+
+
+const PartnerView: React.FC<PartnerViewProps> = ({ partner }) => {
+  return (
+    <div className="partner-side-bar">
+
+    </div>
   );
 };
 
@@ -77,11 +108,21 @@ export const query = graphql`
             src
           }
         }
+        childVideoFfmpeg {
+          transcode {
+            src
+          }
+        }
       }
       translations {
         title
         body
         language
+      }
+      partner {
+        basicInfo
+        name
+        url
       }
     }
   }

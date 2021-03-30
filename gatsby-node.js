@@ -29,6 +29,11 @@ exports.createPages = async ({ graphql, actions }) => {
                   src
                 }
               }
+              childVideoFfmpeg {
+                transcode {
+                  src
+                }
+              }
             }
             url
             enabled
@@ -38,16 +43,20 @@ exports.createPages = async ({ graphql, actions }) => {
               language
             }
             template
+            partner {
+              basicInfo
+              name
+              url
+            }
           }
         }
       }
     }
   `);
-
+  
   for (const { template, enabled, url } of result.data.allStrapiPage.edges.map(edge => edge.node)) {
     if (!enabled)
       continue;
-
     createPage({
       path: url,
       component: path.resolve(`./src/templates/${template ?? 'page'}.tsx`),
