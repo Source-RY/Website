@@ -12,6 +12,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Install FFmpeg
+        run: apt-get install ffmpeg -y
+    
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
