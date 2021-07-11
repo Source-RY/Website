@@ -1,28 +1,11 @@
-import React from 'react'
+import { useStaticQuery } from 'gatsby'
 import { graphql } from 'gatsby'
+import React from 'react'
 import tw from 'twin.macro'
+import ReactMarkdown from 'react-markdown'
 import { Container, NavigationBar } from '../components'
+import useText from '../text'
 
-
-export interface FrontPageProps {
-  data: {
-    strapiFrontPage: {
-      id: string
-      body: string
-      locale: 'fi' | 'en'
-    }
-  }
-}
-
-export const query = graphql`
-  query FrontPageQuery {
-    strapiFrontPage {
-      id
-      body
-      locale
-    }
-  }
-`
 
 const Button = tw.button`
   hover:bg-green-400
@@ -30,14 +13,21 @@ const Button = tw.button`
   shadow-md
 `
 
-export default function FrontPage (props: FrontPageProps): JSX.Element {
+export default function FrontPage (): JSX.Element {
+  const Text = useText('fi')
+
   return (
     <Container>
       <NavigationBar />
-      <p>Hello, world!</p>
-      <Button>Click me</Button>
+      <text>
+        Meikä mandariini
+
+        tässä taas moi
+
+
+        hei maailma
+      </text>
       <div>
-        {props.data.strapiFrontPage.body}
       </div>
     </Container>
   )
