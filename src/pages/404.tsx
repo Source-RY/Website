@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
-export default function () {
+export default function NotFoundPage () {
   return (
     <div>
       <p>Nothing here.</p>

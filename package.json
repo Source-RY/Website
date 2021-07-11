@@ -17,6 +17,7 @@
   "dependencies": {
     "gatsby": "^3.9.0",
     "gatsby-plugin-typescript": "^3.9.0",
+    "gatsby-source-strapi": "^1.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
