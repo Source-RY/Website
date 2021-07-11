@@ -31,7 +31,7 @@ module.exports = {
       options: {
         apiURL: 'https://strapi.vanhanen.dev',
         queryLimit: 1000, // Default to 100
-        contentTypes: ['page'],
+        contentTypes: ['page', 'partner'],
         singleTypes: ['navigation-bar']
       }
     },
@@ -67,6 +67,8 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-trailing-slashes',
-    'gatsby-transformer-ffmpeg'
+    'gatsby-transformer-ffmpeg',
+    'gatsby-plugin-ffmpeg',
+    'gatsby-plugin-styled-components'
   ]
 };

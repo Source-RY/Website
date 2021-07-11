@@ -51,6 +51,23 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allStrapiPartner {
+        edges {
+          node {
+            name
+            url
+            logo {
+              childImageSharp {
+                original {
+                  src
+                }
+              }
+            }
+            basicInfo
+            accentColor
+          }
+        }
+      }
     }
   `);
   
