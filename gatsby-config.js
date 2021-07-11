@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.source.club`
+    siteUrl: 'https://www.source.club'
   },
   plugins: [
     {
-      resolve: `gatsby-source-strapi`,
+      resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL: 'http://localhost:1337',
         queryLimit: 1000,
         singleTypes: [
           'front-page',
@@ -15,14 +15,14 @@ module.exports = {
           'partners-page',
           'suggestions-page',
           'events-page'
-        ],
-      },
+        ]
+      }
     },
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
-        jsxPragma: `jsx`,
+        jsxPragma: 'jsx',
         allExtensions: true
       }
     },
