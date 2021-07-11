@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import tw from 'twin.macro'
+import { Container, NavigationBar } from '../components'
+
 
 export interface FrontPageProps {
   data: {
@@ -30,13 +32,14 @@ const Button = tw.button`
 
 export default function FrontPage (props: FrontPageProps): JSX.Element {
   return (
-    <>
+    <Container>
+      <NavigationBar />
       <p>Hello, world!</p>
       <Button>Click me</Button>
       <div>
         {props.data.strapiFrontPage.body}
       </div>
-    </>
+    </Container>
   )
 }
 

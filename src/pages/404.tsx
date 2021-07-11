@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { Link } from 'gatsby'
+
 
 export default function NotFoundPage () {
   return (
@@ -9,4 +9,4 @@ export default function NotFoundPage () {
       <Link to="/">Go back to home</Link>
     </div>
   )
-}  
+}
