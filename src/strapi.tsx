@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import ReactMarkdown from 'react-markdown'
 
 
-export default function useText(locale: string): ({ children: string }) => JSX.Element {
+export function useMarkdown(locale: string): ({ children: string }) => JSX.Element {
   const data = useStaticQuery(graphql`
     query FrontPageTextsQuery {
       allStrapiText {

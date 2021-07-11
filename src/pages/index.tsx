@@ -4,7 +4,9 @@ import React from 'react'
 import tw from 'twin.macro'
 import ReactMarkdown from 'react-markdown'
 import { Container, NavigationBar } from '../components'
-import useText from '../text'
+import * as strapi from '../strapi'
+import { I18nextContext, useI18next } from 'gatsby-plugin-react-i18next'
+
 
 
 const Button = tw.button`
@@ -13,22 +15,22 @@ const Button = tw.button`
   shadow-md
 `
 
-export default function FrontPage (): JSX.Element {
-  const Text = useText('fi')
+export default function FrontPage (props: unknown): JSX.Element {
+  const { languages, changeLanguage } = useI18next()
+  const context = React.useContext(I18nextContext)
+
+
+  if (context.language !== 'en')
+    changeLanguage('en')
+
+  console.log(context.language)
+
+  const Markdown = strapi.useMarkdown(context.language)
 
   return (
     <Container>
       <NavigationBar />
-      <text>
-        Meikä mandariini
-
-        tässä taas moi
-
-
-        hei maailma
-      </text>
-      <div>
-      </div>
+      <Markdown>home:body</Markdown>
     </Container>
   )
 }
