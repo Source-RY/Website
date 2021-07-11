@@ -2,7 +2,7 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
 import IndexLayout from '../layouts';
-import PartnersWidget from '../components/PartnersWidget'
+import PartnerItem from '../components/PartnerItem'
 
 
 interface PageTemplateProps {
@@ -27,11 +27,28 @@ interface PageTemplateProps {
         language: 'FI' | 'EN';
       }[];
     }
+    allStrapiPartner: {
+      edges: {
+        node: {
+          logo: {
+            childImageSharp: {
+              original: {
+                src: string;
+              }
+            }
+          };
+          name: string;
+          basicInfo: string;
+          url: string;
+          accentColor: string;
+        }
+      }[]
+    }
   }
 }
 
-const PageTemplate: React.FC<PageTemplateProps> = ({ data: { strapiPage } }) => {
-  /* TODO: implement localization */
+const PartnersTemplate: React.FC<PageTemplateProps> = ({ data: { strapiPage, allStrapiPartner } }) => {
+
   const finskTranslation = strapiPage.translations.filter(t => t.language === 'FI')[0];
 
   const isImage = !!strapiPage.banner.childImageSharp;
@@ -48,22 +65,22 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data: { strapiPage } }) => 
         </div>
         <h1 className="page-title">{finskTranslation.title}</h1>
       </div>
-      <ReactMarkdown className={'page-text'}>
+      <ReactMarkdown className={'page-text ' + (strapiPage.hasWidgets ? 'has-widgets' : '')}>
         {finskTranslation.body}
       </ReactMarkdown>
       {
-        strapiPage.hasWidgets ?
-        <PartnersWidget />
-        : <></>
+        allStrapiPartner.edges.map((partner, index) => {
+          return <PartnerItem key={index} isLast={index === allStrapiPartner.edges.length - 1} partner={partner.node} />
+        })
       }
     </IndexLayout>
   );
 };
 
-export default PageTemplate;
+export default PartnersTemplate;
 
 export const query = graphql`
-  query PageTemplateQuery($url: String!) {
+  query PartnersTemplateQuery($url: String!) {
     strapiPage( url: { eq: $url }) {
       hasWidgets
       banner {
@@ -83,6 +100,23 @@ export const query = graphql`
         body
         language
       }
+    }
+    allStrapiPartner {
+      edges {
+        node {
+          logo {
+            childImageSharp {
+              original {
+                src
+              }
+            }
+          }
+          basicInfo
+          name
+          url
+          accentColor
+        }
+      } 
     }
   }
 `;
