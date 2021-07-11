@@ -25,6 +25,7 @@ module.exports = {
         jsxPragma: `jsx`,
         allExtensions: true
       }
-    }
+    },
+    'gatsby-plugin-emotion'
   ]
 }

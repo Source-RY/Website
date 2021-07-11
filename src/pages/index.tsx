@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { graphql } from 'gatsby'
+import tw from 'twin.macro'
 
 export interface FrontPageProps {
   data: {
@@ -22,10 +22,17 @@ export const query = graphql`
   }
 `
 
+const Button = tw.button`
+  hover:bg-green-400
+  rounded-md
+  shadow-md
+`
+
 export default function FrontPage (props: FrontPageProps): JSX.Element {
   return (
     <>
       <p>Hello, world!</p>
+      <Button>Click me</Button>
       <div>
         {props.data.strapiFrontPage.body}
       </div>
