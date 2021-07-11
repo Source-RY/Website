@@ -2,9 +2,9 @@ import React from 'react'
 
 import { graphql } from 'gatsby'
 
-export interface FrontPageProps {
+export interface ContactUsPageProps {
   data: {
-    strapiFrontPage: {
+    strapiContactUsPage: {
       id: string
       body: string
       locale: 'fi' | 'en'
@@ -13,8 +13,8 @@ export interface FrontPageProps {
 }
 
 export const query = graphql`
-  query FrontPageQuery {
-    strapiFrontPage {
+  query ContactUsPageQuery {
+    strapiContactUsPage {
       id
       body
       locale
@@ -22,12 +22,12 @@ export const query = graphql`
   }
 `
 
-export default function FrontPage (props: FrontPageProps): JSX.Element {
+export default function ContactUsPage (props: ContactUsPageProps): JSX.Element {
   return (
     <>
       <p>Hello, world!</p>
       <div>
-        {props.data.strapiFrontPage.body}
+        {props.data.strapiContactUsPage.body}
       </div>
     </>
   )

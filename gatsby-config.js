@@ -8,7 +8,14 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000,
-        singleTypes: ['front-page'],
+        singleTypes: [
+          'front-page',
+          'membership-page',
+          'contact-us-page',
+          'partners-page',
+          'suggestions-page',
+          'events-page'
+        ],
       },
     },
     {
