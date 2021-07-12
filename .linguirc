@@ -2,13 +2,16 @@
   "locales": ["fi", "en"],
   "catalogs": [
     {
-      "path": "<rootDir>/i18n/lingui/{locale}/messages",
+      "path": "<rootDir>/src/locale/{locale}/messages",
       "include": ["<rootDir>/src"],
       "exclude": ["**/node_modules/**", "**/__tests__/**"]
     }
   ],
   "format": "po",
   "extractBabelOptions": {
-    "presets": ["babel-preset-gatsby"]
+    "presets": [
+      "@babel/preset-typescript",
+      "babel-preset-gatsby"
+    ]
   }
 }

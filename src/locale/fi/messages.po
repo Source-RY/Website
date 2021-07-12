@@ -14,8 +14,7 @@ msgstr ""
 #: src/pages/index.tsx:20
 msgid "home:body"
 msgstr ""
-  "a multiline string\n"
-  "bro\n"
-  "here\n"
-
-
+"monirivimerkkijono\n"
+"veli\n"
+"täällä\n"
+""

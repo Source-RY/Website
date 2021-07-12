@@ -4,8 +4,14 @@ import React from 'react'
 import tw from 'twin.macro'
 import ReactMarkdown from 'react-markdown'
 import { Container, NavigationBar } from '../components'
-import { Trans } from '@lingui/react'
+import { I18nProvider, Trans } from '@lingui/react'
+import { withI18n } from '@lingui/react'
+import { i18n } from '@lingui/core'
+import { messages } from '../locale/en/messages'
 
+
+i18n.load('en', messages)
+i18n.activate('en')
 
 const Button = tw.button`
   hover:bg-green-400
@@ -13,7 +19,7 @@ const Button = tw.button`
   shadow-md
 `
 
-export default function FrontPage (props: unknown): JSX.Element {
+const FrontPage: React.FC = () => {
   return (
     <Container>
       <NavigationBar />
@@ -22,3 +28,10 @@ export default function FrontPage (props: unknown): JSX.Element {
   )
 }
 
+export default function() {
+  return (
+    <I18nProvider i18n={i18n}>
+      <FrontPage />
+    </I18nProvider>
+  )
+}
