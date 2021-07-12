@@ -4,20 +4,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: 'gatsby-theme-i18n-lingui',
       options: {
-        path: `${__dirname}/locales`,
-        name: 'locale'
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-react-i18next',
-      options: {
-        languages: ['fi', 'en'],
-        defaultLanguage: 'fi',
-        siteUrl: 'https://www.source.club/',
-        i18nextOptions: {},
-        pages: []
+        localeDir: './i18n/lingui'
       }
     },
     {
@@ -25,7 +14,14 @@ module.exports = {
       options: {
         apiURL: process.env.STRAPI_API_URL,
         queryLimit: 1000,
-        collectionTypes: ['text']
+        collectionTypes: [{
+          name: 'text',
+          api: {
+            qs: {
+              _locale: 'all'
+            }
+          }
+        }]
       }
     },
     {

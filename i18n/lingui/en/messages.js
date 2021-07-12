@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"home:body":"a multiline string\nbro\nhere\n"}};

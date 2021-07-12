@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"home:body":"monirivimerkkijono\nveli\ntäällä\n"}};
