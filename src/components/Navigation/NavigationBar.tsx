@@ -1,4 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { Trans } from '@lingui/react'
+import React from 'react'
 import tw from 'twin.macro'
 import { NavigationBarItem } from './NavigationBarItem'
 
@@ -12,23 +13,15 @@ const Wrapper = tw.nav`
   justify-evenly
 `
 
-export const NavigationBar: React.FC = ({ children }) => {
-
-
-  // const data: NavigationBarData = useStaticQuery(graphql`
-  //  query NavigationBarQuery {
-
-  //   }
-  // `)
-
-
-  function onlyUnique (value, index, self) {
-    return self.indexOf(value) === index
-  }
-
+export const NavigationBar: React.FC = () => {
   return (
     <Wrapper>
-      yee
+      <NavigationBarItem url="/"><Trans id="navigation:home" /></NavigationBarItem>
+      <NavigationBarItem url="/membership"><Trans id="navigation:membership" /></NavigationBarItem>
+      <NavigationBarItem url="/events"><Trans id="navigation:events" /></NavigationBarItem>
+      <NavigationBarItem url="/suggestions"><Trans id="navigation:suggestions" /></NavigationBarItem>
+      <NavigationBarItem url="/contact-us"><Trans id="navigation:contact-us" /></NavigationBarItem>
+      <NavigationBarItem url="/partners"><Trans id="navigation:partners" /></NavigationBarItem>
     </Wrapper>
   )
 }

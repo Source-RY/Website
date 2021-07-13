@@ -14,7 +14,11 @@ const Button = tw.button`
   shadow-md
 `
 
-export default function HomePage () {
+export default function EventsPage () {
+  const x = useLocalization()
+
+  console.log(x)
+
   return (
     <Container>
       <NavigationBar />

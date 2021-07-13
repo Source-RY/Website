@@ -11,10 +11,35 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: src/pages/index.tsx:20
+#: src/pages/contact-us.tsx:25
+#: src/pages/events.tsx:25
+#: src/pages/index.tsx:21
+#: src/pages/membership.tsx:25
+#: src/pages/partners.tsx:25
+#: src/pages/suggestions.tsx:25
 msgid "home:body"
-msgstr ""
-"monirivimerkkijono\n"
-"veli\n"
-"täällä\n"
-""
+msgstr "<p>SOURCE ry on TAMKin tieto- ja viestintätekniikan ainekerho. Kerho on perustettu vuonna 2016. Yhdistykseksi rekisteröidyimme vuotta myöhemmin. Näkyvin osa kerhoamme on oma kerhohuoneemme, joka löytyy A-siiven kerhohuonekäytävän päästä, huoneesta A0-35.</p><p>SOURCEn tarkoituksena tiivistää TiTe-verkostoa ja jakaa tietoa alamme mahdollisuuksista. SOURCE järjestää jäsenilleen mm. sauna- ja lautapeli-iltoja sekä viikottaisen liikuntavuoron. Merkittävimpiä tapahtumiamme ovat perinteiset TiTeLANit sekä yrityksiä TAMKiin keräävä IoT-seminaari.</p><p>SOURCE toimii tiiviissä yhteistyössä Tamkon, TIRO ry:n sekä muiden TAMKin kerhojen kanssa, osallistumalla tapahtumien järjestämiseen.</p><p>Kerhon jäseniksi ovat tervetulleita kaikki koulutusohjelmasta riippumatta. Yritysvierailut ovat kuitenkin suunnattu tietotekniikan opiskelijoille.</p>"
+
+#: src/components/Navigation/NavigationBar.tsx:23
+msgid "navigation:contact-us"
+msgstr "Yhteystiedot"
+
+#: src/components/Navigation/NavigationBar.tsx:21
+msgid "navigation:events"
+msgstr "Tapahtumat"
+
+#: src/components/Navigation/NavigationBar.tsx:19
+msgid "navigation:home"
+msgstr "Etusivu"
+
+#: src/components/Navigation/NavigationBar.tsx:20
+msgid "navigation:membership"
+msgstr "Jäsenyys"
+
+#: src/components/Navigation/NavigationBar.tsx:24
+msgid "navigation:partners"
+msgstr "Yhteistyökumppanit"
+
+#: src/components/Navigation/NavigationBar.tsx:22
+msgid "navigation:suggestions"
+msgstr "Ehdotukset"

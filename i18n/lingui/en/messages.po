@@ -11,10 +11,39 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: src/pages/index.tsx:20
+#: src/pages/contact-us.tsx:25
+#: src/pages/events.tsx:25
+#: src/pages/index.tsx:21
+#: src/pages/membership.tsx:25
+#: src/pages/partners.tsx:25
+#: src/pages/suggestions.tsx:25
 msgid "home:body"
 msgstr ""
 "a multiline string\n"
 "bro\n"
 "here\n"
 ""
+
+#: src/components/Navigation/NavigationBar.tsx:23
+msgid "navigation:contact-us"
+msgstr "Contact us"
+
+#: src/components/Navigation/NavigationBar.tsx:21
+msgid "navigation:events"
+msgstr "Events"
+
+#: src/components/Navigation/NavigationBar.tsx:19
+msgid "navigation:home"
+msgstr "Home"
+
+#: src/components/Navigation/NavigationBar.tsx:20
+msgid "navigation:membership"
+msgstr "Membership"
+
+#: src/components/Navigation/NavigationBar.tsx:24
+msgid "navigation:partners"
+msgstr "Partners"
+
+#: src/components/Navigation/NavigationBar.tsx:22
+msgid "navigation:suggestions"
+msgstr "Suggestions"
