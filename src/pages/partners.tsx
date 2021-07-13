@@ -8,21 +8,59 @@ import tw from 'twin.macro'
 import { Container, NavigationBar } from '../components'
 
 
-const Button = tw.button`
-  hover:bg-green-400
-  rounded-md
-  shadow-md
+interface PartnersPageProps {
+  data: {
+    allStrapiPartner: {
+      edges: Array<{
+        node: {
+          locale: 'fi' | 'en'
+          name: string
+          logo: {
+            url: string
+          }
+          website: string
+        }
+      }>
+    }
+  }
+}
+
+export const query = graphql`
+  query PartnersPageQuery {
+    allStrapiPartner {
+      edges {
+        node {
+          locale
+          name
+          logo {
+            url
+          }
+          website
+        }
+      }
+    }
+  }
 `
 
-export default function PartnersPage () {
-  const x = useLocalization()
+export default function PartnersPage (props: PartnersPageProps) {
+  const { locale } = useLocalization()
 
-  console.log(x)
+  const partners = props.data.allStrapiPartner.edges
+    .map(edge => edge.node)
+    .filter(partner => partner.locale === locale)
+    .map(({ name, logo, website }) => ({
+      name,
+      website,
+      logoUrl: logo.url
+    }))
 
   return (
     <Container>
       <NavigationBar />
       <div dangerouslySetInnerHTML={{ __html: t`home:body` }} />
+      {partners.map(partner => (
+        <div key={partner.website}>{partner.name}</div>
+      ))}
     </Container>
   )
 }

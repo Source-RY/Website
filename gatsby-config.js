@@ -22,14 +22,9 @@ module.exports = {
       options: {
         apiURL: process.env.STRAPI_API_URL,
         queryLimit: 1000,
-        collectionTypes: [{
-          name: 'text',
-          api: {
-            qs: {
-              _locale: 'all'
-            }
-          }
-        }]
+        collectionTypes: [
+          { name: 'partner', api: { qs: { _locale: 'all' } } }
+        ]
       }
     },
     {

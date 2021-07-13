@@ -5,20 +5,34 @@ import styled from '@emotion/styled'
 import tw from 'twin.macro'
 
 
-const Link = styled(LocalizedLink)`
+interface LocalizedLinkProps {
+  [x: string]: any;
+  to: any;
+  language: any;
+}
+
+interface LocalizedLinkStyleProps {
+  $isActive: boolean
+}
+
+const WrappedLocalizedLink: React.FC<LocalizedLinkProps & LocalizedLinkStyleProps> = ({ $isActive, ...props }) =>
+  <LocalizedLink {...props} />
+
+const StyledLocalizedLink = styled(WrappedLocalizedLink)`
   ${tw`
     uppercase
     text-lg
     font-sans
   `}
 
-  ${({ isActive }) => isActive && tw`
+  ${({ $isActive }) => $isActive && tw`
     font-bold
   `}
 `
 
-interface NavigationBarItemProps {
+export interface NavigationBarItemProps {
   url: string
+  children?: React.ReactNode
 }
 
 export const NavigationBarItem: React.FC<NavigationBarItemProps> = ({ url, children }) => {
@@ -27,11 +41,11 @@ export const NavigationBarItem: React.FC<NavigationBarItemProps> = ({ url, child
   const isActive = React.useMemo(() => window.location.href.endsWith(url), [url])
 
   return (
-    <Link
+    <StyledLocalizedLink
       to={url}
       language={locale}
-      isActive={isActive}>
+      $isActive={isActive}>
       {children}
-    </Link>
+    </StyledLocalizedLink>
   )
 }
