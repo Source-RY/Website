@@ -4,7 +4,7 @@ import tw from 'twin.macro'
 import { NavigationBarItem } from './NavigationBarItem'
 
 
-const Wrapper = tw.nav`
+const StyledNav = tw.nav`
   flex
   flex-row
   gap-4
@@ -15,13 +15,13 @@ const Wrapper = tw.nav`
 
 export const NavigationBar: React.FC = () => {
   return (
-    <Wrapper>
+    <StyledNav>
       <NavigationBarItem url="/"><Trans id="navigation:home" /></NavigationBarItem>
       <NavigationBarItem url="/membership"><Trans id="navigation:membership" /></NavigationBarItem>
       <NavigationBarItem url="/events"><Trans id="navigation:events" /></NavigationBarItem>
       <NavigationBarItem url="/suggestions"><Trans id="navigation:suggestions" /></NavigationBarItem>
       <NavigationBarItem url="/contact-us"><Trans id="navigation:contact-us" /></NavigationBarItem>
       <NavigationBarItem url="/partners"><Trans id="navigation:partners" /></NavigationBarItem>
-    </Wrapper>
+    </StyledNav>
   )
 }

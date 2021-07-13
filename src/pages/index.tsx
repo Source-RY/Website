@@ -4,8 +4,10 @@ import { useStaticQuery } from 'gatsby'
 import { graphql } from 'gatsby'
 import { useLocalization } from 'gatsby-theme-i18n'
 import React from 'react'
-import tw from 'twin.macro'
+import tw, { GlobalStyles } from 'twin.macro'
 import { Container, NavigationBar } from '../components'
+import { createGlobalStyle } from 'styled-components'
+
 
 
 const Button = tw.button`
@@ -14,11 +16,23 @@ const Button = tw.button`
   shadow-md
 `
 
+const GlobalCSS = createGlobalStyle`
+  body {
+    ${tw`
+      light:bg-gray-50
+      dark:bg-gray-900
+    `}
+  }
+`
+
 export default function HomePage () {
   return (
-    <Container>
-      <NavigationBar />
-      <div dangerouslySetInnerHTML={{ __html: t`home:body` }} />
-    </Container>
+    <>
+      <GlobalCSS />
+      <Container>
+        <NavigationBar />
+        <div dangerouslySetInnerHTML={{ __html: t`home:body` }} />
+      </Container>
+    </>
   )
 }

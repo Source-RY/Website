@@ -23,6 +23,7 @@ const StyledLocalizedLink = styled(WrappedLocalizedLink)`
     uppercase
     text-lg
     font-sans
+    dark:text-white
   `}
 
   ${({ $isActive }) => $isActive && tw`
