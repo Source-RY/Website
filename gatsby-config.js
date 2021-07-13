@@ -4,6 +4,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-theme-i18n',
+      options: {
+        defaultLang: 'fi',
+        configPath: require.resolve('./i18n/config.json'),
+        prefixDefault: true
+      }
+    },
+    {
+      resolve: 'gatsby-theme-i18n-lingui',
+      options: {
+        localeDir: './i18n/lingui'
+      }
+    },
+    {
       resolve: 'gatsby-source-strapi',
       options: {
         apiURL: process.env.STRAPI_API_URL,
