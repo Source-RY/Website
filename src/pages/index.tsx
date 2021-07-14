@@ -5,8 +5,9 @@ import { graphql } from 'gatsby'
 import { useLocalization } from 'gatsby-theme-i18n'
 import React from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
-import { Container, NavigationBar } from '../components'
+import { Container, HTML, NavigationBar } from '../components'
 import { createGlobalStyle } from 'styled-components'
+import styled from '@emotion/styled'
 
 
 
@@ -16,7 +17,7 @@ const Button = tw.button`
   shadow-md
 `
 
-const GlobalCSS = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     ${tw`
       light:bg-gray-50
@@ -28,10 +29,10 @@ const GlobalCSS = createGlobalStyle`
 export default function HomePage () {
   return (
     <>
-      <GlobalCSS />
+      <GlobalStyle />
       <Container>
         <NavigationBar />
-        <div dangerouslySetInnerHTML={{ __html: t`home:body` }} />
+        <HTML dangerouslySetInnerHTML={{ __html: t`home:body` }} />
       </Container>
     </>
   )
