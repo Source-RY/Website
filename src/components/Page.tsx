@@ -7,6 +7,12 @@ import { NavigationBar } from './Navigation'
 
 
 const GlobalStyle = createGlobalStyle`
+  html, body, #___gatsby, #gatsby-focus-wrapper {
+    ${tw`
+      h-full
+    `}
+  }
+
   body {
     ${tw`
       light:bg-gray-50
@@ -15,23 +21,42 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Container = tw.div`
-  container
-  mx-auto
+const Layout = tw.div`
+  flex
+  flex-col
+  h-full
+`
+
+const Header = tw.div`
 `
 
 const Content = tw.div`
-  mt-2
+  container
+  mx-auto
+  my-4
+  flex-1
+`
+
+const Footer = tw.div`
+  py-16
+  bg-gray-600
 `
 
 export const Page: React.FC = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Container>
-        <NavigationBar />
+      <Layout>
+        <Header>
+          <NavigationBar />
+        </Header>
         <Content>{children}</Content>
-      </Container>
+        <Footer>
+          hehe
+          hoiho
+          hii
+        </Footer>
+      </Layout>
     </>
   )
 }
