@@ -1,11 +1,9 @@
-import { t } from '@lingui/macro'
-import { Trans } from '@lingui/react'
-import { useStaticQuery } from 'gatsby'
+import React from 'react'
+
 import { graphql } from 'gatsby'
 import { useLocalization } from 'gatsby-theme-i18n'
-import React from 'react'
-import tw from 'twin.macro'
-import { Container, NavigationBar } from '../components'
+
+import { Page } from '../components'
 
 
 interface PartnersPageProps {
@@ -45,22 +43,21 @@ export const query = graphql`
 export default function PartnersPage (props: PartnersPageProps) {
   const { locale } = useLocalization()
 
-  const partners = props.data.allStrapiPartner.edges
-    .map(edge => edge.node)
-    .filter(partner => partner.locale === locale)
-    .map(({ name, logo, website }) => ({
-      name,
-      website,
-      logoUrl: logo.url
-    }))
+  const partners = React.useMemo(
+    () => props.data.allStrapiPartner.edges
+      .map(edge => edge.node)
+      .filter(partner => partner.locale === locale)
+      .map(({ name, logo, website }) => ({
+        name,
+        website,
+        logoUrl: logo.url
+      })),
+    [locale]
+  )
 
   return (
-    <Container>
-      <NavigationBar />
-      <div dangerouslySetInnerHTML={{ __html: t`home:body` }} />
-      {partners.map(partner => (
-        <div key={partner.website}>{partner.name}</div>
-      ))}
-    </Container>
+    <Page>
+      {partners.map(partner => (<div key={partner.website}>{partner.name}</div>))}
+    </Page>
   )
 }
