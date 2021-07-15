@@ -3,6 +3,7 @@ import React from 'react'
 import { LocalizedLink, useLocalization } from 'gatsby-theme-i18n'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
+import { useLocation } from '@reach/router'
 
 
 interface LocalizedLinkProps {
@@ -38,8 +39,9 @@ export interface NavigationBarItemProps {
 
 export const NavigationBarItem: React.FC<NavigationBarItemProps> = ({ url, children }) => {
   const { locale } = useLocalization()
+  const location = useLocation()
 
-  const isActive = React.useMemo(() => window.location.href.endsWith(url), [url])
+  const isActive = React.useMemo(() => location.pathname.endsWith(url), [location, url])
 
   return (
     <StyledLocalizedLink
