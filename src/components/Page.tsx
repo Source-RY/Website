@@ -2,6 +2,7 @@ import React from 'react'
 
 import { createGlobalStyle } from 'styled-components'
 import tw from 'twin.macro'
+import { LatestBuildDetails } from './LatestGitCommitDetails'
 
 import { NavigationBar } from './Navigation'
 
@@ -52,9 +53,7 @@ export const Page: React.FC = ({ children }) => {
         </Header>
         <Content>{children}</Content>
         <Footer>
-          hehe
-          hoiho
-          hii
+          <LatestBuildDetails />
         </Footer>
       </Layout>
     </>

@@ -35,6 +35,7 @@ module.exports = {
         allExtensions: true
       }
     },
+    'gatsby-source-local-git',
     'gatsby-plugin-emotion'
   ]
 }

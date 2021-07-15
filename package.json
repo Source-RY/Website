@@ -27,6 +27,7 @@
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-typescript": "^3.9.0",
     "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-source-local-git": "^1.2.2",
     "gatsby-source-strapi": "^1.0.2",
     "gatsby-theme-i18n": "^2.0.0",
     "gatsby-theme-i18n-lingui": "^2.0.0",
