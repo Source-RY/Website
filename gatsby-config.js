@@ -4,6 +4,24 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images/`
+      }
+    },
+    'gatsby-source-local-git',
+    {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: process.env.STRAPI_API_URL,
+        queryLimit: 1000,
+        collectionTypes: [
+          { name: 'partner', api: { qs: { _locale: 'all' } } }
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-theme-i18n',
       options: {
         defaultLang: 'fi',
@@ -18,16 +36,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-strapi',
-      options: {
-        apiURL: process.env.STRAPI_API_URL,
-        queryLimit: 1000,
-        collectionTypes: [
-          { name: 'partner', api: { qs: { _locale: 'all' } } }
-        ]
-      }
-    },
-    {
       resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
@@ -35,7 +43,9 @@ module.exports = {
         allExtensions: true
       }
     },
-    'gatsby-source-local-git',
-    'gatsby-plugin-emotion'
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp'
   ]
 }

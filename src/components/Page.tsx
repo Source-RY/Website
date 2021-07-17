@@ -5,6 +5,7 @@ import tw from 'twin.macro'
 import { LatestBuildDetails } from './LatestGitCommitDetails'
 
 import { NavigationBar } from './Navigation'
+import { PartnerSection } from './PartnerSection'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -32,18 +33,20 @@ const Header = tw.div`
 `
 
 const Content = tw.div`
-  container
+  max-w-4xl
   mx-auto
-  p-4
-  my-4
+  px-3
   flex-1
 `
 
 const Footer = tw.div`
-  py-16
+  py-4
   bg-gray-600
   flex
+  flex-col
+  gap-16
   justify-center
+  light:bg-gray-200
 `
 
 export const Page: React.FC = ({ children }) => {
@@ -56,6 +59,7 @@ export const Page: React.FC = ({ children }) => {
         </Header>
         <Content>{children}</Content>
         <Footer>
+          <PartnerSection />
           <LatestBuildDetails />
         </Footer>
       </Layout>

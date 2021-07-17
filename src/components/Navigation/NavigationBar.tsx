@@ -7,9 +7,8 @@ import { NavigationBarItem } from './NavigationBarItem'
 const StyledNav = tw.nav`
   flex
   flex-col
-  gap-4
+  gap-3
   p-4
-  border
   justify-evenly
 
   lg:flex-row

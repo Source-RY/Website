@@ -22,7 +22,6 @@ const WrappedLocalizedLink: React.FC<LocalizedLinkProps & LocalizedLinkStyleProp
 const StyledLocalizedLink = styled(WrappedLocalizedLink)`
   ${tw`
     uppercase
-    text-lg
     font-sans
     dark:text-white
   `}
