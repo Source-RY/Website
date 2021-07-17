@@ -1,6 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import tw from 'twin.macro'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
+
+dayjs.extend(relativeTime)
 
 interface LatestBuildDetailsData {
   gitCommit: {
@@ -14,8 +18,15 @@ interface LatestBuildDetailsData {
   }
 }
 
+const Container = tw.div`
+  text-center
+  hover:border
+  p-2
+  rounded-md
+`
+
 export const LatestBuildDetails: React.FC = () => {
-  const data: LatestBuildDetailsData = useStaticQuery(graphql`
+  const { gitCommit }: LatestBuildDetailsData = useStaticQuery(graphql`
     query LatestBuildDetailsQuery {
       gitCommit(latest: {eq: true}) {
         author {
@@ -31,8 +42,13 @@ export const LatestBuildDetails: React.FC = () => {
   `)
 
   return (
-    <div>
-      {data.gitCommit.author.name}
-    </div>
+    <Container>
+      <a href={`https://github.com/SOURCE-ry/Website/commit/${gitCommit.hash}`}>
+        <p>Latest edit</p>
+        <p>{gitCommit.message}</p>
+        <p>{dayjs(gitCommit.date).fromNow()} by</p>
+        <p>{gitCommit.author.name}</p>
+      </a>
+    </Container>
   )
 }

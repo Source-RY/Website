@@ -34,6 +34,7 @@ const Header = tw.div`
 const Content = tw.div`
   container
   mx-auto
+  p-4
   my-4
   flex-1
 `
@@ -41,6 +42,8 @@ const Content = tw.div`
 const Footer = tw.div`
   py-16
   bg-gray-600
+  flex
+  justify-center
 `
 
 export const Page: React.FC = ({ children }) => {

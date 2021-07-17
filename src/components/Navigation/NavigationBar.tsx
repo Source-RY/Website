@@ -6,11 +6,13 @@ import { NavigationBarItem } from './NavigationBarItem'
 
 const StyledNav = tw.nav`
   flex
-  flex-row
+  flex-col
   gap-4
   p-4
   border
   justify-evenly
+
+  lg:flex-row
 `
 
 export const NavigationBar: React.FC = () => {
