@@ -7,6 +7,7 @@ export const HTML = styled.div`
     ${tw`
       text-justify
       dark:text-white
+      px-4
       mb-4
     `}
   }

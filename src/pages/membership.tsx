@@ -1,12 +1,17 @@
+import { t } from '@lingui/macro'
+import { Trans } from '@lingui/react'
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
 
-import { Page } from '../components'
+import { HTML, Page } from '../components'
 
 
 export default function MembershipPage () {
   return (
     <Page>
-      <p>hehe</p>
+      <HTML>
+        <ReactMarkdown>{t`membership:body`}</ReactMarkdown>
+      </HTML>
     </Page>
   )
 }

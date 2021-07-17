@@ -61,6 +61,8 @@ const Container = tw.div`
   flex
   flex-row
   flex-wrap
+  max-w-7xl
+  w-full
   items-center
   justify-evenly
 `

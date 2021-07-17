@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     ${tw`
       light:bg-gray-50
-      dark:bg-gray-900
+      dark:bg-background
     `}
   }
 `
@@ -35,18 +35,17 @@ const Header = tw.div`
 const Content = tw.div`
   max-w-4xl
   mx-auto
-  px-3
   flex-1
 `
 
 const Footer = tw.div`
-  py-4
-  bg-gray-600
+  // bg-gray-600
   flex
   flex-col
-  gap-16
+  gap-8
+  items-center
   justify-center
-  light:bg-gray-200
+  // light:bg-gray-200
 `
 
 export const Page: React.FC = ({ children }) => {

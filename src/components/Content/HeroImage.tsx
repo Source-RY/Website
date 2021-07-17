@@ -5,6 +5,7 @@ const Image = tw.img`
   object-cover
   w-full
   h-96
+  mb-4
 `
 
 const Container = tw.div`
