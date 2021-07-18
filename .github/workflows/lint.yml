@@ -1,4 +1,7 @@
 on:
+  push:
+    branches:
+    - "rewrite"
   pull_request:
     branches:
     - "rewrite"
