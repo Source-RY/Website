@@ -21,4 +21,3 @@ jobs:
     - name: Bob the Builder 🧔🔧
       run: |
         npm ci
-        npm run build
