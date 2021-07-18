@@ -9,12 +9,12 @@ import * as A from 'fp-ts/lib/Array'
 import * as ORD from 'fp-ts/lib/Ord'
 import * as N from 'fp-ts/lib/number'
 
-import ReactMarkdown from 'react-markdown'
 import tw from 'twin.macro'
 import dayjs, { Dayjs as DateTime } from 'dayjs'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 
 import { Markdown, Page } from '../components'
+import styled from 'styled-components'
 
 
 dayjs.extend(localizedFormat)
@@ -31,7 +31,7 @@ export const data = graphql`
           cover {
             localFile {
               childImageSharp {
-                original {
+                fluid {
                   src
                 }
               }
@@ -54,7 +54,7 @@ interface EventsPageData {
         cover: {
           localFile: {
             childImageSharp: {
-              original: {
+              fluid: {
                 src: string
               }
             }
@@ -112,7 +112,7 @@ const upcomingEvents = (locale: string) => (data: EventsPageData): Event[] => pi
     date: dayjs(node.date),
     description: node.description,
     cover: {
-      src: node.cover.localFile.childImageSharp.original.src
+      src: node.cover.localFile.childImageSharp.fluid.src
     }
   })),
   A.filter(event => event.date.isAfter(dayjs())),
@@ -131,13 +131,17 @@ const Cover = tw.img`
   md:block
 `
 
-const EventWrapper = tw.div`
-  flex
-  flex-row
-  gap-6
+const EventWrapper = styled.div`
+  ${tw`
+    flex
+    flex-row
+    gap-6
+    items-center
+    justify-between
+  `}
 `
 
-const EventDetails = tw.div`
+const EventDetails = styled.div`
 `
 
 const Event: React.FC<EventProps> = (props: EventProps) => {
@@ -176,11 +180,11 @@ const Event: React.FC<EventProps> = (props: EventProps) => {
 // `
 
 const Container = tw.div`
-  mt-6
+  my-6
   flex
   px-6
   flex-col
-  gap-12
+  gap-8
 `
 
 export default function EventsPage (props: EventsPageProps) {
@@ -191,7 +195,7 @@ export default function EventsPage (props: EventsPageProps) {
   return (
     <Page>
       <Container>
-        {events.map((event, index) => <Event {...event} flipped={index % 2 !== 0} />)}
+        {events.map((event, index) => <Event key={event.name} {...event} flipped={index % 2 !== 0} />)}
       </Container>
     </Page>
   )

@@ -12,53 +12,54 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/components/LatestGitCommitDetails.tsx:63
-msgid "git:by"
-msgstr "käyttäjältä"
+#~ msgid "git:by"
+#~ msgstr "käyttäjältä"
 
-#: src/components/LatestGitCommitDetails.tsx:60
+#: src/components/LatestGitCommitDetails.tsx:61
 msgid "git:latest-change"
-msgstr "Viimeisin muutos"
+msgstr "{author} teki muutoksen \"{message}\" {date}."
 
-#: src/pages/index.tsx:32
+#: src/pages/index.tsx:38
 msgid "home:body"
 msgstr "<p>SOURCE ry on TAMKin tieto- ja viestintätekniikan ainekerho. Kerho on perustettu vuonna 2016. Yhdistykseksi rekisteröidyimme vuotta myöhemmin. Näkyvin osa kerhoamme on oma kerhohuoneemme, joka löytyy A-siiven kerhohuonekäytävän päästä, huoneesta A0-35.</p><p>SOURCEn tarkoituksena tiivistää TiTe-verkostoa ja jakaa tietoa alamme mahdollisuuksista. SOURCE järjestää jäsenilleen mm. sauna- ja lautapeli-iltoja sekä viikottaisen liikuntavuoron. Merkittävimpiä tapahtumiamme ovat perinteiset TiTeLANit sekä yrityksiä TAMKiin keräävä IoT-seminaari.</p><p>SOURCE toimii tiiviissä yhteistyössä Tamkon, TIRO ry:n sekä muiden TAMKin kerhojen kanssa, osallistumalla tapahtumien järjestämiseen.</p><p>Kerhon jäseniksi ovat tervetulleita kaikki koulutusohjelmasta riippumatta. Yritysvierailut ovat kuitenkin suunnattu tietotekniikan opiskelijoille.</p>"
 
-#: src/pages/membership.tsx:13
+#: src/pages/membership.tsx:18
 msgid "membership:body"
 msgstr ""
 "SOURCEn vuotuinen jäsenmaksu on 5€. Jäsenyyden voi hankkia joko hallituksen jäseneltä tai SOURCEn verkkokaupasta. Ostaessasi neljän vuoden jäsenyyden kerralla saat SOURCEn haalarimerkin ilmaiseksi (kysy merkkiä hallituksen jäseneltä).\n"
-"\n"  
+"\n"
 "Jäsenenä voit\n"
 "– osallistua jäsenille tarkoittuihin tapahtumiin, kuten saunailtoihin\n"
 "– osallistua yritysvierailuille\n"
 "– hakea kerhohuoneelta kahvia tai teetä ilmaiseksi\n"
 "– hyödyntää SOURCEn viikottaista liikuntavuoroa\n"
 "– osallistua SOURCEn järjestämiin tapahtumiin, kuten TiTeLAN-tapahtumaan jäsenhintaan  \n"
-"\n"  
+"\n"
 "SOURCEn kerhohuone löytyy Kuntokadun A-siiven pohjakerroksen tilasta A0-35 (kerhohuonekäytävää melkein ulos asti ja vasemmalle). Kerhohuoneelta saat lähes aina tukea opiskeluusi ja sieltä löytyy myös pelejä.\n"
-"\n"  
+"\n"
 "Lisäksi SOURCE osallistuu koulutuspolitiikkaan yhdessä TAMKOn ja tieto- ja viestintätekniikan linjan kanssa.\n"
+""
 
-#: src/components/Navigation/NavigationBar.tsx:34
+#: src/components/Navigation/NavigationBar.tsx:68
 msgid "navigation:contact-us"
 msgstr "Yhteystiedot"
 
-#: src/components/Navigation/NavigationBar.tsx:32
+#: src/components/Navigation/NavigationBar.tsx:66
 msgid "navigation:events"
 msgstr "Tapahtumat"
 
-#: src/components/Navigation/NavigationBar.tsx:30
+#: src/components/Navigation/NavigationBar.tsx:64
 msgid "navigation:home"
 msgstr "Etusivu"
 
-#: src/components/Navigation/NavigationBar.tsx:31
+#: src/components/Navigation/NavigationBar.tsx:65
 msgid "navigation:membership"
 msgstr "Jäsenyys"
 
-#: src/components/Navigation/NavigationBar.tsx:35
+#: src/components/Navigation/NavigationBar.tsx:69
 msgid "navigation:partners"
 msgstr "Yhteistyökumppanit"
 
-#: src/components/Navigation/NavigationBar.tsx:33
+#: src/components/Navigation/NavigationBar.tsx:67
 msgid "navigation:suggestions"
 msgstr "Ehdotukset"

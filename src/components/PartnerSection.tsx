@@ -129,17 +129,12 @@ export const PartnerSection: React.FC = () => {
 
   return (
     <Container>
-      {partners.map(partner => (
-        partner.name === 'ReceiptHero' ?
-          <Partner
-            key={partner.name}
-            $darkSrc={partner.logoUrl.dark}
-            $lightSrc={partner.logoUrl.light} /> :
-          <Partner
-            key={partner.name}
-            $darkSrc={partner.logoUrl.dark}
-            $lightSrc={partner.logoUrl.light} />
-      ))}
+      {partners.map(partner =>
+        <Partner
+          key={partner.name}
+          $darkSrc={partner.logoUrl.dark}
+          $lightSrc={partner.logoUrl.light} />
+      )}
     </Container>
   )
 }

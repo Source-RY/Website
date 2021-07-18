@@ -24,15 +24,14 @@ interface LatestBuildDetailsData {
 
 const Container = tw.div`
   text-center
-  // hover:border
   p-2
   rounded-md
 `
 
-const Line = tw.span`
+const Link = tw.a`
   text-sm
   dark:text-gray-400
-  // dark:text-white
+  hover:text-white
 `
 
 export const LatestBuildDetails: React.FC = () => {
@@ -57,13 +56,15 @@ export const LatestBuildDetails: React.FC = () => {
 
   return (
     <Container>
-      <a target="_blank" href={`https://github.com/SOURCE-ry/Website/commit/${gitCommit.hash}`}>
-        <Line><Trans id="git:latest-change" /></Line><span> </span>
-        <Line>"{gitCommit.message}"</Line><span> </span>
-        <Line>{dayjs(gitCommit.date).fromNow()}</Line><span> </span>
-        <Line><Trans id="git:by" /></Line><span> </span>
-        <Line>{gitCommit.author.name}</Line>
-      </a>
+      <Link target="_blank" href={`https://github.com/SOURCE-ry/Website/commit/${gitCommit.hash}`}>
+        <Trans
+          id="git:latest-change"
+          values={{
+            message: gitCommit.message,
+            date: dayjs(gitCommit.date).fromNow(),
+            author: gitCommit.author.name
+          }} />
+      </Link>
     </Container>
   )
 }
