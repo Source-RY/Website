@@ -39,19 +39,17 @@ const Partner = styled(ThemeAwareImage)`
     h-40
     w-40
   `}
-
+  
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  
   @media (prefers-color-scheme: dark) {
     background-image: url(${({ $darkSrc }) => $darkSrc});
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
   }
 
   @media (prefers-color-scheme: light) {
     background-image: url(${({ $lightSrc }) => $lightSrc});
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
   }
 `
 

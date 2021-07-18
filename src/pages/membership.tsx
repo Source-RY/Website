@@ -1,17 +1,23 @@
-import { t } from '@lingui/macro'
-import { Trans } from '@lingui/react'
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
 
-import { HTML, Page } from '../components'
+import { t } from '@lingui/macro'
 
+import { Markdown, Page } from '../components'
+import { Button } from '../components/Button'
+import tw from 'twin.macro'
+
+
+const Container = tw.div`
+  px-3
+`
 
 export default function MembershipPage () {
   return (
     <Page>
-      <HTML>
-        <ReactMarkdown>{t`membership:body`}</ReactMarkdown>
-      </HTML>
+      <Container>
+        <Markdown>{t`membership:body`}</Markdown>
+        <Button>Liity jäseneksi</Button>
+      </Container>
     </Page>
   )
 }

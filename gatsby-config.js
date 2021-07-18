@@ -17,7 +17,8 @@ module.exports = {
         apiURL: process.env.STRAPI_API_URL,
         queryLimit: 1000,
         collectionTypes: [
-          { name: 'partner', api: { qs: { _locale: 'all' } } }
+          { name: 'partner', api: { qs: { _locale: 'all' } } },
+          { name: 'event', api: { qs: { _locale: 'all' } } }
         ]
       }
     },

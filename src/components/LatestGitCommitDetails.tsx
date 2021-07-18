@@ -31,7 +31,8 @@ const Container = tw.div`
 
 const Line = tw.span`
   text-sm
-  dark:text-white
+  dark:text-gray-400
+  // dark:text-white
 `
 
 export const LatestBuildDetails: React.FC = () => {
@@ -58,7 +59,7 @@ export const LatestBuildDetails: React.FC = () => {
     <Container>
       <a target="_blank" href={`https://github.com/SOURCE-ry/Website/commit/${gitCommit.hash}`}>
         <Line><Trans id="git:latest-change" /></Line><span> </span>
-        <i><Line>{gitCommit.message}</Line></i><span> </span>
+        <Line>"{gitCommit.message}"</Line><span> </span>
         <Line>{dayjs(gitCommit.date).fromNow()}</Line><span> </span>
         <Line><Trans id="git:by" /></Line><span> </span>
         <Line>{gitCommit.author.name}</Line>

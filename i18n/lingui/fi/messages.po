@@ -38,9 +38,6 @@ msgstr ""
 "SOURCEn kerhohuone löytyy Kuntokadun A-siiven pohjakerroksen tilasta A0-35 (kerhohuonekäytävää melkein ulos asti ja vasemmalle). Kerhohuoneelta saat lähes aina tukea opiskeluusi ja sieltä löytyy myös pelejä.\n"
 "\n"  
 "Lisäksi SOURCE osallistuu koulutuspolitiikkaan yhdessä TAMKOn ja tieto- ja viestintätekniikan linjan kanssa.\n"
-"\n"  
-"\n"  
-"[Liity jäseneksi](https://holvi.com/shop/SOURCE)\n"
 
 #: src/components/Navigation/NavigationBar.tsx:34
 msgid "navigation:contact-us"
