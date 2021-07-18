@@ -12,9 +12,12 @@ import * as N from 'fp-ts/lib/number'
 import ReactMarkdown from 'react-markdown'
 import tw from 'twin.macro'
 import dayjs, { Dayjs as DateTime } from 'dayjs'
+import localizedFormat from 'dayjs/plugin/localizedFormat'
 
 import { Markdown, Page } from '../components'
 
+
+dayjs.extend(localizedFormat)
 
 export const data = graphql`
   query EventsPageQuery {
@@ -66,14 +69,21 @@ interface EventsPageProps {
   data: EventsPageData
 }
 
-const EventName = tw.h1`
-  text-3xl
-  mb-2
+const EventTitle = tw.div`
+  mb-5
+  flex
+  flex-col
+  gap-2
+`
+
+const EventName = tw.span`
+  text-4xl
   dark:text-white
 `
 
-const EventDate = tw.p`
+const EventDate = tw.span`
   dark:text-white
+  text-lg
 `
 
 
@@ -110,36 +120,68 @@ const upcomingEvents = (locale: string) => (data: EventsPageData): Event[] => pi
 )
 
 
-type EventProps = Event
+type EventProps = Event & { flipped: boolean }
 
 const Cover = tw.img`
-  max-w-4xl
-  object-contain
+  h-96
+  w-96
+  object-cover
+  rounded-lg
+  hidden
+  md:block
 `
 
 const EventWrapper = tw.div`
   flex
   flex-row
+  gap-6
 `
 
 const EventDetails = tw.div`
 `
 
-const Event: React.FC<EventProps> = (props: EventProps) => (
-  <EventWrapper>
-    <EventDetails>
-      <EventName>{props.name}</EventName>
-      <EventDate>{props.date.toISOString()}</EventDate>
-      <Markdown>{props.description}</Markdown>
-    </EventDetails>
-    <Cover src={props.cover.src} />
-  </EventWrapper>
-)
+const Event: React.FC<EventProps> = (props: EventProps) => {
+  if (props.flipped) {
+    return (
+      <EventWrapper>
+        <Cover src={props.cover.src} />
+        <EventDetails>
+          <EventTitle>
+            <EventName>{props.name} </EventName>
+            <EventDate>{props.date.format('LLLL')}</EventDate>
+          </EventTitle>
+          <Markdown>{props.description}</Markdown>
+        </EventDetails>
+      </EventWrapper>
+    )
+  }
+
+  return (
+    <EventWrapper>
+      <EventDetails>
+        <EventTitle>
+          <EventName>{props.name} </EventName>
+          <EventDate>{props.date.format('LLLL')}</EventDate>
+        </EventTitle>
+        <Markdown>{props.description}</Markdown>
+      </EventDetails>
+      <Cover src={props.cover.src} />
+    </EventWrapper>
+  )
+}
 
 // const Event = tw.div`
 //   grid
 //   grid-
 // `
+
+const Container = tw.div`
+  mt-6
+  flex
+  px-6
+  flex-col
+  gap-12
+`
 
 export default function EventsPage (props: EventsPageProps) {
   const { locale } = useLocalization()
@@ -148,7 +190,9 @@ export default function EventsPage (props: EventsPageProps) {
 
   return (
     <Page>
-      {events.map(event => <Event {...event} />)}
+      <Container>
+        {events.map((event, index) => <Event {...event} flipped={index % 2 !== 0} />)}
+      </Container>
     </Page>
   )
 }

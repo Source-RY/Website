@@ -9,11 +9,14 @@ const StyledNav = tw.nav`
   dark:bg-foreground
   flex
   flex-col
+  lg:flex-row
   items-center
+  justify-center
 `
 
 const Container = tw.div`
   flex
+  flex-grow
   flex-col
   gap-3
   text-lg
@@ -27,10 +30,18 @@ const Container = tw.div`
 
 
 const Logo = tw.img`
-  h-16
-  w-16
+  h-20
+  w-20
+  p-2
+  flex-none
 `
 
+const SocialMedia = tw.div`
+  h-20
+  w-20
+  p-2
+  flex-none
+`
 
 export const NavigationBar: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -48,8 +59,8 @@ export const NavigationBar: React.FC = () => {
 
   return (
     <StyledNav>
+      <Logo src={data.file.childImageSharp.fluid.src} alt="logo" />
       <Container>
-        <Logo src={data.file.childImageSharp.fluid.src} alt="logo" />
         <NavigationBarItem url="/"><Trans id="navigation:home" /></NavigationBarItem>
         <NavigationBarItem url="/membership"><Trans id="navigation:membership" /></NavigationBarItem>
         <NavigationBarItem url="/events"><Trans id="navigation:events" /></NavigationBarItem>
@@ -57,6 +68,7 @@ export const NavigationBar: React.FC = () => {
         <NavigationBarItem url="/contact-us"><Trans id="navigation:contact-us" /></NavigationBarItem>
         <NavigationBarItem url="/partners"><Trans id="navigation:partners" /></NavigationBarItem>
       </Container>
+      <SocialMedia />
     </StyledNav>
   )
 }
