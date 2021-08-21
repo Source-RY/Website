@@ -1,0 +1,7 @@
+services:
+  strapi:
+    volumes:
+      - "./strapi:/srv/app"
+  webhook-proxy:
+    volumes:
+      - "./webhook-proxy:/srv/app"
