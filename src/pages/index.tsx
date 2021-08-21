@@ -33,6 +33,7 @@ const Container = tw.div`
 export default function HomePage ({ data }: HomePageProps) {
   return (
     <Page>
+      <p>hehe</p>
       <HeroImage src={data.file.publicURL} />
       <Container>
         <HTML dangerouslySetInnerHTML={{ __html: t`home:body` }} />

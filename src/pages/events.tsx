@@ -123,8 +123,8 @@ const upcomingEvents = (locale: string) => (data: EventsPageData): Event[] => pi
 type EventProps = Event & { flipped: boolean }
 
 const Cover = tw.img`
-  h-96
-  w-96
+  h-64
+  w-64
   object-cover
   rounded-lg
   hidden
@@ -135,13 +135,23 @@ const EventWrapper = styled.div`
   ${tw`
     flex
     flex-row
-    gap-6
+    gap-5
     items-center
     justify-between
   `}
 `
 
 const EventDetails = styled.div`
+  ${tw`
+    flex
+    flex-col
+  `}
+`
+
+const EventDescription = styled(Markdown)`
+  ${tw`
+    h-full
+  `}
 `
 
 const Event: React.FC<EventProps> = (props: EventProps) => {
@@ -154,7 +164,6 @@ const Event: React.FC<EventProps> = (props: EventProps) => {
             <EventName>{props.name} </EventName>
             <EventDate>{props.date.format('LLLL')}</EventDate>
           </EventTitle>
-          <Markdown>{props.description}</Markdown>
         </EventDetails>
       </EventWrapper>
     )
@@ -167,7 +176,6 @@ const Event: React.FC<EventProps> = (props: EventProps) => {
           <EventName>{props.name} </EventName>
           <EventDate>{props.date.format('LLLL')}</EventDate>
         </EventTitle>
-        <Markdown>{props.description}</Markdown>
       </EventDetails>
       <Cover src={props.cover.src} />
     </EventWrapper>
@@ -184,7 +192,7 @@ const Container = tw.div`
   flex
   px-6
   flex-col
-  gap-8
+  gap-5
 `
 
 export default function EventsPage (props: EventsPageProps) {
@@ -192,10 +200,12 @@ export default function EventsPage (props: EventsPageProps) {
 
   const events = pipe(upcomingEvents, I.ap(locale), I.ap(props.data))
 
+  const isOdd = (i: number) => i % 2 === 1
+
   return (
     <Page>
       <Container>
-        {events.map((event, index) => <Event key={event.name} {...event} flipped={index % 2 !== 0} />)}
+        {events.map((event, index) => <Event key={event.name} {...event} flipped={isOdd(index)} />)}
       </Container>
     </Page>
   )

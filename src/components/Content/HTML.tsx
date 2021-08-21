@@ -9,7 +9,7 @@ export const HTML = styled.div`
   //   `}
   // }
 
-  > p {
+  p {
     ${tw`
       text-justify
       dark:text-white
