@@ -1,7 +1,7 @@
 import concurrently from 'concurrently'
 
 concurrently([
-  'cd strapi && npm ci',
-  'cd webhook-proxy && npm ci',
-  'cd gatsby && npm ci'
+  'cd ./src/strapi && npm ci',
+  'cd ./src/webhook-proxy && npm ci',
+  'cd ./src/gatsby && npm ci'
 ])
