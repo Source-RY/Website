@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "n/a",
+  "type": "module",
+  "scripts": {
+    "ci": "node ./scripts/ci.js",
+    "dev": "node ./scripts/dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/source-ry/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/source-ry/website/issues"
+  },
+  "homepage": "https://github.com/source-ry/website#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.1"
+  }
+}
