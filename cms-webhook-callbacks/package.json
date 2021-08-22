@@ -1,5 +1,5 @@
 {
-  "name": "webhook-proxy",
+  "name": "source-ry-cms-webhook-callbacks",
   "version": "1.0.0",
   "description": "",
   "main": "./src/app.ts",
