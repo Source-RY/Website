@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'https://strapi.vanhanen.dev',
+        apiURL: 'https://strapi.source.club',
         queryLimit: 1000, // Default to 100
         contentTypes: ['page', 'partner'],
         singleTypes: ['navigation-bar']
