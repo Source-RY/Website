@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c070cc5e.css",
+    "main.js": "/static/js/main.b38fe360.js",
+    "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
+    "static/media/tapahtumat.jpeg": "/static/media/tapahtumat.8795a9b63b9d82f5e7a3.jpeg",
+    "static/media/ehdotukset.jpeg": "/static/media/ehdotukset.43915296650a1d8b1987.jpeg",
+    "static/media/sourcebanner.jpeg": "/static/media/sourcebanner.f677c16eea74376c7463.jpeg",
+    "static/media/yhteystiedot.jpeg": "/static/media/yhteystiedot.cda07ae403ac54769fea.jpeg",
+    "static/media/futurice.png": "/static/media/futurice.c8fa9b137f9f0bae68f7.png",
+    "static/media/logo.png": "/static/media/logo.3c98abf85d922489acce.png",
+    "static/media/namebanner.png": "/static/media/namebanner.e804cf086a7de12a61c4.png",
+    "static/media/netum.png": "/static/media/netum.68733b7e81623991eca6.png",
+    "static/media/reaktor.png": "/static/media/reaktor.3679fa4c380568ef82d5.png",
+    "static/media/accenture.png": "/static/media/accenture.15f9818a7ed6bb175b64.png",
+    "index.html": "/index.html",
+    "main.c070cc5e.css.map": "/static/css/main.c070cc5e.css.map",
+    "main.b38fe360.js.map": "/static/js/main.b38fe360.js.map",
+    "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c070cc5e.css",
+    "static/js/main.b38fe360.js"
+  ]
+}
