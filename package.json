@@ -1,6 +1,7 @@
 {
   "homepage": "https://www.source.club/",
-  "name": "source-nettisivut",
+  "name": "source-website",
+  "description": "Homepage of SOURCE ry",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
