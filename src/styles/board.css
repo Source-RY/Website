@@ -1,0 +1,69 @@
+.boards-container p {
+    line-height: 0.8rem;
+  }
+  
+  .boards-container h2 {
+    padding-top: 1rem;
+  }
+  
+  .current-board-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .boardrole {
+    color: #2afe3f;
+    line-height: 1.2rem;
+  }
+  
+  .boardmember {
+    margin: 3rem;
+    width: 15rem;
+  }
+  
+  .boardmember img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 5rem;
+  }
+
+  .helpers-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .helper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    line-height: 0.01rem;
+  }
+  
+  .helper p{
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    .current-board-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1rem;
+      }
+
+      .boards-container{
+        font-size: 1rem;
+      }
+
+      h1{
+        line-height: 3rem;
+      }
+  }

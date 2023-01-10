@@ -1,15 +1,12 @@
 import Image from "./images/namebanner.png"
 
-const namebanner = () => {
+const Namebanner = () => {
     return (
       <div className="namebanner">
-        <div className="dsf">
-          test
-          <img src={Image} alt="Namebanner"/>
-        </div>
+        <img src={Image} alt="Namebanner"/>
       </div>
     )
   }
   
   
-  export default namebanner
+  export default Namebanner

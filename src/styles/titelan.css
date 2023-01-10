@@ -1,0 +1,128 @@
+.titelan-poster {
+  margin-left: 6rem;
+  max-width: 20rem;
+  object-fit: contain;
+  max-height: 20rem;
+}
+
+.titelan-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.titelan-info-container h2 {
+  color: white;
+  margin-left: 3rem;
+  font-size: 2rem;
+}
+
+.titelan-info-container p {
+  color: white;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+}
+
+.titelan-timer-container {
+    color: white;
+    margin-left: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 3rem;
+  }
+
+  .next-titelan-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .next-titelan-info-container h2 {
+    color: white;
+    margin-left: 3rem;
+    font-size: 3rem;
+  }
+
+  .next-titelan-poster {
+    max-width: 20rem;
+    object-fit: contain;
+    max-height: 20rem;
+  }
+
+@media screen and (max-width: 1200px) {
+    .titelan-poster {
+        margin-left: 0rem;
+      }
+
+      .titelan-info-container h2 {
+        margin-left: 0rem;
+      }
+
+      .titelan-info-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .titelan-info-container p {
+        margin-left: 0rem;
+      }
+
+      .titelan-timer-container {
+        margin-left: 0rem;
+        font-size: 2rem;
+      }
+    
+      .next-titelan-info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .next-titelan-info-container h2 {
+        margin-left: 0rem;
+      }
+}
+
+.next-titelan-container a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #fd6a02;
+    background: transparent;
+    width: 10rem;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border: 3px solid #fd6a02;
+    z-index: 0;
+    transition: 0.2s ease-in-out;
+  }
+
+  .next-titelan-container a:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #fd6a02;
+    z-index: -1;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .next-titelan-container a:hover {
+    color: #fff;
+  }
+  
+  .next-titelan-container a:hover:before {
+    width: 100%;
+  }
+  

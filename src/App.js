@@ -1,20 +1,28 @@
 import { HashRouter  as Router, Route, Routes } from "react-router-dom";
 
-import Namebanner from "./components/namebanner";
-import Footer from "./components/footer";
-import OldNavbar from "./components/oldnav";
-//import Navbar from "./components/navbar";
-import OldFront from "./components/oldfront";
-import OldMembership from "./components/oldmembership";
-import OldEvents from "./components/oldevents";
-import OldSuggestions from "./components/oldsuggestions";
-import OldContact from "./components/oldcontact";
-import OldPartners from "./components/oldpartners";
-import Old404 from "./components/old404";
-//import "./styles/navbar.css";
-import "./styles/oldsource.css";
-import "./styles/oldfront.css";
+import Namebanner from "./components/Namebanner";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Front from "./pages/Front";
+import Membership from "./pages/Membership";
+import Events from "./pages/Events";
+import Suggestions from "./pages/Suggestions";
+import Contact from "./pages/Contact";
+import Partners from "./pages/Partners";
+import Missing from "./pages/Missing404";
+import Titelan from "./pages/Titelan";
+import Board from "./pages/Board";
+import Saannot from "./pages/Saannot";
+import Iotseminar from "./pages/Iotseminar";
+import Tuotteet from "./pages/Tuotteet";
+import Yhdistys from "./pages/Yhdistys";
+import "./styles/navbar.css";
 import "./styles/front.css";
+import "./styles/page.css";
+import "./styles/partners.css";
+import "./styles/titelan.css";
+import "./styles/board.css";
+import "./styles/products.css";
 
 function App() {
   return (
@@ -22,16 +30,22 @@ function App() {
       <div className="App">
         <header className="App-header"></header>
         <Namebanner></Namebanner>
-        <OldNavbar></OldNavbar>
+        <Navbar></Navbar>
 
         <Routes>
-          <Route path="/" element={<OldFront />} />
-          <Route path="/jasenyys" element={<OldMembership />} />
-          <Route path="/tapahtumat" element={<OldEvents />} />
-          <Route path="/ehdotukset" element={<OldSuggestions />} />
-          <Route path="/yhteystiedot" element={<OldContact />} />
-          <Route path="/kumppanit" element={<OldPartners />} />
-          <Route path="*" element={<Old404 />} />
+          <Route path="/" element={<Front />} />
+          <Route path="/jasenyys" element={<Membership />} />
+          <Route path="/tapahtumat" element={<Events />} />
+          <Route path="/ehdotukset" element={<Suggestions />} />
+          <Route path="/yhteystiedot" element={<Contact />} />
+          <Route path="/kumppanit" element={<Partners />} />
+          <Route path="/titelan" element={<Titelan />} />
+          <Route path="/hallitus" element={<Board />} />
+          <Route path="/saannot" element={<Saannot />} />
+          <Route path="/iotseminaari" element={<Iotseminar />} />
+          <Route path="/tuotteet" element={<Tuotteet />} />
+          <Route path="/yhdistys" element={<Yhdistys />} />
+          <Route path="*" element={<Missing />} />
         </Routes>
 
         <Footer></Footer>
@@ -41,45 +55,3 @@ function App() {
 }
 
 export default App;
-/*
-<OldFront></OldFront>
-<OldMembership></OldMembership>
-<OldEvents></OldEvents>
-<OldSuggestions></OldSuggestions>
-<OldContact></OldContact>
-<OldPartners></OldPartners>
-<Old404></Old404>*/
-
-/*
-      <Routes>
-				<Route path="/" element={<OldFront/>}/>
-				<Route path="/jasenyys" element={<OldMembership/>}/>
-				<Route path="/tapahtumat" element={<OldEvents/>}/>
-				<Route path="/ehdotukset" element={<OldSuggestions/>}/>
-				<Route path="/yhteystiedot" element={<OldContact/>}/>
-				<Route path="/kumppanit" element={<OldPartners/>}/>
-				<Route path="*" element={<Old404/>}/>
-			</Routes>
-*/
-
-/*
-    <Router>
-      <div className="App">
-        <header className="App-header"></header>
-        <Namebanner></Namebanner>
-        <OldNavbar></OldNavbar>
-
-        <Routes>
-				  <Route path="/" element={<OldFront/>}/>
-				  <Route path="/jasenyys" element={<OldMembership/>}/>
-				  <Route path="/tapahtumat" element={<OldEvents/>}/>
-				  <Route path="/ehdotukset" element={<OldSuggestions/>}/>
-				  <Route path="/yhteystiedot" element={<OldContact/>}/>
-				  <Route path="/kumppanit" element={<OldPartners/>}/>
-				  <Route path="*" element={<Old404/>}/>
-			  </Routes>
-
-        <Footer></Footer>
-      </div>
-    </Router>
-*/
