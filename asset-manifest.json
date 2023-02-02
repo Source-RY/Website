@@ -1,13 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.2921011d.css",
-    "main.js": "/static/js/main.d3f66d4c.js",
-    "static/js/787.f65a3774.chunk.js": "/static/js/787.f65a3774.chunk.js",
+    "main.css": "/static/css/main.804da48e.css",
+    "main.js": "/static/js/main.6bcd01b4.js",
+    "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
+    "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
+    "static/media/laura.jpg": "/static/media/laura.22dde0a3b25efdf54ea2.jpg",
+    "static/media/nelli.jpg": "/static/media/nelli.c2aa81ee8f97c08a05be.jpg",
+    "static/media/toni.jpg": "/static/media/toni.364ecbb923c2d25f91ac.jpg",
+    "static/media/alina.jpg": "/static/media/alina.41aeac4094d059437d4b.jpg",
+    "static/media/leevi.jpg": "/static/media/leevi.9f8bd84fa889cfce14f7.jpg",
+    "static/media/sviat.jpg": "/static/media/sviat.6c0de111246c64e7fd39.jpg",
+    "static/media/safiul.jpg": "/static/media/safiul.16bde4c8f8f21213541d.jpg",
+    "static/media/arttu.jpg": "/static/media/arttu.76ef43f867ada5450859.jpg",
     "static/media/titelan_2012_1.png": "/static/media/titelan_2012_1.dcf11745bac88f7a0e6a.png",
     "static/media/titelan_2011_1.png": "/static/media/titelan_2011_1.e6de2033ffd6f38706ad.png",
     "static/media/titelan_2011_2.png": "/static/media/titelan_2011_2.6951332b35a391d9ef82.png",
     "static/media/titelan_2010_2.png": "/static/media/titelan_2010_2.9670d350401cf9bc2041.png",
+    "static/media/metso.jpg": "/static/media/metso.01881889505a127403ca.jpg",
     "static/media/titelan_2010_1.png": "/static/media/titelan_2010_1.596928bdc35547d22c07.png",
     "static/media/titelan_2022.png": "/static/media/titelan_2022.a5b214c0334dd1154312.png",
     "static/media/titelan_2012_2.png": "/static/media/titelan_2012_2.501b77dbb9a44de24558.png",
@@ -37,12 +47,12 @@
     "static/media/vincit.png": "/static/media/vincit.081c29e2e3dd5af587e4.png",
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
-    "main.2921011d.css.map": "/static/css/main.2921011d.css.map",
-    "main.d3f66d4c.js.map": "/static/js/main.d3f66d4c.js.map",
-    "787.f65a3774.chunk.js.map": "/static/js/787.f65a3774.chunk.js.map"
+    "main.804da48e.css.map": "/static/css/main.804da48e.css.map",
+    "main.6bcd01b4.js.map": "/static/js/main.6bcd01b4.js.map",
+    "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2921011d.css",
-    "static/js/main.d3f66d4c.js"
+    "static/css/main.804da48e.css",
+    "static/js/main.6bcd01b4.js"
   ]
 }
