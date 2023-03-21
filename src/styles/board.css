@@ -9,7 +9,7 @@
 .current-board-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   text-align: center;
   line-height: 1rem;
@@ -18,12 +18,13 @@
 
 .boardrole {
   color: #2afe3f;
-  line-height: 1.2rem;
+  line-height: 1.6rem;
 }
 
 .boardmember {
   margin: 3rem;
   width: 15rem;
+  flex: 1 1 0;
 }
 
 .boardmember img {
@@ -53,7 +54,7 @@
 .board-container {
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   text-align: center;
   display: flex;
@@ -67,8 +68,7 @@
 }
 
 .old-boardmember {
-  margin: auto;
-  flex-shrink: 1;
+  flex: 1 1 0;
 }
 
 @media screen and (max-width: 800px) {

@@ -107,8 +107,8 @@ const Board = () => {
         image: safiul2022,
       },
       {
-        name: "Sihteeri ja viestintävastaava",
-        role: "Laura Tiihonen",
+        name: "Laura Tiihonen",
+        role: "Sihteeri ja viestintävastaava",
         image: laura2022,
       },
       {
