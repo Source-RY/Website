@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.804da48e.css",
-    "main.js": "/static/js/main.6bcd01b4.js",
+    "main.js": "/static/js/main.d895cba0.js",
     "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
     "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
@@ -44,15 +44,16 @@
     "static/media/titelan_2017.jpg": "/static/media/titelan_2017.6681646fafb2f6efaed5.jpg",
     "static/media/boardmember_placeholder.png": "/static/media/boardmember_placeholder.27be2904b1d95554a471.png",
     "static/media/accenture.png": "/static/media/accenture.15f9818a7ed6bb175b64.png",
+    "static/media/nokia.png": "/static/media/nokia.85723cf2abccca677272.png",
     "static/media/vincit.png": "/static/media/vincit.081c29e2e3dd5af587e4.png",
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
     "main.804da48e.css.map": "/static/css/main.804da48e.css.map",
-    "main.6bcd01b4.js.map": "/static/js/main.6bcd01b4.js.map",
+    "main.d895cba0.js.map": "/static/js/main.d895cba0.js.map",
     "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.804da48e.css",
-    "static/js/main.6bcd01b4.js"
+    "static/js/main.d895cba0.js"
   ]
 }
