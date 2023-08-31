@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.804da48e.css",
-    "main.js": "/static/js/main.d895cba0.js",
+    "main.css": "/static/css/main.2e9f12b9.css",
+    "main.js": "/static/js/main.bd5d8867.js",
     "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
     "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
-    "static/media/laura.jpg": "/static/media/laura.22dde0a3b25efdf54ea2.jpg",
+    "static/media/laura.jpg": "/static/media/laura.5319fb545ed7cb639ab3.jpg",
     "static/media/nelli.jpg": "/static/media/nelli.c2aa81ee8f97c08a05be.jpg",
-    "static/media/toni.jpg": "/static/media/toni.364ecbb923c2d25f91ac.jpg",
-    "static/media/alina.jpg": "/static/media/alina.41aeac4094d059437d4b.jpg",
+    "static/media/toni.jpg": "/static/media/toni.38030c1e8051abca5122.jpg",
+    "static/media/alina.jpg": "/static/media/alina.b104fd6ea6a7bc1e6fb3.jpg",
     "static/media/leevi.jpg": "/static/media/leevi.9f8bd84fa889cfce14f7.jpg",
     "static/media/sviat.jpg": "/static/media/sviat.6c0de111246c64e7fd39.jpg",
     "static/media/safiul.jpg": "/static/media/safiul.16bde4c8f8f21213541d.jpg",
     "static/media/arttu.jpg": "/static/media/arttu.76ef43f867ada5450859.jpg",
+    "static/media/juho.jpg": "/static/media/juho.2e61ac0d68b4720ce305.jpg",
+    "static/media/oscar.jpg": "/static/media/oscar.4e039b5d7bbf8d66fb56.jpg",
+    "static/media/sylvi.jpg": "/static/media/sylvi.ac9770d47c5bdde5e9e7.jpg",
+    "static/media/atte.jpg": "/static/media/atte.fd309cd1d45843fc178b.jpg",
     "static/media/titelan_2012_1.png": "/static/media/titelan_2012_1.dcf11745bac88f7a0e6a.png",
     "static/media/titelan_2011_1.png": "/static/media/titelan_2011_1.e6de2033ffd6f38706ad.png",
     "static/media/titelan_2011_2.png": "/static/media/titelan_2011_2.6951332b35a391d9ef82.png",
@@ -46,14 +50,15 @@
     "static/media/accenture.png": "/static/media/accenture.15f9818a7ed6bb175b64.png",
     "static/media/nokia.png": "/static/media/nokia.85723cf2abccca677272.png",
     "static/media/vincit.png": "/static/media/vincit.081c29e2e3dd5af587e4.png",
+    "static/media/frostly.png": "/static/media/frostly.89814785918107524400.png",
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
-    "main.804da48e.css.map": "/static/css/main.804da48e.css.map",
-    "main.d895cba0.js.map": "/static/js/main.d895cba0.js.map",
+    "main.2e9f12b9.css.map": "/static/css/main.2e9f12b9.css.map",
+    "main.bd5d8867.js.map": "/static/js/main.bd5d8867.js.map",
     "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.804da48e.css",
-    "static/js/main.d895cba0.js"
+    "static/css/main.2e9f12b9.css",
+    "static/js/main.bd5d8867.js"
   ]
 }
