@@ -251,9 +251,16 @@
     margin-left: 3rem;
     border-left: 3px solid white;
   }
-  
+
   .nav-link-dropdown-container .nav-link {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .namebanner img {
+    width: calc(100% - 6rem);
+    padding: 0.5rem 0;
+    padding-right: 6rem;
+    padding-left: 0.5rem;
   }
 }

@@ -13,6 +13,7 @@ import Kaijakka from "../components/images/partners/kaijakka.png";
 import Hene from "../components/images/partners/hene.png";
 import TOAS from "../components/images/partners/toas.png";
 import Nokia from "../components/images/partners/nokia.png";
+import Frostly from "../components/images/partners/frostly.png";
 
 const Partners = () => {
   return (
@@ -179,11 +180,11 @@ const Partners = () => {
           <div class="partner-break"></div>
           <div class="partner-item">
             <div class="top-row">
-              <img class="partner-logo" src={Reaktor} alt="Reaktor Logo" />
+              <img class="partner-logo" src={Frostly} alt="Reaktor Logo" />
               <a
                 target="_blank"
-                href="https://www.reaktor.com/tampere/"
-                class="PartnerItem__PartnerLink-sc-n5e0ep-0 edSrMC"
+                href="https://www.frostly.fi/"
+                class="PartnerItem__PartnerLink-sc-n5e0ep-0 igEdOu"
                 rel="noreferrer"
               >
                 Verkkosivut
@@ -200,42 +201,6 @@ const Partners = () => {
                 target="_blank"
                 href="https://www.solita.fi/"
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 ekXJXT"
-                rel="noreferrer"
-              >
-                Verkkosivut
-              </a>
-            </div>
-            <div class="partner-desc"></div>
-          </div>
-
-          <div class="partner-break"></div>
-          <div class="partner-item">
-            <div class="top-row">
-              <img
-                class="partner-logo"
-                src={ReceiptHero}
-                alt="ReceiptHero Logo"
-              />
-              <a
-                target="_blank"
-                href="https://www.getreceipthero.com/"
-                class="PartnerItem__PartnerLink-sc-n5e0ep-0 edSrMC"
-                rel="noreferrer"
-              >
-                Verkkosivut
-              </a>
-            </div>
-            <div class="partner-desc"></div>
-          </div>
-
-          <div class="partner-break"></div>
-          <div class="partner-item">
-            <div class="top-row">
-              <img class="partner-logo" src={Modulight} alt="Modulight Logo" />
-              <a
-                target="_blank"
-                href="https://www.modulight.com/"
-                class="PartnerItem__PartnerLink-sc-n5e0ep-0 bAPMmw"
                 rel="noreferrer"
               >
                 Verkkosivut
@@ -302,7 +267,7 @@ const Partners = () => {
               <img class="partner-logo" src={Hene} alt="Siniset Bussit Logo" />
               <a
                 target="_blank"
-                href="https://www.vincit.com/"
+                href="https://hene.fi/"
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 edSrMC"
                 rel="noreferrer"
               >
