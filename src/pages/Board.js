@@ -10,6 +10,13 @@ import toni2022 from "../components/images/board/2022/toni.jpg";
 import leevi2022 from "../components/images/board/2022/leevi.jpg";
 import sviat2022 from "../components/images/board/2022/sviat.jpg";
 import metso2022 from "../components/images/board/2022/metso.jpg";
+import alina2023 from "../components/images/board/2023/alina.jpg";
+import atte2023 from "../components/images/board/2023/atte.jpg";
+import juho2023 from "../components/images/board/2023/juho.jpg";
+import laura2023 from "../components/images/board/2023/laura.jpg";
+import sylvi2023 from "../components/images/board/2023/sylvi.jpg";
+import oscar2023 from "../components/images/board/2023/oscar.jpg";
+import toni2023 from "../components/images/board/2023/toni.jpg";
 
 const Board = () => {
   const board2023 = {
@@ -17,7 +24,7 @@ const Board = () => {
       {
         name: "Toni Rantanen",
         role: "Puheenjohtaja",
-        image: toni2022,
+        image: toni2023,
       },
       {
         name: "Leevi Immonen",
@@ -27,12 +34,12 @@ const Board = () => {
       {
         name: "Atte Kaartosalmi",
         role: "Rahastonhoitaja",
-        image: boardmember_placeholder,
+        image: atte2023,
       },
       {
         name: "Juho Mäkitalo",
         role: "Tapahtumavastaava",
-        image: boardmember_placeholder,
+        image: juho2023,
       },
       {
         name: "Arttu Uuranmäki",
@@ -42,22 +49,22 @@ const Board = () => {
       {
         name: "Laura Tiihonen",
         role: "Sihteeri ja viestintävastaava",
-        image: laura2022,
+        image: laura2023,
       },
       {
         name: "Sylvi Kokko",
         role: "Jäsen- ja kerhisvastaava",
-        image: boardmember_placeholder,
+        image: sylvi2023,
       },
       {
         name: "Alina Kauppila",
         role: "Ulkosuhdevastaava",
-        image: alina2022,
+        image: alina2023,
       },
       {
         name: "Oscar Hero",
         role: "Kansainvälisyysvastaava",
-        image: boardmember_placeholder,
+        image: oscar2023,
       },
       {
         name: "Sviatoslav Vasev",
