@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2e9f12b9.css",
-    "main.js": "/static/js/main.bd5d8867.js",
+    "main.js": "/static/js/main.0536c2ea.js",
     "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
     "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
@@ -45,20 +45,21 @@
     "static/media/netum.png": "/static/media/netum.68733b7e81623991eca6.png",
     "static/media/reaktor.png": "/static/media/reaktor.3679fa4c380568ef82d5.png",
     "static/media/toas.png": "/static/media/toas.f9017695ee66ef42b464.png",
+    "static/media/vincit.png": "/static/media/vincit.d003bcf1742c0c18c782.png",
     "static/media/titelan_2017.jpg": "/static/media/titelan_2017.6681646fafb2f6efaed5.jpg",
     "static/media/boardmember_placeholder.png": "/static/media/boardmember_placeholder.27be2904b1d95554a471.png",
     "static/media/accenture.png": "/static/media/accenture.15f9818a7ed6bb175b64.png",
     "static/media/nokia.png": "/static/media/nokia.85723cf2abccca677272.png",
-    "static/media/vincit.png": "/static/media/vincit.081c29e2e3dd5af587e4.png",
     "static/media/frostly.png": "/static/media/frostly.89814785918107524400.png",
+    "static/media/evitec.png": "/static/media/evitec.b1da187ed749f865eef8.png",
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
     "main.2e9f12b9.css.map": "/static/css/main.2e9f12b9.css.map",
-    "main.bd5d8867.js.map": "/static/js/main.bd5d8867.js.map",
+    "main.0536c2ea.js.map": "/static/js/main.0536c2ea.js.map",
     "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e9f12b9.css",
-    "static/js/main.bd5d8867.js"
+    "static/js/main.0536c2ea.js"
   ]
 }
