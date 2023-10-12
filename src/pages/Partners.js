@@ -7,7 +7,7 @@ import Reaktor from "../components/images/partners/reaktor.png";
 import Solita from "../components/images/partners/solita.png";
 import ReceiptHero from "../components/images/partners/receipthero.png";
 import Modulight from "../components/images/partners/modulight.png";
-import ProfitSoftware from "../components/images/partners/profitsoftware.png";
+import Evitec from "../components/images/partners/evitec.png";
 import Vincit from "../components/images/partners/vincit.png";
 import Kaijakka from "../components/images/partners/kaijakka.png";
 import Hene from "../components/images/partners/hene.png";
@@ -106,44 +106,6 @@ const Partners = () => {
             </div>
             <div class="partner-desc"></div>
           </div>
-          <div class="partner-break"></div>
-
-          <div class="partner-item">
-            <div class="top-row">
-              <img class="partner-logo" src={Accenture} alt="Accenture Logo" />
-              <a
-                target="_blank"
-                href="https://www.accenture.com/"
-                class="PartnerItem__PartnerLink-sc-n5e0ep-0 kKYexN"
-                rel="noreferrer"
-              >
-                Verkkosivut
-              </a>
-            </div>
-            <div class="partner-desc">
-              <p>
-                Accenture on globaali yli 515 000 asiantuntijan
-                IT-konsultointitalo, joka tarjoaa teknologian ratkaisuja
-                asiakkailleen 40 eri toimialalla yli 120 maassa. Suomessa
-                Accenturella on n. 1100 työntekijää Helsingissä ja Tampereella.
-                Accenture rekrytoi vuosittain myös opiskelijoita palkallisiin
-                Internship-ohjelmiin Technology, Strategy &amp; Consulting,
-                Creative ja Security -yksiköihin. Kaikki harjoittelupaikat ja
-                muut kymmenet avoimet työpaikat täältä:
-                www.accenture.com/fi-en/careers
-              </p>
-              <p>
-                Accenture is a global IT consulting company of over 515 000
-                professionals that offers solutions for its customers in over 40
-                industries in over 120 countries. In Finland, Accenture has
-                about 1100 employees in Helsinki and Tampere. Every year
-                Accenture hires also students to paid internship programs in
-                Technology, Strategy &amp; Consulting, Creative and Security
-                -units. Check out the internship positions and tens of other
-                open positions here
-              </p>
-            </div>
-          </div>
 
           <div class="partner-break"></div>
           <div class="partner-item">
@@ -212,14 +174,10 @@ const Partners = () => {
           <div class="partner-break"></div>
           <div class="partner-item">
             <div class="top-row">
-              <img
-                class="partner-logo"
-                src={ProfitSoftware}
-                alt="Profit Software Logo"
-              />
+              <img class="partner-logo" src={Evitec} alt="Evitec Logo" />
               <a
                 target="_blank"
-                href="https://profitsoftware.com/"
+                href="https://evitec.com/"
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 kKYexN"
                 rel="noreferrer"
               >

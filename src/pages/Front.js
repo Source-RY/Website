@@ -11,6 +11,8 @@ import Kaijakka from "../components/images/partners/kaijakka.png";
 import Hene from "../components/images/partners/hene.png";
 import TOAS from "../components/images/partners/toas.png";
 import Nokia from "../components/images/partners/nokia.png";
+import Evitec from "../components/images/partners/evitec.png";
+import Frostly from "../components/images/partners/frostly.png";
 
 import sourcebanner from "../components/images/sourcebanner.jpeg";
 
@@ -53,32 +55,17 @@ const Front = () => {
           <a class="partner-widget-item" href="https://tammerforce.com/">
             <img src={Futurice} alt="Futurice Logo" />
           </a>
-          <a class="partner-widget-item" href="https://www.accenture.com/">
-            <img src={Accenture} alt="Accenture Logo" />
-          </a>
           <a class="partner-widget-item" href="https://netum.fi">
             <img src={Netum} alt="Netum Logo" />
-          </a>
-          <a
-            class="partner-widget-item"
-            href="https://www.reaktor.com/tampere/"
-          >
-            <img src={Reaktor} alt="Reaktor Logo" />
           </a>
           <a class="partner-widget-item" href="https://www.solita.fi/">
             <img src={Solita} alt="Solita Logo" />
           </a>
-          <a class="partner-widget-item" href="https://www.getreceipthero.com/">
-            <img src={ReceiptHero} alt="ReceiptHero Logo" />
-          </a>
-          <a class="partner-widget-item" href="https://www.modulight.com/">
-            <img src={Modulight} alt="Modulight Logo" />
-          </a>
-          <a class="partner-widget-item" href="https://profitsoftware.com/">
-            <img src={ProfitSoftware} alt="Profit Software Logo" />
-          </a>
           <a class="partner-widget-item" href="https://www.vincit.com/">
             <img src={Vincit} alt="Vincit Logo" />
+          </a>
+          <a class="partner-widget-item" href="https://www.evitec.com/">
+            <img src={Evitec} alt="Evitec Logo" />
           </a>
           <a class="partner-widget-item" href="https://www.yobaari.com/">
             <img src={Kaijakka} alt="Kaijakka Logo" />
@@ -91,6 +78,9 @@ const Front = () => {
           </a>
           <a class="partner-widget-item" href="https://www.nokia.com/">
             <img src={Nokia} alt="Nokia Logo" />
+          </a>
+          <a class="partner-widget-item" href="https://www.frostly.com/">
+            <img src={Frostly} alt="Frostly Logo" />
           </a>
         </div>
       </div>
