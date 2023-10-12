@@ -79,7 +79,7 @@ const Front = () => {
           <a class="partner-widget-item" href="https://www.nokia.com/">
             <img src={Nokia} alt="Nokia Logo" />
           </a>
-          <a class="partner-widget-item" href="https://www.frostly.com/">
+          <a class="partner-widget-item" href="https://www.frostly.fi/">
             <img src={Frostly} alt="Frostly Logo" />
           </a>
         </div>
