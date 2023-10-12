@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import banner from "../components/images/titelan/logo.png";
 import no_poster from "../components/images/titelan/titelan_no_poster.png";
 import titelan_2020_1 from "../components/images/titelan/titelan_2022.png";
@@ -15,30 +15,24 @@ import titelan_2011_1 from "../components/images/titelan/titelan_2011_1.png";
 import titelan_2010_2 from "../components/images/titelan/titelan_2010_2.png";
 import titelan_2010_1 from "../components/images/titelan/titelan_2010_1.png";
 import TitelanTimer from "../components/Titelantimer";
+import moment from "moment";
 
 const Titelan = () => {
   // If the nextTitelan value is "", the countdowns etc. will not be visible on the page
-  const [nextTitelan, setNextTitelan] = useState(""); // Timestamp format: YYYY-MM-DD hh:mm ie. 2023-01-07 18:00 for example
-  const [nextTitelanTickets, setNextTitelanTickets] = useState(""); // Add here the full link to the ticket sales website
+  const [nextTitelan, setNextTitelan] = useState();
 
-  // Remember to update these values to fit the next event
-  let next_titelan_html = (
-    <div className="titelan-timer-container">
-      <br />
-      <h2>Seuraavat TiTeLANit:</h2>
-      <div className="next-titelan-container">
-        <div className="next-titelan-info-container">
-          <img className="next-titelan-poster" src={no_poster} Alt="" />
-          <div className="titelan-info">
-            <h2>TiTeLAN 2023 I</h2>
-            <p>XX.-XX.XX.2023</p>
-          </div>
-        </div>
-        <TitelanTimer endDate={new Date(Date.parse(nextTitelan))} />
-        <a href={nextTitelanTickets}>Liput</a>
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    fetch(
+      "https://api.kide.app/api/companies/ac0a8d32-9274-4fc6-a6ba-e5dfbf557029"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const event = data?.model?.events?.find((e) =>
+          e.name.toLowerCase().includes("titelan")
+        );
+        setNextTitelan(event);
+      });
+  }, []);
 
   return (
     <div>
@@ -47,7 +41,32 @@ const Titelan = () => {
           <div className="page-title-image">
             <img className="bannerImage" src={banner} alt=""></img>
           </div>
-          {nextTitelan !== "" && next_titelan_html}
+          {nextTitelan && (
+            <div className="titelan-timer-container">
+              <br />
+              <h2>Seuraavat TiTeLANit:</h2>
+              <div className="next-titelan-container">
+                <div className="next-titelan-info-container">
+                  <img
+                    className="next-titelan-poster"
+                    src={`https://portalvhdsp62n0yt356llm.blob.core.windows.net/bailataan-mediaitems/${nextTitelan.mediaFilename}`}
+                    alt="Titelan logo"
+                  />
+                  <div className="titelan-info">
+                    <h2>{nextTitelan.name}</h2>
+                    <p>
+                      {moment(nextTitelan.dateActualFrom).format("DD")}-
+                      {moment(nextTitelan.dateActualUntil).format("DD.MM.YYYY")}
+                    </p>
+                  </div>
+                </div>
+                <TitelanTimer
+                  endDate={new Date(Date.parse(nextTitelan.dateActualFrom))}
+                />
+                <a href={`https://kide.app/events/${nextTitelan.id}`}>Liput</a>
+              </div>
+            </div>
+          )}
           <br />
           <p>
             TiTeLANIt on keväällä ja syksyllä järjestettävä LAN -tapahtuma
@@ -74,7 +93,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2022 II Poster"
+                alt="Titelan 2022 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2022 II</h2>
@@ -91,7 +110,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2020_1}
-                Alt="Titelan 2022 I Poster"
+                alt="Titelan 2022 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2022 I</h2>
@@ -113,7 +132,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2019_1}
-                Alt="Titelan 2019 I Poster"
+                alt="Titelan 2019 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2019</h2>
@@ -132,7 +151,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2018 II Poster"
+                alt="Titelan 2018 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2018 II</h2>
@@ -152,7 +171,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2018}
-                Alt="Titelan 2018 II Poster"
+                alt="Titelan 2018 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2018 I</h2>
@@ -174,7 +193,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2017 I Poster"
+                alt="Titelan 2017 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2017 II</h2>
@@ -194,7 +213,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2017}
-                Alt="Titelan 2017 I Poster"
+                alt="Titelan 2017 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2017 I</h2>
@@ -217,7 +236,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2015_2}
-                Alt="Titelan 2015 II Poster"
+                alt="Titelan 2015 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2015 II</h2>
@@ -240,7 +259,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2014_2}
-                Alt="Titelan 2015 I Poster"
+                alt="Titelan 2015 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2015 I</h2>
@@ -257,7 +276,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2014_2}
-                Alt="Titelan 2014 II Poster"
+                alt="Titelan 2014 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2014 II</h2>
@@ -280,7 +299,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2014 I Poster"
+                alt="Titelan 2014 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2014 I</h2>
@@ -297,7 +316,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2013_2}
-                Alt="Titelan 2013 II Poster"
+                alt="Titelan 2013 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2013 II</h2>
@@ -314,7 +333,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2013 I Poster"
+                alt="Titelan 2013 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2013 I</h2>
@@ -331,7 +350,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2012_2}
-                Alt="Titelan 2012 II Poster"
+                alt="Titelan 2012 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2012 II</h2>
@@ -348,7 +367,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2012_1}
-                Alt="Titelan 2012 I Poster"
+                alt="Titelan 2012 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2012 I</h2>
@@ -372,7 +391,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2011_2}
-                Alt="Titelan 2011 II Poster"
+                alt="Titelan 2011 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2011 II</h2>
@@ -395,7 +414,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2011_1}
-                Alt="Titelan 2011 I Poster"
+                alt="Titelan 2011 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2011 I</h2>
@@ -418,7 +437,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2010_2}
-                Alt="Titelan 2010 II Poster"
+                alt="Titelan 2010 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2010 II</h2>
@@ -438,7 +457,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={titelan_2010_1}
-                Alt="Titelan 2010 I Poster"
+                alt="Titelan 2010 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2010 I</h2>
@@ -461,7 +480,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2009 II Poster"
+                alt="Titelan 2009 II Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2009 II</h2>
@@ -484,7 +503,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2009 I Poster"
+                alt="Titelan 2009 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2009 I</h2>
@@ -507,7 +526,7 @@ const Titelan = () => {
               <img
                 className="titelan-poster"
                 src={no_poster}
-                Alt="Titelan 2009 I Poster"
+                alt="Titelan 2009 I Poster"
               />
               <div className="titelan-info">
                 <h2>TiTeLAN 2008</h2>

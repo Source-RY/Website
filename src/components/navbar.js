@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [windowWidth]);
 
   const toggleNavbarVisibility = () => {
-    if (windowWidth < 1200){
+    if (windowWidth < 1200) {
       setNavbarVisible(!navbarVisible);
     }
   };
@@ -39,7 +39,7 @@ const Navbar = () => {
   let deactivate_button = (
     <button
       type="button"
-      class="deactivate-nav-button"
+      className="deactivate-nav-button"
       onClick={toggleNavbarVisibility}
     >
       <svg
@@ -52,7 +52,7 @@ const Navbar = () => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="deactivate-nav-button-icon"
+        className="deactivate-nav-button-icon"
       >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -63,7 +63,7 @@ const Navbar = () => {
   let activate_button = (
     <button
       type="button"
-      class="activate-nav-button"
+      className="activate-nav-button"
       onClick={toggleNavbarVisibility}
     >
       <svg
@@ -76,7 +76,7 @@ const Navbar = () => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="activate-nav-button-icon"
+        className="activate-nav-button-icon"
       >
         <line x1="3" y1="12" x2="21" y2="12"></line>
         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -85,80 +85,143 @@ const Navbar = () => {
     </button>
   );
 
-  let hamburger_button = navbarVisible === true ? deactivate_button : activate_button;
+  let hamburger_button =
+    navbarVisible === true ? deactivate_button : activate_button;
 
   return (
-    <div class="nav-bar-container">
-      
+    <div className="nav-bar-container">
       {navbarVisible && (
-        <nav class="nav-bar">
+        <nav className="nav-bar">
           {
-            <div class="nav-bar">
-              <div class="nav-inner">
-                <div class="nav-logo-container">
+            <div className="nav-bar">
+              <div className="nav-inner">
+                <div className="nav-logo-container">
                   <img src={Logo} alt="Logo" />
                 </div>
-                <div class="nav-items">
-                  <div class="nav-link-container">
-                    <Link aria-current="page" class="nav-link" to="/" onClick={toggleNavbarVisibility}>
+                <div className="nav-items">
+                  <div className="nav-link-container">
+                    <Link
+                      aria-current="page"
+                      className="nav-link"
+                      to="/"
+                      onClick={toggleNavbarVisibility}
+                    >
                       Etusivu
                     </Link>
                   </div>
-                  <div class="nav-link-container">
-                    <Link class="nav-link" to="/jasenyys" onClick={toggleNavbarVisibility}>
+                  <div className="nav-link-container">
+                    <Link
+                      className="nav-link"
+                      to="/jasenyys"
+                      onClick={toggleNavbarVisibility}
+                    >
                       Jäsenyys
                     </Link>
                   </div>
-                  <div class="nav-link-container">
-                    <Link class="nav-link" to="/tapahtumat" onClick={toggleNavbarVisibility} onMouseEnter={() => handleMouseEnter(1)} onMouseLeave={() => handleMouseLeave(0)}>
+                  <div className="nav-link-container">
+                    <Link
+                      className="nav-link"
+                      to="/tapahtumat"
+                      onClick={toggleNavbarVisibility}
+                      onMouseEnter={() => handleMouseEnter(1)}
+                      onMouseLeave={() => handleMouseLeave(0)}
+                    >
                       Tapahtumat
                     </Link>
                     {(windowWidth < 1200 || showDropdown === 1) && (
-                    <div className="nav-link-dropdown-container" onMouseEnter={() => handleMouseEnter(1)} onMouseLeave={() => handleMouseLeave(0)}>
-                      <Link class="nav-link" to="/titelan" onClick={toggleNavbarVisibility}>
-                        TiTeLAN
-                      </Link>
-                      <Link class="nav-link" to="/iotseminaari" onClick={toggleNavbarVisibility}>
-                        IoT-Seminaari
-                      </Link>
-                    </div>)}
+                      <div
+                        className="nav-link-dropdown-container"
+                        onMouseEnter={() => handleMouseEnter(1)}
+                        onMouseLeave={() => handleMouseLeave(0)}
+                      >
+                        <Link
+                          className="nav-link"
+                          to="/titelan"
+                          onClick={toggleNavbarVisibility}
+                        >
+                          TiTeLAN
+                        </Link>
+                        <Link
+                          className="nav-link"
+                          to="/iotseminaari"
+                          onClick={toggleNavbarVisibility}
+                        >
+                          IoT-Seminaari
+                        </Link>
+                      </div>
+                    )}
                   </div>
-                  <div class="nav-link-container">
-                    <Link class="nav-link" to="/ehdotukset" onClick={toggleNavbarVisibility}>
+                  <div className="nav-link-container">
+                    <Link
+                      className="nav-link"
+                      to="/ehdotukset"
+                      onClick={toggleNavbarVisibility}
+                    >
                       Ehdotukset
                     </Link>
                   </div>
-                  <div class="nav-link-container">
-                    <Link class="nav-link" to="/yhteystiedot" onClick={toggleNavbarVisibility}>
+                  <div className="nav-link-container">
+                    <Link
+                      className="nav-link"
+                      to="/yhteystiedot"
+                      onClick={toggleNavbarVisibility}
+                    >
                       Yhteystiedot
                     </Link>
                   </div>
-                  <div class="nav-link-container">
-                    <Link class="nav-link" to="/yhdistys" onClick={toggleNavbarVisibility} onMouseEnter={() => handleMouseEnter(2)} onMouseLeave={() => handleMouseLeave(0)}>
+                  <div className="nav-link-container">
+                    <Link
+                      className="nav-link"
+                      to="/yhdistys"
+                      onClick={toggleNavbarVisibility}
+                      onMouseEnter={() => handleMouseEnter(2)}
+                      onMouseLeave={() => handleMouseLeave(0)}
+                    >
                       Yhdistys
                     </Link>
                     {(windowWidth < 1200 || showDropdown === 2) && (
-                    <div className="nav-link-dropdown-container" onMouseEnter={() => handleMouseEnter(2)} onMouseLeave={() => handleMouseLeave(0)}>
-                      <Link class="nav-link" to="/hallitus" onClick={toggleNavbarVisibility}>
-                        Hallitus
-                      </Link>
-                      <Link class="nav-link" to="/kumppanit" onClick={toggleNavbarVisibility}>
-                        Kumppanit
-                      </Link>
-                      <Link class="nav-link" to="/tuotteet" onClick={toggleNavbarVisibility}>
-                        Tuotteet
-                      </Link>
-                      <Link class="nav-link" to="/saannot" onClick={toggleNavbarVisibility}>
-                        Säännöt
-                      </Link>
-                    </div>)}
+                      <div
+                        className="nav-link-dropdown-container"
+                        onMouseEnter={() => handleMouseEnter(2)}
+                        onMouseLeave={() => handleMouseLeave(0)}
+                      >
+                        <Link
+                          className="nav-link"
+                          to="/hallitus"
+                          onClick={toggleNavbarVisibility}
+                        >
+                          Hallitus
+                        </Link>
+                        <Link
+                          className="nav-link"
+                          to="/kumppanit"
+                          onClick={toggleNavbarVisibility}
+                        >
+                          Kumppanit
+                        </Link>
+                        <Link
+                          className="nav-link"
+                          to="/tuotteet"
+                          onClick={toggleNavbarVisibility}
+                        >
+                          Tuotteet
+                        </Link>
+                        <Link
+                          className="nav-link"
+                          to="/saannot"
+                          onClick={toggleNavbarVisibility}
+                        >
+                          Säännöt
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
-                <div class="nav-socials">
+                <div className="nav-socials">
                   <a
                     target="_blank"
                     href="https://www.instagram.com/source_ry/"
-                    class="nav-social-link"
+                    className="nav-social-link"
                     rel="noreferrer"
                   >
                     <svg
@@ -171,7 +234,7 @@ const Navbar = () => {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="nav-social-icon"
+                      className="nav-social-icon"
                     >
                       <rect
                         x="2"
@@ -188,7 +251,7 @@ const Navbar = () => {
                   <a
                     target="_blank"
                     href="https://www.facebook.com/tamko.source/"
-                    class="nav-social-link"
+                    className="nav-social-link"
                     rel="noreferrer"
                   >
                     <svg
@@ -201,7 +264,7 @@ const Navbar = () => {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="nav-social-icon"
+                      className="nav-social-icon"
                     >
                       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                     </svg>
