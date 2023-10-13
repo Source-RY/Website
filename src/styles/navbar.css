@@ -68,8 +68,8 @@
 
 .hamburger-button-container {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   z-index: 99;
   width: 4rem;
   height: 4rem;
@@ -95,7 +95,6 @@
 .activate-nav-button svg,
 .deactivate-nav-button svg {
   z-index: 99;
-  filter: invert(100%);
   height: 3rem;
   width: 3rem;
 }
@@ -164,17 +163,25 @@
 .namebanner {
   background-color: #000000;
   border-bottom: solid green 4px;
+  align-items: center;
+  display: flex;
 }
 
-.namebanner img {
+.namebanner #namebanner-image {
   padding-top: 1rem;
   padding-bottom: 1rem;
   max-width: 50rem;
   height: auto;
   width: 100%;
   display: block;
-  margin-left: auto;
+  width: calc(100% - 9rem);
+  padding: 0rem;
   margin-right: auto;
+  margin-left: auto;
+}
+
+.namebanner .nav-link {
+  display: none;
 }
 
 .nav-link-dropdown-container {
@@ -203,7 +210,7 @@
   .nav-items {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     text-align: center;
   }
@@ -244,7 +251,7 @@
   .nav-link-dropdown-container {
     position: inherit;
     text-align: left;
-    margin-left: 3rem;
+    margin-left: 2rem;
     border-left: 3px solid white;
   }
 
@@ -253,10 +260,20 @@
     padding-right: 0.5rem;
   }
 
-  .namebanner img {
-    width: calc(100% - 6rem);
-    padding: 0.5rem 0;
-    padding-right: 6rem;
-    padding-left: 0.5rem;
+  .namebanner p {
+    display: inline;
+  }
+
+  .namebanner .nav-link {
+    display: flex;
+  }
+
+  .namebanner #namebanner-image {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+
+  .nav-link-container .parent-link {
+    text-align: left;
   }
 }

@@ -11,6 +11,7 @@ const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(window.innerWidth > 1200);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showDropdown, setShowDropdown] = useState(0);
+  const isScreenNarrow = windowWidth < 1200;
   const { t } = useTranslation();
 
   const handleMouseEnter = (number) => {
@@ -30,13 +31,13 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (windowWidth > 1200) {
+    if (!isScreenNarrow) {
       setNavbarVisible(true);
     }
-  }, [windowWidth]);
+  }, [isScreenNarrow]);
 
   const toggleNavbarVisibility = () => {
-    if (windowWidth < 1200) {
+    if (isScreenNarrow) {
       setNavbarVisible(!navbarVisible);
     }
   };
@@ -125,7 +126,7 @@ const Navbar = () => {
                   </div>
                   <div className="nav-link-container">
                     <Link
-                      className="nav-link"
+                      className="nav-link parent-link"
                       to="/tapahtumat"
                       onClick={toggleNavbarVisibility}
                       onMouseEnter={() => handleMouseEnter(1)}
@@ -133,7 +134,7 @@ const Navbar = () => {
                     >
                       {t("nav.events")}
                     </Link>
-                    {(windowWidth < 1200 || showDropdown === 1) && (
+                    {(isScreenNarrow || showDropdown === 1) && (
                       <div
                         className="nav-link-dropdown-container"
                         onMouseEnter={() => handleMouseEnter(1)}
@@ -176,7 +177,7 @@ const Navbar = () => {
                   </div>
                   <div className="nav-link-container">
                     <Link
-                      className="nav-link"
+                      className="nav-link parent-link"
                       to="/yhdistys"
                       onClick={toggleNavbarVisibility}
                       onMouseEnter={() => handleMouseEnter(2)}
@@ -184,7 +185,7 @@ const Navbar = () => {
                     >
                       {t("nav.association")}
                     </Link>
-                    {(windowWidth < 1200 || showDropdown === 2) && (
+                    {(isScreenNarrow || showDropdown === 2) && (
                       <div
                         className="nav-link-dropdown-container"
                         onMouseEnter={() => handleMouseEnter(2)}
@@ -275,48 +276,49 @@ const Navbar = () => {
                     </svg>
                   </a>
                 </div>
-                {i18n.language === "fi" ? (
-                  <div
-                    className="nav-link"
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      marginLeft: 10,
-                    }}
-                    onClick={() => i18n.changeLanguage("en")}
-                  >
-                    <p>EN</p>
-                    <img
-                      src={en}
-                      alt="UK flag"
-                      style={{ alignSelf: "center", marginLeft: 5 }}
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className="nav-link"
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      marginLeft: 10,
-                    }}
-                    onClick={() => i18n.changeLanguage("fi")}
-                  >
-                    <p>FI</p>
-                    <img
-                      src={fi}
-                      alt="Finnish flag"
-                      style={{ alignSelf: "center", marginLeft: 5 }}
-                    />
-                  </div>
-                )}
+                {!isScreenNarrow &&
+                  (i18n.language === "fi" ? (
+                    <div
+                      className="nav-link"
+                      style={{
+                        flexDirection: "row",
+                        display: "flex",
+                        marginLeft: 10,
+                      }}
+                      onClick={() => i18n.changeLanguage("en")}
+                    >
+                      <p>EN</p>
+                      <img
+                        src={en}
+                        alt="UK flag"
+                        style={{ alignSelf: "center", marginLeft: 5 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="nav-link"
+                      style={{
+                        flexDirection: "row",
+                        display: "flex",
+                        marginLeft: 10,
+                      }}
+                      onClick={() => i18n.changeLanguage("fi")}
+                    >
+                      <p>FI</p>
+                      <img
+                        src={fi}
+                        alt="Finnish flag"
+                        style={{ alignSelf: "center", marginLeft: 5 }}
+                      />
+                    </div>
+                  ))}
               </div>
             </div>
           }
         </nav>
       )}
       <div className="hamburger-button-container">
-        {windowWidth < 1200 && hamburger_button}
+        {isScreenNarrow && hamburger_button}
       </div>
     </div>
   );
