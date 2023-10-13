@@ -1,6 +1,9 @@
+import React from "react";
 import Image from "./images/source-small-text.png";
+import { useTranslation } from "react-i18next";
 
-const footer = () => {
+const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div className="footer">
       <div className="footer-container">
@@ -11,21 +14,8 @@ const footer = () => {
           <p>Tampere</p>
         </div>
         <div className="footer-item">
-          <p></p>
-        </div>
-        <div className="footer-item">
-          <p>Kerhotila/: A-siipi kellarikerros A0-35</p>
-          <p>
-            Löytääksesi kerhohuoneen, kävele kaikkien muiden ainejärjestöjen
-            kerhohuoneiden ohi, kävele suoraan vastaan tulevan oven läpi ja
-            jatka melkein ulko-ovelle asti.
-          </p>
-          <p>Club room: Wing-A, basement floor A0-35</p>
-          <p>
-            To find the club room, walk past every club room in the basement
-            floor, walk through the door that comes straight ahead in the
-            corridor and walk almost to the outside door.
-          </p>
+          <p>{t("footerInfo.address1")}</p>
+          <p>{t("footerInfo.address2")}</p>
         </div>
       </div>
       <img src={Image} alt=""></img>
@@ -33,4 +23,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

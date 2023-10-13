@@ -2,11 +2,16 @@ import { Link } from "react-router-dom";
 //import "../styles/newnavbar.css";
 import Logo from "./images/logo.png";
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
+import fi from "./images/fi.png";
+import en from "./images/en.png";
 
 const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(window.innerWidth > 1200);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showDropdown, setShowDropdown] = useState(0);
+  const { t } = useTranslation();
 
   const handleMouseEnter = (number) => {
     setShowDropdown(number);
@@ -48,7 +53,7 @@ const Navbar = () => {
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -72,7 +77,7 @@ const Navbar = () => {
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -106,7 +111,7 @@ const Navbar = () => {
                       to="/"
                       onClick={toggleNavbarVisibility}
                     >
-                      Etusivu
+                      {t("nav.frontPage")}
                     </Link>
                   </div>
                   <div className="nav-link-container">
@@ -115,7 +120,7 @@ const Navbar = () => {
                       to="/jasenyys"
                       onClick={toggleNavbarVisibility}
                     >
-                      Jäsenyys
+                      {t("nav.membership")}
                     </Link>
                   </div>
                   <div className="nav-link-container">
@@ -126,7 +131,7 @@ const Navbar = () => {
                       onMouseEnter={() => handleMouseEnter(1)}
                       onMouseLeave={() => handleMouseLeave(0)}
                     >
-                      Tapahtumat
+                      {t("nav.events")}
                     </Link>
                     {(windowWidth < 1200 || showDropdown === 1) && (
                       <div
@@ -139,14 +144,14 @@ const Navbar = () => {
                           to="/titelan"
                           onClick={toggleNavbarVisibility}
                         >
-                          TiTeLAN
+                          {t("nav.titelan")}
                         </Link>
                         <Link
                           className="nav-link"
                           to="/iotseminaari"
                           onClick={toggleNavbarVisibility}
                         >
-                          IoT-Seminaari
+                          {t("nav.iotSeminaari")}
                         </Link>
                       </div>
                     )}
@@ -157,7 +162,7 @@ const Navbar = () => {
                       to="/ehdotukset"
                       onClick={toggleNavbarVisibility}
                     >
-                      Ehdotukset
+                      {t("nav.suggestions")}
                     </Link>
                   </div>
                   <div className="nav-link-container">
@@ -166,7 +171,7 @@ const Navbar = () => {
                       to="/yhteystiedot"
                       onClick={toggleNavbarVisibility}
                     >
-                      Yhteystiedot
+                      {t("nav.contact")}
                     </Link>
                   </div>
                   <div className="nav-link-container">
@@ -177,7 +182,7 @@ const Navbar = () => {
                       onMouseEnter={() => handleMouseEnter(2)}
                       onMouseLeave={() => handleMouseLeave(0)}
                     >
-                      Yhdistys
+                      {t("nav.association")}
                     </Link>
                     {(windowWidth < 1200 || showDropdown === 2) && (
                       <div
@@ -190,28 +195,28 @@ const Navbar = () => {
                           to="/hallitus"
                           onClick={toggleNavbarVisibility}
                         >
-                          Hallitus
+                          {t("nav.board")}
                         </Link>
                         <Link
                           className="nav-link"
                           to="/kumppanit"
                           onClick={toggleNavbarVisibility}
                         >
-                          Kumppanit
+                          {t("nav.partners")}
                         </Link>
                         <Link
                           className="nav-link"
                           to="/tuotteet"
                           onClick={toggleNavbarVisibility}
                         >
-                          Tuotteet
+                          {t("nav.products")}
                         </Link>
                         <Link
                           className="nav-link"
                           to="/saannot"
                           onClick={toggleNavbarVisibility}
                         >
-                          Säännöt
+                          {t("nav.rules")}
                         </Link>
                       </div>
                     )}
@@ -270,6 +275,41 @@ const Navbar = () => {
                     </svg>
                   </a>
                 </div>
+                {i18n.language === "fi" ? (
+                  <div
+                    className="nav-link"
+                    style={{
+                      flexDirection: "row",
+                      display: "flex",
+                      marginLeft: 10,
+                    }}
+                    onClick={() => i18n.changeLanguage("en")}
+                  >
+                    <p>EN</p>
+                    <img
+                      src={en}
+                      alt="UK flag"
+                      style={{ alignSelf: "center", marginLeft: 5 }}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="nav-link"
+                    style={{
+                      flexDirection: "row",
+                      display: "flex",
+                      marginLeft: 10,
+                    }}
+                    onClick={() => i18n.changeLanguage("fi")}
+                  >
+                    <p>FI</p>
+                    <img
+                      src={fi}
+                      alt="Finnish flag"
+                      style={{ alignSelf: "center", marginLeft: 5 }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           }

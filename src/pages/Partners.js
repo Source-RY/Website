@@ -1,3 +1,5 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
 import banner from "../components/images/sourcebanner.jpeg";
 
 import Futurice from "../components/images/partners/futurice.png";
@@ -16,6 +18,7 @@ import Nokia from "../components/images/partners/nokia.png";
 import Frostly from "../components/images/partners/frostly.png";
 
 const Partners = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="page">
@@ -23,72 +26,22 @@ const Partners = () => {
           <div className="page-banner filter">
             <img className="bannerImage" src={banner} alt=""></img>
           </div>
-          <h1 class="page-title">Yritysyhteistyö</h1>
+          <h1 class="page-title">{t("corporatePartnershipTitle")}</h1>
         </div>
         <div class="page-text">
-          <p>
-            SOURCE ry:n yritysyhteistyön tavoitteena on lähentää opiskelijoita
-            yritysten kanssa. Yritysyhteistyö luo hyvän pohjan opiskelijoille
-            tutustua yrityksiin, oppia uutta alasta ja verkostoitua. Yrityksille
-            yhteistyö SOURCE ry:n kanssa takaa näkyvyyden TAMK:in tietotekniikan
-            opiskelijoiden keskuudessa ja luo mahdollisuuden tutustua tuleviin
-            alansa ammattilaisiin.
-          </p>
-          <p>
-            Yritysyhteistyö on monimuotoista ja joustavaa. Tarkoituksenamme on
-            lyötää aina tapauskohtaisesti paras mahdollinen vaihtoehto
-            molemmille osapuolille. Alla on kerrottu hieman tarkemmin
-            mahdollisuuksista.
-          </p>
-          <h2>Perusta</h2>
-          <p>
-            Pohjalta on aina aloitettava (ellei ole FOSS jumala). SOURCE ry
-            tarjoaa yrityksillä mahdollisuuden lähettää työpaikkailmoituksia ja
-            muita tiedotteitaan jäsenilleen sopimuksen mukaisesti. Pakettiin
-            kuuluu yrityksen logo SOURCE ry:n etusivulle, sekä lyhyt kuvaus
-            yrityksestä yhteistyökumppanit sivustolle.
-          </p>
-          <h2>Excursiot eli yritysvierailut</h2>
-          <p>
-            Excursiot ovat SOURCE ry:n jäsenten keskuudessa suosittuja
-            tapahtumia. Excursiot ovat paras mahdollisuus opiskelijoille päästä
-            tutustumaan kiinnostavaan yritykseen ja sen toimintaan. Yrityksille
-            excursiot taas ovat mainio mahdollisuus päästä tutustumaan
-            tietotekniikan opiskelijoihin ja tulevaisuuden tekijöihin.
-          </p>
-          <h2>Vierailijaluennot</h2>
-          <p>
-            Vierailijaluennot ovat hieno mahdollisuus jakaa ammattilaisten
-            osaamista opiskelijoille. Opiskelijat ovat aina kiinnostuneita
-            työelämässä käytetyistä toimintatavoista ja teknologioista.
-            Vierailijaluentoja varten SOURCE ry voi varata tilat TAMK:ilta.
-          </p>
-          <h2>IoT-seminaari</h2>
-          <p>
-            IoT-Seminaari on Tampereen ammattikorkeakoululla vuosittain
-            järjestettävä seminaaritapahtuma, joka kerää yhteen alan yrityksiä,
-            asiantuntijoita ja opiskelijoita. Tapahtuman järjestää SOURCE ry ja
-            tapahtuman tuotot ohjataan lyhentämättöminä IoT-Seminaarin
-            kehittämiseen ja SOURCE ry:n toimintaan.
-          </p>
-          <p>
-            Yritykset voivat osallistua IoT-seminaariin lunastamalla itselleen
-            ständipaikan ja/tai järjestämällä puheenvuoron.
-          </p>
-          <p>
-            Ständipaikkojen hinnat ovat paikasta riippuen tyypillisesti olleet
-            150-250€ / 2vrk ja puheenvuorot yrityksille ilmaisia.
-          </p>
-          <h2>Haalarimainokset</h2>
-          <p>
-            Haalarimainokset ovat mainio mahdollisuus yritykselle hankkia
-            näkyvyyttä opiskelijoiden keskuudessa. SOURCE ry tarjoaa yrityksille
-            mahdollisuuden ostaa mainospaikan opiskelijahaalareistaan.
-            Mainospaikkojen hinnat vaihtelevat sijainnin ja koon mukaan 500€ ja
-            1000€ välillä. Haalarimainosten tuotot ohjataan vuosittain
-            haalareiden hankintaan ja jäsenistölle järjestettävään toimintaan.
-          </p>
-          <h2>Yhteistyökumppanimme</h2>
+          <p>{t("companyPartnership.intro")}</p>
+          <p>{t("companyPartnership.diverseFlexible")}</p>
+          <h2>{t("companyPartnership.jobPostings.title")}</h2>
+          <p>{t("companyPartnership.jobPostings.description")}</p>
+          <h2>{t("companyPartnership.excursions.title")}</h2>
+          <p>{t("companyPartnership.excursions.description")}</p>
+          <h2>{t("companyPartnership.guestLectures.title")}</h2>
+          <p>{t("companyPartnership.guestLectures.description")}</p>
+          <h2>{t("companyPartnership.iotSeminar.title")}</h2>
+          <p>{t("companyPartnership.iotSeminar.description")}</p>
+          <h2>{t("companyPartnership.overallsAds.title")}</h2>
+          <p>{t("companyPartnership.overallsAds.description")}</p>
+          <h2>{t("partnersTitle")}</h2>
         </div>
 
         <div className="ParterContainer">
@@ -101,7 +54,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 jKshWR"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -117,7 +70,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 hbJvqK"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc">
@@ -149,7 +102,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 igEdOu"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -165,7 +118,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 ekXJXT"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -181,7 +134,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 kKYexN"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -197,7 +150,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 jKshWR"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -213,7 +166,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 bAPMmw"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -229,7 +182,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 edSrMC"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -245,7 +198,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 ekXJXT"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc"></div>
@@ -261,7 +214,7 @@ const Partners = () => {
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 bAPMmw"
                 rel="noreferrer"
               >
-                Verkkosivut
+                {t("webpage")}
               </a>
             </div>
             <div class="partner-desc">

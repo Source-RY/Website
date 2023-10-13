@@ -1,6 +1,29 @@
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Tuotteet from "../components/images/tuotteet.jpeg";
 
 const Board = () => {
+  const { t } = useTranslation();
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch(
+      "https://api.kide.app/api/companies/ac0a8d32-9274-4fc6-a6ba-e5dfbf557029"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data?.model?.products || []);
+      });
+  }, []);
+
+  function centsToPrice(cents) {
+    const euros = Math.floor(cents / 100);
+    const remainingCents = cents % 100;
+    const priceString = `${euros},${remainingCents
+      .toString()
+      .padStart(2, "0")}`;
+    return priceString;
+  }
+
   return (
     <div>
       <div className="page">
@@ -8,41 +31,36 @@ const Board = () => {
           <div className="page-banner filter">
             <img className="bannerImage" src={Tuotteet} alt=""></img>
           </div>
-          <h1 class="page-title">Tuotteet</h1>
+          <h1 class="page-title">{t("nav.products")}</h1>
         </div>
         <div class="page-text">
           <br />
           <br />
           <br />
-          <div
-            className="products-container"
-            onClick={() =>
-              window.location.assign(
-                "https://kide.app/products/165a8a6b-d6a1-4880-ae02-5a088151e467"
-              )
-            }
-          >
-            <div className="product">
-              <img
-                className="productImage"
-                src="https://portalvhdsp62n0yt356llm.blob.core.windows.net/bailataan-mediaitems/xl_1742423fb09a75c381e42bf4443e0de8e0454093a8678b6087964344.jpeg"
-                alt=""
-              ></img>
-              <h2>Haalarimerkit</h2>
-              <p>2,20 € ... 3,00 €</p>
-              <p className="buy-button">Kide.app</p>
-            </div>
-
-            <div className="product">
-              <img
-                className="productImage"
-                src="https://portalvhdsp62n0yt356llm.blob.core.windows.net/bailataan-mediaitems/xl_5f044ef6af801b4b653662213720523f2fdd4ab7b5c30c96341f34da.jpeg"
-                alt=""
-              ></img>
-              <h2>Juhlanauha</h2>
-              <p>4,00 €</p>
-              <p className="buy-button">Kide.app</p>
-            </div>
+          <div className="products-container">
+            {products.map((product) => (
+              <div className="product">
+                <img
+                  className="productImage"
+                  src={`https://portalvhdsp62n0yt356llm.blob.core.windows.net/bailataan-mediaitems/${product.mediaFilename}`}
+                  alt="Product"
+                ></img>
+                <h2>{product.name}</h2>
+                <p>
+                  {product.maxPrice.eur === product.minPrice.eur
+                    ? `${centsToPrice(product.maxPrice.eur)}€`
+                    : `${centsToPrice(product.minPrice.eur)}€-${centsToPrice(
+                        product.maxPrice.eur
+                      )}€`}
+                </p>
+                <a
+                  href={`https://kide.app/products/${product.id}`}
+                  className="buy-button"
+                >
+                  Kide.app
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>

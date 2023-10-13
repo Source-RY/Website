@@ -13,10 +13,12 @@ import TOAS from "../components/images/partners/toas.png";
 import Nokia from "../components/images/partners/nokia.png";
 import Evitec from "../components/images/partners/evitec.png";
 import Frostly from "../components/images/partners/frostly.png";
+import { useTranslation } from "react-i18next";
 
 import sourcebanner from "../components/images/sourcebanner.jpeg";
 
 const Front = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="page">
@@ -24,33 +26,15 @@ const Front = () => {
           <div className="page-banner filter">
             <img className="bannerImage" src={sourcebanner} alt=""></img>
           </div>
-          <h1 class="page-title">Etusivu</h1>
+          <h1 class="page-title">{t("nav.frontPage")}</h1>
         </div>
         <div class="page-text">
-          <p>
-            SOURCE ry on TAMKin tieto- ja viestintätekniikan ainekerho. Kerho on
-            perustettu vuonna 2016. Yhdistykseksi rekisteröidyimme vuotta
-            myöhemmin. Näkyvin osa kerhoamme on oma kerhohuoneemme, joka löytyy
-            A-siiven kerhohuonekäytävän päästä, huoneesta A0-35.
-          </p>
-          <p>
-            SOURCEn tarkoituksena tiivistää TiTe-verkostoa ja jakaa tietoa
-            alamme mahdollisuuksista. SOURCE järjestää jäsenilleen mm. sauna- ja
-            lautapeli-iltoja sekä viikottaisen liikuntavuoron. Merkittävimpiä
-            tapahtumiamme ovat perinteiset TiTeLANit sekä yrityksiä TAMKiin
-            keräävä IoT-seminaari.
-          </p>
-          <p>
-            SOURCE toimii tiiviissä yhteistyössä Tamkon, TIRO ry:n sekä muiden
-            TAMKin kerhojen kanssa, osallistumalla tapahtumien järjestämiseen.
-          </p>
-          <p>
-            Kerhon jäseniksi ovat tervetulleita kaikki koulutusohjelmasta
-            riippumatta. Yritysvierailut ovat kuitenkin suunnattu tietotekniikan
-            opiskelijoille.
-          </p>
+          <p>{t("sourceInfo.paragraph1")}</p>
+          <p>{t("sourceInfo.paragraph2")}</p>
+          <p>{t("sourceInfo.paragraph3")}</p>
+          <p>{t("sourceInfo.paragraph4")}</p>
         </div>
-        <h1 class="partners-title">Yhteistyökumppanimme</h1>
+        <h1 class="partners-title">{t("partnersTitle")}</h1>
         <div class="partner-widget-partners">
           <a class="partner-widget-item" href="https://tammerforce.com/">
             <img src={Futurice} alt="Futurice Logo" />

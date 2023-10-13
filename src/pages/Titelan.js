@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import banner from "../components/images/titelan/logo.png";
 import no_poster from "../components/images/titelan/titelan_no_poster.png";
 import titelan_2020_1 from "../components/images/titelan/titelan_2022.png";
@@ -20,6 +21,7 @@ import moment from "moment";
 const Titelan = () => {
   // If the nextTitelan value is "", the countdowns etc. will not be visible on the page
   const [nextTitelan, setNextTitelan] = useState();
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetch(
@@ -44,7 +46,7 @@ const Titelan = () => {
           {nextTitelan && (
             <div className="titelan-timer-container">
               <br />
-              <h2>Seuraavat TiTeLANit:</h2>
+              <h2>{t("nextTitelan")}:</h2>
               <div className="next-titelan-container">
                 <div className="next-titelan-info-container">
                   <img
@@ -63,28 +65,23 @@ const Titelan = () => {
                 <TitelanTimer
                   endDate={new Date(Date.parse(nextTitelan.dateActualFrom))}
                 />
-                <a href={`https://kide.app/events/${nextTitelan.id}`}>Liput</a>
+                <a href={`https://kide.app/events/${nextTitelan.id}`}>
+                  {t("tickets")}
+                </a>
               </div>
             </div>
           )}
           <br />
           <p>
-            TiTeLANIt on keväällä ja syksyllä järjestettävä LAN -tapahtuma
+            {t("titelanInfo.title")}
             <br />
             <br />
-            Titelanit saivat alkunsa 2008 syksyllä, kun omaa
-            verkkopelitapahtumaa ei ollut vielä TAMKilta löytynyt. Pitkän
-            historiansa aikana Titelanit ovat olleet osallistujamääriltään
-            suosittuja ja erilaisia peliturnauksia on järjestetty laidasta
-            laitaan lanien aikana. Titelanien järjestyspaikaksi on vakiintunut
-            TAMKin liikuntasali, mutta muutamaan otteeseen myös Tampereen
-            keskustan Demolaa on käytetty. Tapahtuma on järjestetty katkeamatta
-            joka vuosi, lukuun ottamatta pandemia ajan taukoa.
+            {t("titelanInfo.description")}
             <br />
           </p>
           <br />
           <br />
-          <h1>Menneet Titelanit</h1>
+          <h1>{t("pastTitelans")}</h1>
         </div>
         <div className="titelanContainer">
           <div className="partner-break"></div>
@@ -115,10 +112,10 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2022 I</h2>
                 <p>8.-10.4.2022</p>
-                <p>Sijainti: TAMK Liikuntasali</p>
+                <p>{t("location")}: TAMK Liikuntasali</p>
                 <p>
-                  Turnaukset: Counter-Strike: Global Offensive, NHL, Guitar
-                  Hero, Civilization VI, Pro Pilkki 2
+                  {t("tournaments")}: Counter-Strike: Global Offensive, NHL,
+                  Guitar Hero, Civilization VI, Pro Pilkki 2
                 </p>
               </div>
             </div>
@@ -137,8 +134,10 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2019</h2>
                 <p>5.-7.4.2019</p>
-                <p>Sijainti: TAMK Liikuntasali</p>
-                <p>Turnaukset: Crash Team Racing, Tekken 7, Pro Pilkki 2</p>
+                <p>{t("location")}: TAMK Liikuntasali</p>
+                <p>
+                  {t("tournaments")}: Crash Team Racing, Tekken 7, Pro Pilkki 2
+                </p>
               </div>
             </div>
             <div className="partner-desc"></div>
@@ -176,10 +175,10 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2018 I</h2>
                 <p>23.-25.3.2018</p>
-                <p>Sijainti: TAMK Liikuntasali</p>
+                <p>{t("location")}: TAMK Liikuntasali</p>
                 <p>
-                  Turnaukset: Counter-Strike: Global Offensive, Tekken 7, Rocket
-                  League, Crash Team Racing, Pro Pilkki 2
+                  {t("tournaments")}: Counter-Strike: Global Offensive, Tekken
+                  7, Rocket League, Crash Team Racing, Pro Pilkki 2
                 </p>
               </div>
             </div>
@@ -218,11 +217,11 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2017 I</h2>
                 <p>24.-26.3.2017</p>
-                <p>Sijainti: TAMK Liikuntasali</p>
+                <p>{t("location")}: TAMK Liikuntasali</p>
                 <p></p>
                 <p>
-                  Turnaukset: Counter-Strike: Global Offensive, Rocket League,
-                  Tekken
+                  {t("tournaments")}: Counter-Strike: Global Offensive, Rocket
+                  League, Tekken
                 </p>
               </div>
             </div>
@@ -241,11 +240,11 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2015 II</h2>
                 <p>20.-22.11.2015</p>
-                <p>Sijainti: Demola</p>
+                <p>{t("location")}: Demola</p>
                 <p>
-                  Turnaukset: Counter-Strike: Global Offensive, Heartstone,
-                  Retrokompo, Rocket League, Speedrunners, Tekken Tag Tournament
-                  2
+                  {t("tournaments")}: Counter-Strike: Global Offensive,
+                  Heartstone, Retrokompo, Rocket League, Speedrunners, Tekken
+                  Tag Tournament 2
                 </p>
               </div>
             </div>
@@ -283,9 +282,9 @@ const Titelan = () => {
                 <p>24.-26.10.2014</p>
                 <p></p>
                 <p>
-                  Turnaukset: Counter-Strike: Global Offensive, Heartstone, Dota
-                  2, Retrokompo, Street Fighter, Tekken, Pro Pilkki 2, Quake
-                  Live
+                  {t("tournaments")}: Counter-Strike: Global Offensive,
+                  Heartstone, Dota 2, Retrokompo, Street Fighter, Tekken, Pro
+                  Pilkki 2, Quake Live
                 </p>
               </div>
             </div>
@@ -372,12 +371,12 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2012 I</h2>
                 <p>23.-25.3.2012</p>
-                <p>Sijainti: Demola</p>
+                <p>{t("location")}: Demola</p>
                 <p>Paikkamäärä: 120</p>
                 <p>
-                  Turnaukset: Heroes of Newerth, Starcraft 2, League of Legends,
-                  Pro Pilkki 2, Left 4 Dead 2, Quake Live, Counter-Strike 1.6,
-                  World of Warcraft
+                  {t("tournaments")}: Heroes of Newerth, Starcraft 2, League of
+                  Legends, Pro Pilkki 2, Left 4 Dead 2, Quake Live,
+                  Counter-Strike 1.6, World of Warcraft
                 </p>
               </div>
             </div>
@@ -396,11 +395,11 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2011 II</h2>
                 <p>28.-30.10.2011</p>
-                <p>Sijainti: Demola</p>
+                <p>{t("location")}: Demola</p>
                 <p>Paikkamäärä: 120</p>
                 <p>
-                  Turnaukset: Heroes of Newerth, Warsow, Starcraft 2, League of
-                  Legends, Pro Pilkki 2
+                  {t("tournaments")}: Heroes of Newerth, Warsow, Starcraft 2,
+                  League of Legends, Pro Pilkki 2
                 </p>
               </div>
             </div>
@@ -419,11 +418,11 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2011 I</h2>
                 <p>18.-20.3.2011</p>
-                <p>Sijainti: Demola</p>
+                <p>{t("location")}: Demola</p>
                 <p>Paikkamäärä: 120</p>
                 <p>
-                  Turnaukset: Heroes of Newerth, Warsow, Starcraft 2, Super
-                  Street Fighter 2, CD-levyn heitto
+                  {t("tournaments")}: Heroes of Newerth, Warsow, Starcraft 2,
+                  Super Street Fighter 2, CD-levyn heitto
                 </p>
               </div>
             </div>
@@ -442,9 +441,11 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2010 II</h2>
                 <p>29.-31.10.2010</p>
-                <p>Sijainti: Demola</p>
+                <p>{t("location")}: Demola</p>
                 <p>Paikkamäärä: 100</p>
-                <p>Turnaukset: Heroes of Newerth, Warsow, Starcraft 2</p>
+                <p>
+                  {t("tournaments")}: Heroes of Newerth, Warsow, Starcraft 2
+                </p>
               </div>
             </div>
             <div className="partner-desc"></div>
@@ -462,11 +463,11 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2010 I</h2>
                 <p>9.-11.4.2010</p>
-                <p>Sijainti: Demola</p>
+                <p>{t("location")}: Demola</p>
                 <p>Paikkamäärä: 100</p>
                 <p>
-                  Turnaukset: Heroes of Newerth, Battlefield: Bad Company 2,
-                  Warsow
+                  {t("tournaments")}: Heroes of Newerth, Battlefield: Bad
+                  Company 2, Warsow
                 </p>
               </div>
             </div>
@@ -485,11 +486,12 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2009 II</h2>
                 <p>23.-25.10.2009</p>
-                <p>Sijainti: TAMK Liikuntasali</p>
+                <p>{t("location")}: TAMK Liikuntasali</p>
                 <p>Paikkamäärä: 80</p>
                 <p>
-                  Turnaukset: Guitar Hero, Warsow, CD-levyn heitto, Grafiikka
-                  -kilpailu, Heroes of Newerth, Super Mario -nopeuskilpailu
+                  {t("tournaments")}: Guitar Hero, Warsow, CD-levyn heitto,
+                  Grafiikka -kilpailu, Heroes of Newerth, Super Mario
+                  -nopeuskilpailu
                 </p>
               </div>
             </div>
@@ -508,11 +510,11 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2009 I</h2>
                 <p>27.-29.3.2009</p>
-                <p>Sijainti: TAMK Liikuntasali</p>
+                <p>{t("location")}: TAMK Liikuntasali</p>
                 <p>Paikkamäärä: 100</p>
                 <p>
-                  Turnaukset: Guitar Hero, Warsow, CD-levyn heitto, Grafiikka
-                  -kilpailu
+                  {t("tournaments")}: Guitar Hero, Warsow, CD-levyn heitto,
+                  Grafiikka -kilpailu
                 </p>
               </div>
             </div>
@@ -531,9 +533,9 @@ const Titelan = () => {
               <div className="titelan-info">
                 <h2>TiTeLAN 2008</h2>
                 <p>31.10. - 2.11.2008</p>
-                <p>Sijainti: TAMK Liikuntasali</p>
+                <p>{t("location")}: TAMK Liikuntasali</p>
                 <p>Paikkamäärä: 40</p>
-                <p>Turnaukset: Guitar Hero, Warsow, CD-levyn heitto</p>
+                <p>{t("tournaments")}: Guitar Hero, Warsow, CD-levyn heitto</p>
               </div>
             </div>
             <div className="partner-desc"></div>

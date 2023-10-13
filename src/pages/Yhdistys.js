@@ -1,41 +1,30 @@
-import sourcebanner from "../components/images/sourcebanner.jpeg"
+import React from "react";
+import { useTranslation } from "react-i18next";
+import sourcebanner from "../components/images/sourcebanner.jpeg";
 
 const Titelan = () => {
+  const { t } = useTranslation();
   return (
     <div>
-    <div className="page">
+      <div className="page">
         <div className="page-banner-container">
-            <div className="page-banner filter">
-                <img className="bannerImage" src={sourcebanner} alt=""></img>
-            </div>
-            <h1 class="page-title">Yhdistys</h1>
+          <div className="page-banner filter">
+            <img
+              className="bannerImage"
+              src={sourcebanner}
+              alt="Source banenr"
+            ></img>
+          </div>
+          <h1 class="page-title">{t("nav.association")}</h1>
         </div>
         <div class="page-text">
-            <p>
-            SOURCE ry on TAMKin tieto- ja viestintätekniikan ainekerho. Kerho
-            on perustettu vuonna 2016. Yhdistykseksi rekisteröidyimme vuotta
-            myöhemmin. Näkyvin osa kerhoamme on oma kerhohuoneemme, joka
-            löytyy A-siiven kerhohuonekäytävän päästä, huoneesta A0-35.
-            </p>
-            <p>
-            SOURCEn tarkoituksena tiivistää TiTe-verkostoa ja jakaa tietoa
-            alamme mahdollisuuksista. SOURCE järjestää jäsenilleen mm. sauna-
-            ja lautapeli-iltoja sekä viikottaisen liikuntavuoron.
-            Merkittävimpiä tapahtumiamme ovat perinteiset TiTeLANit sekä
-            yrityksiä TAMKiin keräävä IoT-seminaari.
-            </p>
-            <p>
-            SOURCE toimii tiiviissä yhteistyössä Tamkon, TIRO ry:n sekä muiden
-            TAMKin kerhojen kanssa, osallistumalla tapahtumien järjestämiseen.
-            </p>
-            <p>
-            Kerhon jäseniksi ovat tervetulleita kaikki koulutusohjelmasta
-            riippumatta. Yritysvierailut ovat kuitenkin suunnattu
-            tietotekniikan opiskelijoille.
-            </p>
+          <p>{t("associationInfo.paragraph1")}</p>
+          <p>{t("associationInfo.paragraph2")}</p>
+          <p>{t("associationInfo.paragraph3")}</p>
+          <p>{t("associationInfo.paragraph4")}</p>
         </div>
+      </div>
     </div>
-</div>
   );
 };
 

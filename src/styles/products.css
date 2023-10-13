@@ -1,79 +1,78 @@
 .products-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 4rem;
-    cursor: pointer;
-    padding-bottom: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4rem;
+  cursor: pointer;
+  padding-bottom: 15rem;
 }
 
 .product {
-    background-color: rgba(255, 255, 255, 0.326);
-    border:solid #FEA136 4px;
-    width: 20rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    transition: transform .2s;
+  background-color: rgba(255, 255, 255, 0.326);
+  border: solid #fea136 4px;
+  width: 20rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.2s;
 }
 
 .product:hover {
-    transform: scale(1.2);
-  }
-
-.product img{
-    width: 20rem;
-    border-radius: 2rem;
+  transform: scale(1.2);
 }
 
-.product h2{
-    font-size: 2rem;
-    font-weight: 700;
+.product img {
+  width: 20rem;
+  border-radius: 2rem;
 }
 
-.product p{
-    font-size: 1.5rem;
-    font-weight: 700;
+.product h2 {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.product .buy-button{
-    background-color: #5E35B1;
-    height: 3rem;
-    width: 10rem;
-    border-radius: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 1rem;
+.product p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.product .buy-button {
+  background-color: #5e35b1;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 1200px) {
-    .products-container {
-        display: flex;
-        flex-direction: column;
-    }
+  .products-container {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .product {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        margin-left: auto;
-        margin-right: auto;
-        transition: transform .2s;
-    }
+  .product {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.2s;
+  }
 
-    .product img{
-        width: 20rem;
-        border-radius: 2rem;
-    }
-    
-    .product h2{
-        font-size: 2rem;
-        font-weight: 700;
-    }
-    
-    .product p{
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-}  
+  .product img {
+    width: 20rem;
+    border-radius: 2rem;
+  }
+
+  .product h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .product p {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}

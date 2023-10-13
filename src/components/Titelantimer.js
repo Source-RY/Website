@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function TitelanTimer({ endDate }) {
   const [timeLeft, setTimeLeft] = useState({
@@ -7,6 +8,7 @@ function TitelanTimer({ endDate }) {
     minutes: 0,
     seconds: 0,
   });
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!endDate) {
@@ -45,10 +47,11 @@ function TitelanTimer({ endDate }) {
     <div>
       {endDate ? (
         minutes < 0 ? (
-            <p>Käynnissä!</p>
+          <p>{t("happeningNow")}</p>
         ) : (
           <p>
-            {days} päivää {hours} tuntia {minutes} minuuttia {seconds} sekuntia
+            {days} {t("days")} {hours} {t("hours")} {minutes} {t("minutes")}{" "}
+            {seconds} {t("seconds")}
           </p>
         )
       ) : null}

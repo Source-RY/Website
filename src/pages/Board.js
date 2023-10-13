@@ -1,3 +1,5 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
 import sourcebanner from "../components/images/sourcebanner.jpeg";
 import boardmember_placeholder from "../components/images/boardmember_placeholder.png";
 import nelli2022 from "../components/images/board/2022/nelli.jpg";
@@ -19,56 +21,57 @@ import oscar2023 from "../components/images/board/2023/oscar.jpg";
 import toni2023 from "../components/images/board/2023/toni.jpg";
 
 const Board = () => {
+  const { t } = useTranslation();
   const board2023 = {
     board: [
       {
         name: "Toni Rantanen",
-        role: "Puheenjohtaja",
+        role: t("roles.chairperson"),
         image: toni2023,
       },
       {
         name: "Leevi Immonen",
-        role: "Varapuheenjohtaja",
+        role: t("roles.viceChairperson"),
         image: leevi2022,
       },
       {
         name: "Atte Kaartosalmi",
-        role: "Rahastonhoitaja",
+        role: t("roles.treasurer"),
         image: atte2023,
       },
       {
         name: "Juho Mäkitalo",
-        role: "Tapahtumavastaava",
+        role: t("roles.eventsCoordinator"),
         image: juho2023,
       },
       {
         name: "Arttu Uuranmäki",
-        role: "Vapaa-aikavastaava",
+        role: t("roles.leisureCoordinator"),
         image: arttu2022,
       },
       {
         name: "Laura Tiihonen",
-        role: "Sihteeri ja viestintävastaava",
+        role: t("roles.secretary"),
         image: laura2023,
       },
       {
         name: "Sylvi Kokko",
-        role: "Jäsen- ja kerhisvastaava",
+        role: t("roles.membershipAndClubroomCoordinator"),
         image: sylvi2023,
       },
       {
         name: "Alina Kauppila",
-        role: "Ulkosuhdevastaava",
+        role: t("roles.externalRelationsCoordinator"),
         image: alina2023,
       },
       {
         name: "Oscar Hero",
-        role: "Kansainvälisyysvastaava",
+        role: t("roles.internationalStudentsCoordinator"),
         image: oscar2023,
       },
       {
         name: "Sviatoslav Vasev",
-        role: "Webmaster",
+        role: t("roles.webmaster"),
         image: sviat2022,
       },
     ],
@@ -90,52 +93,52 @@ const Board = () => {
     board: [
       {
         name: "Nelli Niinivaara",
-        role: "Puheenjohtaja",
+        role: t("roles.chairperson"),
         image: nelli2022,
       },
       {
         name: "Alina Kauppila",
-        role: "Varapuheenjohtaja",
+        role: t("roles.viceChairperson"),
         image: alina2022,
       },
       {
         name: "Jonna Sorsa",
-        role: "Rahastonhoitaja",
+        role: t("roles.treasurer"),
         image: jonna2022,
       },
       {
         name: "Arttu Uuranmäki",
-        role: "Tapahtumavastaava",
+        role: t("roles.eventsCoordinator"),
         image: arttu2022,
       },
       {
         name: "Safiul Alam",
-        role: "Vapaa-aikavastaava",
+        role: t("roles.leisureCoordinator"),
         image: safiul2022,
       },
       {
         name: "Laura Tiihonen",
-        role: "Sihteeri ja viestintävastaava",
+        role: t("roles.secretary"),
         image: laura2022,
       },
       {
         name: "Toni Rantanen",
-        role: "Jäsen- ja kerhisvastaava",
+        role: t("roles.membershipAndClubroomCoordinator"),
         image: toni2022,
       },
       {
         name: "Leevi Immonen",
-        role: "Ulkosuhdevastaava",
+        role: t("roles.externalRelationsCoordinator"),
         image: leevi2022,
       },
       {
         name: "Sviatoslav Vasev",
-        role: "Kansainvälisyysvastaava",
+        role: t("roles.internationalStudentsCoordinator"),
         image: sviat2022,
       },
       {
         name: "Marko Metsola",
-        role: "Webmaster",
+        role: t("roles.webmaster"),
         image: metso2022,
       },
     ],
@@ -152,15 +155,21 @@ const Board = () => {
   };
   const board2021 = {
     board: [
-      { name: "Mikko Wrightson", role: "Puheenjohtaja" },
-      { name: "Artturi Koutonen", role: "Varapuheenjohtaja" },
-      { name: "Jonna Sorsa", role: "Rahastonhoitaja" },
-      { name: "Joonas Korpela", role: "Tapahtumavastaava" },
-      { name: "Toni Rantanen", role: "Vapaa-aikavastaava" },
-      { name: "Nelli Niinivaara", role: "Sihteeri ja viestintävastaava" },
-      { name: "Veera Selin", role: "Jäsen- ja kerhisvastaava" },
-      { name: "Tomi Minkkinen", role: "Ulkosuhdevastaava" },
-      { name: "Aaro Toivonen", role: "Webmain" },
+      { name: "Mikko Wrightson", role: t("roles.chairperson") },
+      { name: "Artturi Koutonen", role: t("roles.viceChairperson") },
+      { name: "Jonna Sorsa", role: t("roles.treasurer") },
+      { name: "Joonas Korpela", role: t("roles.eventsCoordinator") },
+      { name: "Toni Rantanen", role: t("roles.leisureCoordinator") },
+      { name: "Nelli Niinivaara", role: t("roles.secretary") },
+      {
+        name: "Veera Selin",
+        role: t("roles.membershipAndClubroomCoordinator"),
+      },
+      { name: "Tomi Minkkinen", role: t("roles.externalRelationsCoordinator") },
+      {
+        name: "Aaro Toivonen",
+        role: t("roles.internationalStudentsCoordinator"),
+      },
     ],
     staff: [{ name: "Janne Vanhanen", role: "Web Junior ja IO-virta" }],
   };
@@ -171,7 +180,7 @@ const Board = () => {
           <div className="page-banner filter">
             <img className="bannerImage" src={sourcebanner} alt=""></img>
           </div>
-          <h1 class="page-title">Hallitus</h1>
+          <h1 class="page-title">{t("boardMembers")}</h1>
         </div>
         <div class="page-text">
           <br />
@@ -186,7 +195,7 @@ const Board = () => {
             ))}
           </div>
           <div className="helpers-container">
-            <h2>Toimihenkilöt</h2>
+            <h2>{t("officers")}</h2>
             {board2023.staff.map((member) => (
               <div className="helper">
                 <p>
@@ -197,16 +206,11 @@ const Board = () => {
             ))}
           </div>
           <br />
-          <p>
-            Uusi hallitus ja toimihenkilöt valitaan joka vuosi syyskokouksessa
-            ja ehdolle asettuminen tapahtuu saapumalla paikalle kokoukseen ja
-            ilmaisemalla halukkuutensa siinä kohtaa kokousta, kun
-            hallitusta/toimihenkilöitä valitaan.
-          </p>
+          <p>{t("newBoardDescription")}</p>
 
           <br />
           <br />
-          <h1>Menneet hallitukset ja toimihenkilöt</h1>
+          <h1>{t("pastBoards")}</h1>
           <div className="boards-container">
             <h2>2022</h2>
             <div className="board-container">
@@ -221,7 +225,7 @@ const Board = () => {
             <br />
 
             <p>
-              <b>Toimihenkilöt</b>
+              <b>{t("officers")}</b>
             </p>
             {board2022.staff.map((member) => (
               <p>
@@ -237,7 +241,7 @@ const Board = () => {
             ))}
             <br />
             <p>
-              <b>Toimihenkilöt</b>
+              <b>{t("officers")}</b>
             </p>
             {board2021.staff.map((member) => (
               <p>

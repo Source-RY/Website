@@ -1,6 +1,9 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
 import banner from "../components/images/iotseminaari/logo_white_2020.png";
 
 const Iotseminar = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="page">
@@ -10,14 +13,10 @@ const Iotseminar = () => {
           </div>
           <br />
           <p>
-            IoT-Seminaari on Tampereen ammattikorkeakoululla järjestettävä
-            seminaaritapahtuma, joka kerää yhteen alan yrityksiä,
-            asiantuntijoita ja opiskelijoita.
+            {t("iotseminarInfo.paragraph1")}
             <br />
             <br />
-            IoT-Seminaarissa perehdytään tieteen ja tekniikan alan monipuolisiin
-            ratkaisuihin ja innovaatioihin seminaariesitelmien puitteissa sekä
-            päivän aikana voi tutustua eri yritysten ständeihin ja verkostoitua.
+            {t("iotseminarInfo.paragraph1")}
             <br />
           </p>
           <br />
