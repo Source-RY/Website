@@ -47,42 +47,42 @@ const Board = () => {
       {
         name: "Vertti Salo",
         role: t("roles.treasurer"),
-        image: vertti2024,
+        //image: vertti2024,
       },
       {
         name: "Antti Venetjoki",
         role: t("roles.eventsCoordinator"),
-        image: antti2024,
+        //image: antti2024,
       },
       {
         name: "Juha Hautakangas",
         role: t("roles.leisureCoordinator"),
-        image: juha2024,
+        //image: juha2024,
       },
       {
         name: "Juuso Alanko",
         role: t("roles.secretary"),
-        image: juuso2024,
+        //image: juuso2024,
       },
       {
         name: "Joanne Hoikka",
         role: t("roles.membershipAndClubroomCoordinator"),
-        image: joanne2024,
+        //image: joanne2024,
       },
       {
         name: "Eino Palomäki",
         role: t("roles.externalRelationsCoordinator"),
-        image: eino2024,
+        //image: eino2024,
       },
       {
         name: "Eetu Reijasto",
         role: t("roles.kopo"),
-        image: eetu2024,
+        //image: eetu2024,
       },
       {
         name: "Wilhelm Nilsson",
         role: t("roles.webmaster"),
-        image: will2024,
+        //image: will2024,
       }
     ],
     staff: [
