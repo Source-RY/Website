@@ -251,7 +251,7 @@ const Board = () => {
       <div className="page">
         <div className="page-banner-container">
           <div className="page-banner filter">
-            <img className="bannerImage" src={sourcebanner} alt={boardmember_placeholder}></img>
+            <img className="bannerImage" src={sourcebanner} alt=""></img>
           </div>
           <h1 class="page-title">{t("boardMembers")}</h1>
         </div>
@@ -261,7 +261,7 @@ const Board = () => {
           <div className="current-board-container">
             {board2024.board.map((member) => (
               <div className="boardmember">
-                <img src={member.image} alt=""></img>
+                <img src={member.image} alt={boardmember_placeholder}></img>
                 <p className="boardmember-name">{member.name}</p>
                 <i className="boardrole">//{member.role}</i>
               </div>
