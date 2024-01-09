@@ -21,7 +21,7 @@ import oscar2023 from "../components/images/board/2023/oscar.jpg";
 import toni2023 from "../components/images/board/2023/toni.jpg";
 import sylvi2024 from "../components/images/board/2024/sylvi.jpg"
 import juho2024 from "../components/images/board/2024/juho.jpg"
-import juha2024 from "../components/images/board/2024/juha.jpg"
+//import juha2024 from "../components/images/board/2024/juha.jpg"
 //import juuso2024 from "../components/images/board/2024/juuso.jpg"
 //import vertti2024 from "../components/images/board/2024/vertti.jpg"
 //import eino2024 from "../components/images/board/2024/eino.jpg"
