@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dea86a76.css",
-    "main.js": "/static/js/main.40d3cae8.js",
+    "main.js": "/static/js/main.bc731385.js",
     "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
     "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
@@ -55,11 +55,11 @@
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
     "main.dea86a76.css.map": "/static/css/main.dea86a76.css.map",
-    "main.40d3cae8.js.map": "/static/js/main.40d3cae8.js.map",
+    "main.bc731385.js.map": "/static/js/main.bc731385.js.map",
     "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dea86a76.css",
-    "static/js/main.40d3cae8.js"
+    "static/js/main.bc731385.js"
   ]
 }
