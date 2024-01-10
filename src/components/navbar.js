@@ -94,6 +94,15 @@ const Navbar = () => {
   let hamburger_button =
     navbarVisible === true ? deactivate_button : activate_button;
 
+    /* this goes under the TiteLan link if it ever comes back
+<Link
+className="nav-link"
+to="/iotseminaari"
+onClick={toggleNavbarVisibility}
+>
+{t("nav.iotSeminaari")}
+</Link>
+*/
   return (
     <div className="nav-bar-container">
       {navbarVisible && (
@@ -146,13 +155,6 @@ const Navbar = () => {
                           onClick={toggleNavbarVisibility}
                         >
                           {t("nav.titelan")}
-                        </Link>
-                        <Link
-                          className="nav-link"
-                          to="/iotseminaari"
-                          onClick={toggleNavbarVisibility}
-                        >
-                          {t("nav.iotSeminaari")}
                         </Link>
                       </div>
                     )}

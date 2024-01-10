@@ -89,7 +89,6 @@ const Board = () => {
       { name: "Leo Liikka", role: "TiTeLAN" },
       { name: "Leevi Villa", role: "TiTeLAN" },
       { name: "Toni Rantanen", role: t("roles.officer") },
-      { name: "Jyri Pappinen", role: t("roles.officer") },
       { name: "Henna Kumpumäki", role: t("roles.officer") },
       { name: "Lassi Esama", role: t("roles.officer") },
       { name: "Lassi Keijonen", role: t("roles.officer") },

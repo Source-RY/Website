@@ -19,7 +19,7 @@ const Suggestions = () => {
             <br />
             {t("clubRoomSuggestions.paragraph2")}
             <br />
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZar30P-LmcHjYnlOaebpS9G-TGrS1_KnHtUEghFOH8CImSg/viewform">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRnbc_QdeW2hCQDD0MHOcnVTOOso85Yncfl6YjNKxKBCQkFg/viewform">
               {t("clubRoomAquisitions")}
             </a>
           </p>
@@ -30,7 +30,7 @@ const Suggestions = () => {
             <br />
             {t("companySuggestions.paragraph3")}
             <br />
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeehQrOdczRqpODpw1exrf1baUp_zMfOgdS6tNDz0r04z02tA/viewform">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSephvgvm1_gzXikuVaRpI3uOIoNCJphDLcTjo30YPSImFiZ0g/viewform">
               {t("excursionSuggestions")}
             </a>
           </p>

@@ -40,9 +40,9 @@ function App() {
           <Route path="/yhteystiedot" element={<Contact />} />
           <Route path="/kumppanit" element={<Partners />} />
           <Route path="/titelan" element={<Titelan />} />
+          <Route path="/iotseminaari" element={<Iotseminar />} />
           <Route path="/hallitus" element={<Board />} />
           <Route path="/saannot" element={<Saannot />} />
-          <Route path="/iotseminaari" element={<Iotseminar />} />
           <Route path="/tuotteet" element={<Tuotteet />} />
           <Route path="/yhdistys" element={<Yhdistys />} />
           <Route path="*" element={<Missing />} />
