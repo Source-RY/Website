@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dea86a76.css",
-    "main.js": "/static/js/main.c55069dc.js",
+    "main.js": "/static/js/main.e49c1840.js",
     "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
     "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
@@ -13,9 +13,9 @@
     "static/media/sviat.jpg": "/static/media/sviat.6c0de111246c64e7fd39.jpg",
     "static/media/safiul.jpg": "/static/media/safiul.16bde4c8f8f21213541d.jpg",
     "static/media/arttu.jpg": "/static/media/arttu.76ef43f867ada5450859.jpg",
-    "static/media/juho.jpg": "/static/media/juho.2e61ac0d68b4720ce305.jpg",
+    "static/media/juho.jpg": "/static/media/juho.08925bdb154f7cbe911e.jpg",
     "static/media/oscar.jpg": "/static/media/oscar.4e039b5d7bbf8d66fb56.jpg",
-    "static/media/sylvi.jpg": "/static/media/sylvi.ac9770d47c5bdde5e9e7.jpg",
+    "static/media/sylvi.jpg": "/static/media/sylvi.19e8d7ac9f24978cc1c2.jpg",
     "static/media/atte.jpg": "/static/media/atte.fd309cd1d45843fc178b.jpg",
     "static/media/titelan_2012_1.png": "/static/media/titelan_2012_1.dcf11745bac88f7a0e6a.png",
     "static/media/titelan_2011_1.png": "/static/media/titelan_2011_1.e6de2033ffd6f38706ad.png",
@@ -25,7 +25,15 @@
     "static/media/titelan_2010_1.png": "/static/media/titelan_2010_1.596928bdc35547d22c07.png",
     "static/media/titelan_2022.png": "/static/media/titelan_2022.a5b214c0334dd1154312.png",
     "static/media/titelan_2012_2.png": "/static/media/titelan_2012_2.501b77dbb9a44de24558.png",
+    "static/media/wilhelm.jpg": "/static/media/wilhelm.407272816b699acc9d09.jpg",
+    "static/media/joanne.jpg": "/static/media/joanne.39f445bff96b3d68c81b.jpg",
+    "static/media/eetu.jpg": "/static/media/eetu.25f3911da971b241c253.jpg",
     "static/media/titelan_no_poster.png": "/static/media/titelan_no_poster.37f96135724004808cba.png",
+    "static/media/vertti.jpg": "/static/media/vertti.a5f051cb2cc88c3fe3a7.jpg",
+    "static/media/antti.jpg": "/static/media/antti.fda6771ce665638f1c39.jpg",
+    "static/media/juha.jpg": "/static/media/juha.07fd5446af6fb5f466f1.jpg",
+    "static/media/juuso.jpg": "/static/media/juuso.463237192cc18542dfc4.jpg",
+    "static/media/eino.jpg": "/static/media/eino.8043acfe65f9052d7179.jpg",
     "static/media/titelan_2013_2_recreation.png": "/static/media/titelan_2013_2_recreation.99282eaed58a65db4fb5.png",
     "static/media/tapahtumat.jpeg": "/static/media/tapahtumat.8795a9b63b9d82f5e7a3.jpeg",
     "static/media/titelan_2018.jpg": "/static/media/titelan_2018.89cb467b0a4028caeae6.jpg",
@@ -55,11 +63,11 @@
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
     "main.dea86a76.css.map": "/static/css/main.dea86a76.css.map",
-    "main.c55069dc.js.map": "/static/js/main.c55069dc.js.map",
+    "main.e49c1840.js.map": "/static/js/main.e49c1840.js.map",
     "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dea86a76.css",
-    "static/js/main.c55069dc.js"
+    "static/js/main.e49c1840.js"
   ]
 }
