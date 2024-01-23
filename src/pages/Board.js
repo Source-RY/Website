@@ -21,13 +21,14 @@ import oscar2023 from "../components/images/board/2023/oscar.jpg";
 import toni2023 from "../components/images/board/2023/toni.jpg";
 import sylvi2024 from "../components/images/board/2024/sylvi.jpg"
 import juho2024 from "../components/images/board/2024/juho.jpg"
-//import juha2024 from "../components/images/board/2024/juha.jpg"
-//import juuso2024 from "../components/images/board/2024/juuso.jpg"
-//import vertti2024 from "../components/images/board/2024/vertti.jpg"
-//import eino2024 from "../components/images/board/2024/eino.jpg"
-//import eetu2024 from "../components/images/board/2024/eetu.jpg"
-//import antti2024 from "../components/images/board/2024/antti.jpg"
-//import will2024 from "../components/images/board/2024/will.jpg"
+import juha2024 from "../components/images/board/2024/juha.jpg"
+import juuso2024 from "../components/images/board/2024/juuso.jpg"
+import joanne2024 from "../components/images/board/2024/joanne.jpg"
+import vertti2024 from "../components/images/board/2024/vertti.jpg"
+import eino2024 from "../components/images/board/2024/eino.jpg"
+import eetu2024 from "../components/images/board/2024/eetu.jpg"
+import antti2024 from "../components/images/board/2024/antti.jpg"
+import wilhelm2024 from "../components/images/board/2024/wilhelm.jpg"
 
 
 const Board = () => {
@@ -47,42 +48,42 @@ const Board = () => {
       {
         name: "Vertti Salo",
         role: t("roles.treasurer"),
-        image: boardmember_placeholder,
+        image: vertti2024,
       },
       {
         name: "Antti Venetjoki",
         role: t("roles.eventsCoordinator"),
-        image: boardmember_placeholder,
+        image: antti2024,
       },
       {
         name: "Juha Hautakangas",
         role: t("roles.leisureCoordinator"),
-        image: boardmember_placeholder,
+        image: juha2024,
       },
       {
         name: "Juuso Alanko",
         role: t("roles.secretary"),
-        image: boardmember_placeholder,
+        image: juuso2024,
       },
       {
         name: "Joanne Hoikka",
         role: t("roles.membershipAndClubroomCoordinator"),
-        image: boardmember_placeholder,
+        image: joanne2024,
       },
       {
         name: "Eino Palomäki",
         role: t("roles.externalRelationsCoordinator"),
-        image: boardmember_placeholder,
+        image: eino2024,
       },
       {
         name: "Eetu Reijasto",
         role: t("roles.kopo"),
-        image: boardmember_placeholder,
+        image: eetu2024,
       },
       {
         name: "Wilhelm Nilsson",
         role: t("roles.webmaster"),
-        image: boardmember_placeholder,
+        image: wilhelm2024,
       }
     ],
     staff: [
