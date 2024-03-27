@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dea86a76.css",
-    "main.js": "/static/js/main.e49c1840.js",
+    "main.js": "/static/js/main.64fd2cac.js",
     "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
     "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
@@ -43,6 +43,7 @@
     "static/media/kaijakka.png": "/static/media/kaijakka.c97b3d291d75d6ad92bd.png",
     "static/media/titelan_2014_2.png": "/static/media/titelan_2014_2.0f474ec23551d2e2cf0e.png",
     "static/media/sourcebanner.jpeg": "/static/media/sourcebanner.f677c16eea74376c7463.jpeg",
+    "static/media/evitec_solutions.png": "/static/media/evitec_solutions.1e2782dc89cb660bebff.png",
     "static/media/titelan_2015_2.jpg": "/static/media/titelan_2015_2.66b59098e12d18baaf2f.jpg",
     "static/media/yhteystiedot.jpeg": "/static/media/yhteystiedot.cda07ae403ac54769fea.jpeg",
     "static/media/futurice.png": "/static/media/futurice.c8fa9b137f9f0bae68f7.png",
@@ -63,11 +64,11 @@
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
     "main.dea86a76.css.map": "/static/css/main.dea86a76.css.map",
-    "main.e49c1840.js.map": "/static/js/main.e49c1840.js.map",
+    "main.64fd2cac.js.map": "/static/js/main.64fd2cac.js.map",
     "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dea86a76.css",
-    "static/js/main.e49c1840.js"
+    "static/js/main.64fd2cac.js"
   ]
 }
