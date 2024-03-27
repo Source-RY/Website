@@ -9,7 +9,7 @@ import Reaktor from "../components/images/partners/reaktor.png";
 import Solita from "../components/images/partners/solita.png";
 import ReceiptHero from "../components/images/partners/receipthero.png";
 import Modulight from "../components/images/partners/modulight.png";
-import Evitec from "../components/images/partners/evitec.png";
+import Evitec from "../components/images/partners/evitec_solutions.png";
 import Vincit from "../components/images/partners/vincit.png";
 import Kaijakka from "../components/images/partners/kaijakka.png";
 import Hene from "../components/images/partners/hene.png";
@@ -127,7 +127,7 @@ const Partners = () => {
           <div class="partner-break"></div>
           <div class="partner-item">
             <div class="top-row">
-              <img class="partner-logo" src={Evitec} alt="Evitec Logo" />
+              <img class="partner-logo" src={Evitec} alt="Evitec Solutions Logo" />
               <a
                 target="_blank"
                 href="https://evitec.com/"
