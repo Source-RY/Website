@@ -146,7 +146,7 @@ const Partners = () => {
               <img class="partner-logo" src={Vincit} alt="Vincit Logo" />
               <a
                 target="_blank"
-                href="https://profitsoftware.com/"
+                href="https://www.vincit.com/"
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 jKshWR"
                 rel="noreferrer"
               >
