@@ -288,6 +288,7 @@ onClick={toggleNavbarVisibility}
                         marginLeft: 10,
                       }}
                       onClick={() => i18n.changeLanguage("en")}
+                      tabIndex="0"
                     >
                       <p>EN</p>
                       <img
@@ -305,6 +306,7 @@ onClick={toggleNavbarVisibility}
                         marginLeft: 10,
                       }}
                       onClick={() => i18n.changeLanguage("fi")}
+                      tabIndex="0"
                     >
                       <p>FI</p>
                       <img

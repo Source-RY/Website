@@ -10,7 +10,7 @@ import Solita from "../components/images/partners/solita.png";
 import ReceiptHero from "../components/images/partners/receipthero.png";
 import Modulight from "../components/images/partners/modulight.png";
 import Evitec from "../components/images/partners/evitec_solutions.png";
-import Vincit from "../components/images/partners/vincit.png";
+import Twoday from "../components/images/partners/twoday.png";
 import Kaijakka from "../components/images/partners/kaijakka.png";
 import Hene from "../components/images/partners/hene.png";
 import TOAS from "../components/images/partners/toas.png";
@@ -91,7 +91,7 @@ const Partners = () => {
               </p>
             </div>
           </div>
-
+{/* 
           <div class="partner-break"></div>
           <div class="partner-item">
             <div class="top-row">
@@ -107,7 +107,7 @@ const Partners = () => {
             </div>
             <div class="partner-desc"></div>
           </div>
-
+ */}
           <div class="partner-break"></div>
           <div class="partner-item">
             <div class="top-row">
@@ -139,14 +139,13 @@ const Partners = () => {
             </div>
             <div class="partner-desc"></div>
           </div>
-
           <div class="partner-break"></div>
           <div class="partner-item">
             <div class="top-row">
-              <img class="partner-logo" src={Vincit} alt="Vincit Logo" />
+              <img class="partner-logo" src={Twoday} alt="Twoday Logo" />
               <a
                 target="_blank"
-                href="https://www.vincit.com/"
+                href="https://www.twoday.com/"
                 class="PartnerItem__PartnerLink-sc-n5e0ep-0 jKshWR"
                 rel="noreferrer"
               >
@@ -155,7 +154,6 @@ const Partners = () => {
             </div>
             <div class="partner-desc"></div>
           </div>
-
           <div class="partner-break"></div>
           <div class="partner-item">
             <div class="top-row">
@@ -219,31 +217,28 @@ const Partners = () => {
             </div>
             <div class="partner-desc">
               <p>
-                At Nokia, we create technology that helps the world act
-                together. We are a B2B technology innovation leader pioneering
-                the future where networks meet cloud. At Nokia you will have a
-                positive impact on people’s lives and help build the
-                capabilities needed for a more productive, sustainable, and
-                accessible world. We have three sites in Finland: Espoo focuses
-                on the development of mobile networks and cloud products; Oulu
-                specializes in the radio technologies; and Tampere is the home
-                of network management and leading SoC development. Our main
-                focus is on 5G development, while already pioneering the future
-                of 6G. Open yourself to starting your career with Nokia. We are
-                looking for unique minds with skills such as: SW coding (e.g.
-                C/C++, JavaScript, Python and Golang), SW testing, automation
-                and integration (e.g. Gerrit, GitLab CI, Jenkins), Cloud
-                technology (Webscale clouds, Kubernetes, Docker), System on chip
-                development (MATLAB, System Verilog, UVM). Each year, we welcome
-                around 500 trainees. Apply to our open positions via
-                <a href="https://www.nokia.com/about-us/careers/">
-                  www.nokia.com/careers
-                </a>
-                . Follow us on Instagram @nokiafinland and on TikTok @nokia. Be
-                part of a culture built on an inclusive way of working where we
-                are open to your ideas, you are empowered to take risks and are
-                encouraged to be fearless in bringing your authentic self to
-                work. Join us.
+              At Nokia, we create tech­no­logy that helps the world act 
+              toget­her. We are a B2B tech­no­logy inno­va­tion lea­der pio­nee­ring 
+              the future where networks meet cloud. 
+              At Nokia you will have a posi­tive impact on people’s lives and 
+              help build the capa­bi­li­ties nee­ded for a more pro­duc­tive, sus­tai­nable, 
+              and acces­sible world.
+              We have three sites in Finland: Espoo focuses on the development 
+              of mobile networks and cloud products; 
+              Oulu specializes in the radio technologies; and Tampere is the home 
+              of network management and leading SoC development. 
+              Our main focus is on 5G development, while already pioneering the 
+              future of 6G. Open yourself to start your career with Nokia. 
+              We are looking for unique minds with skills such as: 
+              SW coding (e.g. C/C++, JavaScript, Python and Golang), SW testing, 
+              automation and integration (e.g. Gerrit, GitLab CI, Jenkins), 
+              Cloud technology (Webscale clouds, Kubernetes, Docker), System on chip 
+              development (MATLAB, System Verilog, UVM). 
+              Each year, we welcome around 500 trainees. 
+              Apply to our open positions via <a href="http://www.nokia.com/careers">www.nokia.com/careers</a>
+              and follow and engage with us on Instagram <a href="https://www.instagram.com/nokiafinland/">@nokiafinland</a>.
+              Be part of a culture built on an inclusive way of working where we are open to your ideas, 
+              you are empowered to take risks and are encouraged to be fearless in bringing your authentic self to work.
               </p>
             </div>
           </div>
