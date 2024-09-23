@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dea86a76.css",
-    "main.js": "/static/js/main.6015db20.js",
+    "main.js": "/static/js/main.78d51f70.js",
     "static/js/787.9ed5246f.chunk.js": "/static/js/787.9ed5246f.chunk.js",
     "static/media/titelan_2019.png": "/static/media/titelan_2019.e682c735f8ab761304c9.png",
     "static/media/jonna.jpg": "/static/media/jonna.6afd0ea8f40796e38ab7.jpg",
@@ -51,6 +51,7 @@
     "static/media/kerhohuone.png": "/static/media/kerhohuone.67094b30aa52a9689c7d.png",
     "static/media/hene.png": "/static/media/hene.3c94bd6eb69e0a5192db.png",
     "static/media/namebanner.png": "/static/media/namebanner.e804cf086a7de12a61c4.png",
+    "static/media/twoday.png": "/static/media/twoday.aa904a0cb85b19c7fa98.png",
     "static/media/netum.png": "/static/media/netum.68733b7e81623991eca6.png",
     "static/media/reaktor.png": "/static/media/reaktor.3679fa4c380568ef82d5.png",
     "static/media/toas.png": "/static/media/toas.f9017695ee66ef42b464.png",
@@ -64,11 +65,11 @@
     "static/media/profitsoftware.png": "/static/media/profitsoftware.2ff09b757d07f798dabf.png",
     "index.html": "/index.html",
     "main.dea86a76.css.map": "/static/css/main.dea86a76.css.map",
-    "main.6015db20.js.map": "/static/js/main.6015db20.js.map",
+    "main.78d51f70.js.map": "/static/js/main.78d51f70.js.map",
     "787.9ed5246f.chunk.js.map": "/static/js/787.9ed5246f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dea86a76.css",
-    "static/js/main.6015db20.js"
+    "static/js/main.78d51f70.js"
   ]
 }
